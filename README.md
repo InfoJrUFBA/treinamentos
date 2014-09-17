@@ -1,4 +1,4 @@
-capacitacao-git
+Capacitacão de Git e Github
 ===============
 
-Capacitação de Git/Github feita parao teinamento de membros e trainees da InfoJR UFBA
+>Capacitação feita para o teinamento de membros e trainees da InfoJR UFBA.
