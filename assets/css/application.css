@@ -1,0 +1,39 @@
+.navbar {
+    min-height: 65px;
+}
+
+.navbar-nav > li > a {
+    line-height: 34px;
+}
+
+.navbar-brand img {
+    height: 30px;
+}
+
+.table td > .middle-aligned {
+    vertical-align: super;
+}
+
+.icon-2x {
+    font-size: 2em;
+}
+
+.icon-link {
+    margin-right: 10px;
+}
+
+.icon-link:hover {
+    text-decoration: none;
+}
+
+.git-color {
+    color: #f05033;
+}
+
+.javascript-color {
+    color: #f0db4f;
+}
+
+.entrepreneurship-color {
+    color: #7cb124;
+}
