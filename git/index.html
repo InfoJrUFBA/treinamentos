@@ -1,143 +1,141 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
 
-	<head>
-		<meta charset="utf-8">
+        <title>InfoJr UFBA - Git</title>
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../assets/css/reveal.min.css">
+        <link rel="stylesheet" href="../assets/css/theme/blood.css" id="theme">
 
-		<link rel="stylesheet" href="../assets/css/reveal.min.css">
-		<link rel="stylesheet" href="../assets/css/theme/blood.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../assets/lib/css/zenburn.css">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="../assets/lib/css/zenburn.css">
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '../assets/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <div class="reveal">
 
-	<body>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Controle de versão com Git</h1>
+                    <h2></h2>
+                </section>
 
-		<div class="reveal">
+                <section>
+                    <h1>Eu</h1>
+                    <img src="img/foto_eu_2.jpg" height="320" width="240" alt="eu">
+                    <h2 class="fragment">Rafael Coelho</h2>
+                    <p class="fragment">Ciência da Computação</p>
+                    <p class="fragment">Marketing</p>
+                    <p class="fragment">Gamification</p>
+                </section>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Controle de versão com Git</h1>
-					<h2></h2>
-				</section>
+                <!-- Example of nested vertical slides -->
+                <section>
+                    <h3>Uma equipe deseja trabalhar em um grande projeto. O que fazer???</h3>
+                    <p class="fragment current-visible">Compartilhar os arquivos na nuvem?</p>
+                    <p class="fragment current-visible">Passar os arquivos por pendrive?</p>
+                    <p class="fragment current-visible">Fazer o projeto em reunião com sua equipe?</p>
+                </section>
 
-				<section>
-					<h1>Eu</h1>
-					<img src="img/foto_eu_2.jpg" height="320" width="240" alt="eu">
-					<h2 class="fragment">Rafael Coelho</h2>
-					<p class="fragment">Ciência da Computação</p>
-					<p class="fragment">Marketing</p>
-					<p class="fragment">Gamification</p>
-				</section>
+                <section data-background="img/explosion.gif">
+                    <h2 class="fragment">problemas de colaboração</h2>
+                </section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<h3>Uma equipe deseja trabalhar em um grande projeto. O que fazer???</h3>
-					<p class="fragment current-visible">Compartilhar os arquivos na nuvem?</p>
-					<p class="fragment current-visible">Passar os arquivos por pendrive?</p>
-					<p class="fragment current-visible">Fazer o projeto em reunião com sua equipe?</p>
-				</section>
+                <section>
+                    <h2>Bom, outras pessoas já passaram por isso...</h2>
+                </section>
 
-				<section data-background="img/explosion.gif">
-					<h2 class="fragment">problemas de colaboração</h2>
-				</section>
+                <section data-background="#007777">
+                    <img src="img/linus.jpg" height="366" width="366" alt="linus">
+                    <div class="fragment">
+                        <h2>Linus Torvalds</h2>
+                        <p>Um dos criadores do linux</p>
+                    </div>
+                </section>
 
-				<section>
-					<h2>Bom, outras pessoas já passaram por isso...</h2>
-				</section>
+                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+                    <img src="img/git.png" alt="git">
+                    <h2>Git</h2>
+                    <p>Controlador de versão distribuido</p>
+                </section>
 
-				<section data-background="#007777">
-					<img src="img/linus.jpg" height="366" width="366" alt="linus">
-					<div class="fragment">
-						<h2>Linus Torvalds</h2>
-						<p>Um dos criadores do linux</p>
-					</div>
-				</section>
+                <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+                    <h2>Controle de versão distribuído</h2><!--Controle de versão -->
+                    <img src="img/version-control-3.png" height="240" width="337" alt="controle de versão">
+                </section>
 
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<img src="img/git.png" alt="git">
-					<h2>Git</h2>
-					<p>Controlador de versão distribuido</p>
-				</section>
+                <section data-markdown>
+                        ## Inicializando o git
 
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Controle de versão distribuído</h2><!--Controle de versão -->
-					<img src="img/version-control-3.png" height="240" width="337" alt="controle de versão">
-				</section>
+                        Inicialize seu projeto
+                        ```
+                        $ mkdir choose-your-adventure
+                        $ cd choose-your-adventure
+                        $ git init
+                        ```
+                        Configure o seu usuário do git
+                        ```
+                        $ git config user.name "Rafael Coelho"
+                        $ git config user.email rafaellima@infojr.com.br
+                        ```
+                </section>
 
-				<section data-markdown>
-						## Inicializando o git
-						
-						Inicialize seu projeto
-						```
-						$ mkdir choose-your-adventure
-						$ cd choose-your-adventure
-						$ git init
-						```
-						Configure o seu usuário do git
-						```
-						$ git config user.name "Rafael Coelho"
-						$ git config user.email rafaellima@infojr.com.br
-						```
-				</section>
+                <section>
+                    <h2>Exercício</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Configurar e inicializar um repositório e adicionar alguns arquivos</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Iniciar um repositório</p>
+                    <p>Configurar seu usuário</p>
+                    <p>Escrever um arquivo adventure.md</p>
+                </section>
 
-				<section>
-					<h2>Exercício</h2>
-					<h3 style="color: #27ae60">Objetivo</h3>
-					<p>Configurar e inicializar um repositório e adicionar alguns arquivos</p>
-					<h3 style="color: #c0392b">Método</h3>
-					<p>Iniciar um repositório</p>
-					<p>Configurar seu usuário</p>
-					<p>Escrever um arquivo adventure.md</p>
-				</section>
+                <section data-background="img/flow.gif">
+                    <h2>Fluxo Git</h2>
+                </section>
 
-				<section data-background="img/flow.gif">
-					<h2>Fluxo Git</h2>
-				</section>
+                <section>
+                    <img src="img/work-flow.png" height="605" width="738" alt="fluxo de trabalho no git">
+                </section>
 
-				<section>
-					<img src="img/work-flow.png" height="605" width="738" alt="fluxo de trabalho no git">
-				</section>
+                <section data-background="img/fotografia.jpg">
+                    <h2>A analogia da fotografia</h2>
+                    <code>
+                        <h4 class="fragment">Arquivo = Modelo</h4>
+                        <h4 class="fragment">Git add = posicionar o modelo (arquivo) no palco (staging area)</h4>
+                        <h4 class="fragment">Git commit = Tirar foto</h4>
+                    </code>
+                </section>
 
-				<section data-background="img/fotografia.jpg">
-					<h2>A analogia da fotografia</h2>
-					<code>
-						<h4 class="fragment">Arquivo = Modelo</h4>
-						<h4 class="fragment">Git add = posicionar o modelo (arquivo) no palco (staging area)</h4>
-						<h4 class="fragment">Git commit = Tirar foto</h4>
-					</code>
-				</section>
-
-				<section data-background="#007777">
-					<h2>Git Status</h2>
-					<p>Certifica o status corrente do diretório</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+                <section data-background="#007777">
+                    <h2>Git Status</h2>
+                    <p>Certifica o status corrente do diretório</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 $git status
 # On branch master
 #
@@ -145,313 +143,312 @@ $git status
 # Untracked files:(use "git add <!--file-->..." to include in what will be committed)
 #
 # adventure.md
-					</code></pre>
-				</section>
-				<section>
-					<h2>Adicionando ao palco</h2>
-					<p>Devemos começar a rastrear as mudanças</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Adicionando ao palco</h2>
+                    <p>Devemos começar a rastrear as mudanças</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 $git add adventure.md
 $git status
 # On branch master
 #
 # Initial commit
 # Changes to be commited:
-#	 (use "git rm --cached <"file">..." to unstage)
+#    (use "git rm --cached <"file">..." to unstage)
 #
-# 	new file: adventure.md
-					</code></pre>
-				</section>
-				<section>
-					<h2>Armazenando uma foto</h2>
-					<p>Guardando uma foto no repositório local</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+#   new file: adventure.md
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Armazenando uma foto</h2>
+                    <p>Guardando uma foto no repositório local</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 $git commit -m "Initial commit"
 $git status
 # On branch master
 nothing to commit (working directory clean)
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Exercício</h2>
-					<h3 style="color: #27ae60">Objetivo</h3>
-					<p>Armazenar os arquivos no repositório local através dos commits</p>
-					<h3 style="color: #c0392b">Método</h3>
-					<p>Adicionar arquivos para a staging area (dica: git add);</p>
-					<p>Salvar alterações no repositório local (dica: git commit);</p>
-					<p>Criar uma cena e mais 3 cenas que possam ser desencadeadas pela primeira (dungeons);</p>
-					<p>Realizar mesmo processo para salvar alterações no repositório local;</p>
-					<p>Bônus: Adicionar css à página.</p>
-				</section>
+                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+                    <h2>Exercício</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Armazenar os arquivos no repositório local através dos commits</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Adicionar arquivos para a staging area (dica: git add);</p>
+                    <p>Salvar alterações no repositório local (dica: git commit);</p>
+                    <p>Criar uma cena e mais 3 cenas que possam ser desencadeadas pela primeira (dungeons);</p>
+                    <p>Realizar mesmo processo para salvar alterações no repositório local;</p>
+                    <p>Bônus: Adicionar css à página.</p>
+                </section>
 
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Histórico</h2>
-					<p>É possível ver quais alterações feitas</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-$ git log	
-commit	19dd00d4913497107ef6de07e0ee00a9b9315304	
-Author:	Rafael Coelho	<"rafaellima@infojr.com.br">	
-Date:			Sun Oct	12	02:51:03	2014	-0300	
-				Creating	index	and modifying README.md
-commit	a44995e61542e54aa88e55908cf09133578a43f6	
-Author:	Rafael Coelh	<"rafaellima@infojr.com.br">	
-Date:			Sun Oct	12	02:37:13	2014	-0300	
-				Initial commit
-					</code></pre>
-				</section>
+                <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+                    <h2>Histórico</h2>
+                    <p>É possível ver quais alterações feitas</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+$ git log
+commit  19dd00d4913497107ef6de07e0ee00a9b9315304
+Author: Rafael Coelho   <"rafaellima@infojr.com.br">
+Date:           Sun Oct 12  02:51:03    2014    -0300
+                Creating    index   and modifying README.md
+commit  a44995e61542e54aa88e55908cf09133578a43f6
+Author: Rafael Coelh    <"rafaellima@infojr.com.br">
+Date:           Sun Oct 12  02:37:13    2014    -0300
+                Initial commit
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>Diferenças entre commits</h2>
-					<p>Podemos ver o que modificamos em relação ao repositório local</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-$	git	diff	
-diff	--git	a/README.md	b/README.md
-index	9d1d09d..61f26f8	100644	
----	a/README.md
-+++	b/README.md
-@@	-1,2	+1,4	@@	
-	Minha aventura	
-	===================	
-+	
+                <section>
+                    <h2>Diferenças entre commits</h2>
+                    <p>Podemos ver o que modificamos em relação ao repositório local</p>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+$   git diff
+diff    --git   a/README.md b/README.md
+index   9d1d09d..61f26f8    100644
+--- a/README.md
++++ b/README.md
+@@  -1,2    +1,4    @@
+    Minha aventura
+    ===================
++
 +Andando pela rua, você vê ao longe um gnomo carregando uma sacola cheia de ouro
 +a) Você segue o gnomo [(vá para 2)](2.md)
-$	git	add	adventure.md
-$	git	diff	
-					</code></pre>
-				</section>
+$   git add adventure.md
+$   git diff
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>Add acidental</h2>
-					<p>Como fazer para remover arquivos adicionados acidentalmente?</p>
-					<pre><code data-trim contenteditable>
-$	git	status	
-#	On	branch	master	
-#	Changes	to	be	committed:	
-#			(use	"git	reset	HEAD	<file>..."	to	unstage)	
-#	
-# modified:			adventure.md
-#	
-$	git	reset	HEAD	adventure.md
-Unstaged	changes	after	reset:	
+                <section>
+                    <h2>Add acidental</h2>
+                    <p>Como fazer para remover arquivos adicionados acidentalmente?</p>
+                    <pre><code data-trim contenteditable>
+$   git status
+#   On  branch  master
+#   Changes to  be  committed:
+#           (use    "git    reset   HEAD    <file>..."  to  unstage)
+#
+# modified:         adventure.md
+#
+$   git reset   HEAD    adventure.md
+Unstaged    changes after   reset:
 M adventure.md
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>Descartando modificações</h2>
-					<p>E se eu quiser voltar como estava antes?</p>
-					<pre><code data-trim contenteditable>
-$	git	status	
-#	On	branch	master	
-#	Changes	not	staged	for	commit:	
-#			(use	"git	add	<file>..."	to	update	what	will	be	committed)	
-#			(use	"git	checkout	--	<file>..."	to	discard	changes	in	working	
-directory)	
-#	
-# modified:			adventure.md
-#	
-no	changes	added	to	commit	(use	"git	add"	and/or	"git	commit	-a")	
-$	git	checkout	--	adventure.md
-$	git	status	
-					</code></pre>
-				</section>
+                <section>
+                    <h2>Descartando modificações</h2>
+                    <p>E se eu quiser voltar como estava antes?</p>
+                    <pre><code data-trim contenteditable>
+$   git status
+#   On  branch  master
+#   Changes not staged  for commit:
+#           (use    "git    add <file>..."  to  update  what    will    be  committed)
+#           (use    "git    checkout    --  <file>..."  to  discard changes in  working
+directory)
+#
+# modified:         adventure.md
+#
+no  changes added   to  commit  (use    "git    add"    and/or  "git    commit  -a")
+$   git checkout    --  adventure.md
+$   git status
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>REFAZENDO COMMITS</h2>
-					<p>E se eu esqueci de adicionar alguma coisa?</p>
-					<pre><code data-trim contenteditable>
-$	git	reset	--soft	HEAD^	
-$	git	status	
-#	On	branch	master	
-#	Changes	to	be	committed:	
-#			(use	"git	reset	HEAD	<file>..."	to	unstage)	
-#	
-# modified:			adventure.md
-# new	file:			2.md
-#	
-					</code></pre>
-				</section>
+                <section>
+                    <h2>REFAZENDO COMMITS</h2>
+                    <p>E se eu esqueci de adicionar alguma coisa?</p>
+                    <pre><code data-trim contenteditable>
+$   git reset   --soft  HEAD^
+$   git status
+#   On  branch  master
+#   Changes to  be  committed:
+#           (use    "git    reset   HEAD    <file>..."  to  unstage)
+#
+# modified:         adventure.md
+# new   file:           2.md
+#
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>Adicionando a um commit</h2>
-					<p>E se eu esqueci de adicionar alguma coisa?</p>
-					<pre><code data-trim contenteditable>
-$	git	add	dungeon_new.html
-$	git	commit	--amend	-m	"Adding	new option"	
-					</code></pre>
-					<p>Para que as pessoas peguem as modificações do repositório remoto</p>
-					<pre><code data-trim contenteditable>
-$	git	pull
-					</code></pre>
-					<p>Para que as pessoas peguem o repositório remoto</p>
-					<pre><code data-trim contenteditable>
-$	git	clone	https://github.com/<"user">/<"project">.git	[<"folder">]	
-					</code></pre>
-				</section>
+                <section>
+                    <h2>Adicionando a um commit</h2>
+                    <p>E se eu esqueci de adicionar alguma coisa?</p>
+                    <pre><code data-trim contenteditable>
+$   git add dungeon_new.html
+$   git commit  --amend -m  "Adding new option"
+                    </code></pre>
+                    <p>Para que as pessoas peguem as modificações do repositório remoto</p>
+                    <pre><code data-trim contenteditable>
+$   git pull
+                    </code></pre>
+                    <p>Para que as pessoas peguem o repositório remoto</p>
+                    <pre><code data-trim contenteditable>
+$   git clone   https://github.com/<"user">/<"project">.git [<"folder">]
+                    </code></pre>
+                </section>
 
-				<section data-background="img/dogs-sharing.gif">
-					<h2 class="fragment">Compartilhando repositórios</h2>
-				</section>
+                <section data-background="img/dogs-sharing.gif">
+                    <h2 class="fragment">Compartilhando repositórios</h2>
+                </section>
 
-				<section>
-					<img src="img/github-logo.jpg" alt="github">
-					<h2>Github</h2>
-				</section>
+                <section>
+                    <img src="img/github-logo.jpg" alt="github">
+                    <h2>Github</h2>
+                </section>
 
-				<section>
-					<h2>Adicionando servidor remoto</h2>
-					<p>Precisamos definir quem vai ser o nosso servidor central</p>
-					<pre><code data-trim contenteditable>
-$	git	remote	add	origin	https://github.com/<"user">/<"project">.git
-$	git	push	-u	origin	master	
-					</code></pre>
-				</section>
+                <section>
+                    <h2>Adicionando servidor remoto</h2>
+                    <p>Precisamos definir quem vai ser o nosso servidor central</p>
+                    <pre><code data-trim contenteditable>
+$   git remote  add origin  https://github.com/<"user">/<"project">.git
+$   git push    -u  origin  master
+                    </code></pre>
+                </section>
 
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Exercício</h2>
-					<h3 style="color: #27ae60">Objetivo</h3>
-					<p>Crie um repositório remoto e colabore com o do colega</p>
-					<h3 style="color: #c0392b">Método</h3>
-					<p>Crie o seu repositório no github e envie o seu código (dica: git remote e git push); </p>
-					<p>Adicione o colega do seu lado como colaborador como colaborador; </p>
-					<p>Crie uma cópia do repositório do seu colega (dica: git clone); </p>
-					<p>Sem contar o que está fazendo, faça as alterações que desejar no projeto dele; </p>
-					<p>Envie as suas alterações para o github (dica: git push); </p>
-					<p>Volte para o diretório do seu projeto e pegue as alterações feitas pelo seu colega (dica: git pull); </p>
-					<p>Identifique as alterações feitas sem perguntar para o colega que as modificou.</p> 
-				</section>
+                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+                    <h2>Exercício</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Crie um repositório remoto e colabore com o do colega</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Crie o seu repositório no github e envie o seu código (dica: git remote e git push); </p>
+                    <p>Adicione o colega do seu lado como colaborador como colaborador; </p>
+                    <p>Crie uma cópia do repositório do seu colega (dica: git clone); </p>
+                    <p>Sem contar o que está fazendo, faça as alterações que desejar no projeto dele; </p>
+                    <p>Envie as suas alterações para o github (dica: git push); </p>
+                    <p>Volte para o diretório do seu projeto e pegue as alterações feitas pelo seu colega (dica: git pull); </p>
+                    <p>Identifique as alterações feitas sem perguntar para o colega que as modificou.</p>
+                </section>
 
-				<section data-background="img/women-colaboration.gif">
-					<h2 class="fragment">Mais colaboração!</h2>
-					
-				</section>
+                <section data-background="img/women-colaboration.gif">
+                    <h2 class="fragment">Mais colaboração!</h2>
 
-				<section>
-					<img src="img/branches.png" alt="branches">
-					<h2>Branches</h2>
-				</section>
+                </section>
 
-				<section>
-					<p>Criar branch</p>
-					<pre><code data-trim contenteditable>
+                <section>
+                    <img src="img/branches.png" alt="branches">
+                    <h2>Branches</h2>
+                </section>
+
+                <section>
+                    <p>Criar branch</p>
+                    <pre><code data-trim contenteditable>
 $ git branch aventura
-					</code></pre>
-					<p>Acessar branch</p>
-					<pre><code data-trim contenteditable>
-$ git checkout aventura	
+                    </code></pre>
+                    <p>Acessar branch</p>
+                    <pre><code data-trim contenteditable>
+$ git checkout aventura
 Switched to branch 'aventura'
-					</code></pre>
-					<p>Atalho para criar e acessar branch em um só comando</p>
-					<pre><code data-trim contenteditable>
+                    </code></pre>
+                    <p>Atalho para criar e acessar branch em um só comando</p>
+                    <pre><code data-trim contenteditable>
 $ git checkout -b aventura
-					</code></pre>
-					<p>Listar branches</p>
-					<pre><code data-trim contenteditable>
-$ git branch	
- aventura	
-* master	
-					</code></pre>
-				</section>
+                    </code></pre>
+                    <p>Listar branches</p>
+                    <pre><code data-trim contenteditable>
+$ git branch
+ aventura
+* master
+                    </code></pre>
+                </section>
 
-				<section>
-					<p>Baixar branch</p>
-					<pre><code data-trim contenteditable>
+                <section>
+                    <p>Baixar branch</p>
+                    <pre><code data-trim contenteditable>
 git checkout -t origin/<"branch">
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Exercício</h2>
-					<h3 style="color: #27ae60">Objetivo</h3>
-					<p>Crie uma branch e nessa branch crie mais cenas para sua história</p>
-					<h3 style="color: #c0392b">Método</h3>
-					<p>Crie uma branch (dica: git branch);</p>
-					<p>Vá para a branch (dica: git checkout);</p>
-					<p>Crie um formulário para salvar personagens;</p>
-					<p>Faça o commit dessa funcionalidade;</p>
-					<p>Volte para a branch master.</p>
-					<p>O que foi que aconteceu?</p>
-				</section>
+                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+                    <h2>Exercício</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Crie uma branch e nessa branch crie mais cenas para sua história</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Crie uma branch (dica: git branch);</p>
+                    <p>Vá para a branch (dica: git checkout);</p>
+                    <p>Crie um formulário para salvar personagens;</p>
+                    <p>Faça o commit dessa funcionalidade;</p>
+                    <p>Volte para a branch master.</p>
+                    <p>O que foi que aconteceu?</p>
+                </section>
 
-				<section>
-					<h2>Merge Branches</h2>
-					<p>Terminamos de criar as outras cenas da nossa história. É hora de fundir as branches</p>
-					<pre><code data-trim contenteditable>
-$ git checkout master	
-$ git merge char	
-Updating c8541d6..a226599	
-Fast-forward	
- 0 files changed, 0 insertions(+),	
-0 deletions(-)	
+                <section>
+                    <h2>Merge Branches</h2>
+                    <p>Terminamos de criar as outras cenas da nossa história. É hora de fundir as branches</p>
+                    <pre><code data-trim contenteditable>
+$ git checkout master
+$ git merge char
+Updating c8541d6..a226599
+Fast-forward
+ 0 files changed, 0 insertions(+),
+0 deletions(-)
  create mode 100644 chars_new.html
-					</code></pre>
-					<p>Remover branch</p>
-					<pre><code data-trim contenteditable>
+                    </code></pre>
+                    <p>Remover branch</p>
+                    <pre><code data-trim contenteditable>
 $ git branch -d char
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>Resolvendo conflitos</h2>
-					<p>E quando duas pessoas mechem no mesmo arquivo?</p>
-					<pre><code data-trim contenteditable>
-$ git push	
-! [rejected]		master	-> 
-master (non-fast-forward)	
-					</code></pre>
-					<p><code>IMPORTANTE! REALIZAR GIT PULL ANTES DE GIT PUSH!</code></p>
-				</section>
+                <section>
+                    <h2>Resolvendo conflitos</h2>
+                    <p>E quando duas pessoas mechem no mesmo arquivo?</p>
+                    <pre><code data-trim contenteditable>
+$ git push
+! [rejected]        master  ->
+master (non-fast-forward)
+                    </code></pre>
+                    <p><code>IMPORTANTE! REALIZAR GIT PULL ANTES DE GIT PUSH!</code></p>
+                </section>
 
-				<section>
-					<h2>Resolvendo conflitos</h2>
-					<p>Arquivo com conflito</p>
-					<pre><code data-trim contenteditable>
-<<<<<<<	HEAD	
-		<title>DungeonCrawlers Generations</title>	
-=======	
-		<title>Dungeon	Crawlers</title>	
->>>>>>>	7a61a9b596cdd07120e36f4f916ee65036d5c179
-					</code></pre>
-				</section>
+                <section>
+                    <h2>Resolvendo conflitos</h2>
+                    <p>Arquivo com conflito</p>
+                    <pre><code data-trim contenteditable>
+<<<<<<< HEAD
+        <title>DungeonCrawlers Generations</title>
+=======
+        <title>Dungeon  Crawlers</title>
+>>>>>>> 7a61a9b596cdd07120e36f4f916ee65036d5c179
+                    </code></pre>
+                </section>
 
-				<section data-background="img/the-end.gif">
-				</section>
+                <section data-background="img/the-end.gif">
+                </section>
 
-		</div>
+        </div>
 
-		<script src="../assets/lib/js/head.min.js"></script>
-		<script src="../assets/js/reveal.min.js"></script>
+        <script src="../assets/lib/js/head.min.js"></script>
+        <script src="../assets/js/reveal.min.js"></script>
 
-		<script>
+        <script>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: '../assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '../assets/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../assets/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../assets/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '../assets/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: '../assets/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../assets/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../assets/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../assets/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../assets/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../assets/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
 
-		</script>
-
-	</body>
+        </script>
+    </body>
 </html>
