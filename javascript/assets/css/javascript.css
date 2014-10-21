@@ -42,3 +42,22 @@ input.success {
   font-weight: 700;
   margin: .5em 0;
 }
+
+.reveal .kbd-shortcut {
+  font-size: .5em;
+}
+
+.reveal kbd {
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0px rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+  color: #333;
+  display: inline-block;
+  font-family: Arial,Helvetica,sans-serif;
+  line-height: .8em;
+  margin: 0 0.1em;
+  padding: 0.3em 0.6em;
+  text-shadow: 0 1px 0 #fff;
+  white-space: nowrap;
+}

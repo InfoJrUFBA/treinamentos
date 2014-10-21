@@ -85,7 +85,7 @@ body {
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #0000f1;
+  color: #4F7F00;
   text-shadow: none;
   border: none; }
 
