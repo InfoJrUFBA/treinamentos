@@ -37,6 +37,10 @@ input.success {
   border-color: #7cb124;
 }
 
+.reveal img.unstyled {
+  border: 0;
+}
+
 .reveal .helper {
   font-size: 1em;
   font-weight: 700;
