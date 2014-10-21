@@ -154,19 +154,19 @@
                         <div>JavaScript é embutido na maioria dos navegadores modernos.</div>
                         <br>
                         <h4>Inline JavaScript</h4>
-                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;" class="html">
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
 <a href="javascript:void(0)"></a>
                         </code></pre>
                         <br>
                         <h4>Internal JavaScript</h4>
-                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;" class="html">
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
 <script>
     console.log(1 + 1);
 </script>
                         </code></pre>
                         <br>
                         <h4>External JavaScript</h4>
-                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;" class="html">
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
 <script src="assets/js/filename.js"></script>
                         </code></pre>
                     </section>
@@ -193,23 +193,150 @@
                 </section>
 
                 <section>
-                    <h2>Exercício</h2>
-                    <div class="align-right">3 min</div>
-                    <br>
-                    <ul>
-                        <li>Configurar Git;</li>
-                        <li>Criar projeto no GitHub;</li>
-                        <li>Criar um arquivo README, html, css e js;</li>
-                        <li>Git push!</li>
-                    </ul>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">3 min</div>
+                        <br>
+                        <ul>
+                            <li>Configurar Git;</li>
+                            <li>Criar projeto no GitHub;</li>
+                            <li>Criar um arquivo README, html, css e js;</li>
+                            <li>Git push!</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <div>Configuração Git</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+$ git config --global user.name "Marco Almeida"
+$ git config --global user.email "marcoantonio@infojr.com.br"
+                        </code></pre>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+$ ssh-keygen -t rsa -C "marcoantonio@infojr.com.br"
+                        </code></pre>
+                        <div>Lembre-se de registrar as chaves no GitHub</div>
+                    </section>
                 </section>
 
                 <section>
                     <section>
                         <h1>Valores, tipos e operadores</h1>
                     </section>
+                    <section>
+                        <h2>Number</h2>
+                        <div>Representação em formato numérico</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+// Integer
+13;
+// Float
+9.81;
+// Exponent
+2.998e8;
+// Arithmetic
+100 + 4 * 11;
+// Infinity
+Infinity - 1;
+// Not a Number
+NaN;
+0/0;
+
+typeof(4);
+// number
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>String</h2>
+                        <div>Representação em formato de texto</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+"Patch my boat with chewing gum";
+'Monkeys wave goodbye';
+// Concatenate
+"con" + "cat" + "e" + "nate";
+
+typeof('This is the first line\nAnd this is the second');
+//string
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Boolean</h2>
+                        <div>Representação de verdadeiro e falso</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+3 > 2;
+// true
+
+3 < 2;
+// false
+
+"Aardvark" < "Zoroaster";
+// true
+
+"Itchy" != "Scratchy";
+// false
+
+NaN == NaN;
+// false
+
+true && false;
+// false
+
+true || false;
+// true
+
+true ? 1 : 2;
+// 1
+
+typeof(true);
+// boolean
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Undefined</h2>
+                        <div>Representação da falta de um valor</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var a;
+null;
+undefined;
+
+typeof(undefined);
+// undefined
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Function</h2>
+                        <div>Representação de um conjunto de operações</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var helloWorld = function () {
+    return 'Hello World';
+};
+
+var age = parseInt(window.prompt('What\'s your age?'));
+
+console.log(helloWorld());
+
+typeof(helloWorld);
+// function
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Object</h2>
+                        <div>Representação de uma estrutura de dados complexa</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var array = [];
+var object = {};
+var date = new Date();
+
+typeof(array);
+// object
+                        </code></pre>
+                    </section>
                 </section>
 
+                <section>
+                    <section>
+                        <h1>Estrutura do programa</h1>
+                    </section>
+                </section>
                 <section>
                     <h2>Point of View</h2>
                     <p>
