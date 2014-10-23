@@ -155,19 +155,19 @@
                         <br>
                         <h4>Inline JavaScript</h4>
                         <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
-<a href="javascript:void(0)"></a>
+&lt;a href="javascript:void(0)"&gt;&lt;/a&gt;
                         </code></pre>
                         <br>
                         <h4>Internal JavaScript</h4>
                         <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
-<script>
+&lt;script&gt;
     console.log(1 + 1);
-</script>
+&lt;/script>
                         </code></pre>
                         <br>
                         <h4>External JavaScript</h4>
                         <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
-<script src="assets/js/filename.js"></script>
+&lt;script src="assets/js/filename.js"&gt;&lt;/script&gt;
                         </code></pre>
                     </section>
                 </section>
@@ -271,10 +271,10 @@ typeof('This is the first line\nAnd this is the second');
 "Aardvark" < "Zoroaster";
 // true
 
-"Itchy" != "Scratchy";
+"Itchy" !== "Scratchy";
 // false
 
-NaN == NaN;
+NaN === NaN;
 // false
 
 true && false;
@@ -306,15 +306,15 @@ typeof(undefined);
                         <h2>Function</h2>
                         <div>Representação de um conjunto de operações</div>
                         <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
-var helloWorld = function () {
-    return 'Hello World';
+var dieRoll = function () {
+    return Math.floor(Math.random() * 6) + 1;
 };
 
 var age = parseInt(window.prompt('What\'s your age?'));
 
-console.log(helloWorld());
+console.log(dieRoll());
 
-typeof(helloWorld);
+typeof(dieRoll);
 // function
                         </code></pre>
                     </section>
@@ -334,9 +334,96 @@ typeof(array);
 
                 <section>
                     <section>
-                        <h1>Estrutura do programa</h1>
+                        <h2>Exercício</h2>
+                        <div class="align-right">3 min</div>
+                        <h3>Simulador de batalhas</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Entrada #1: Força do primeiro herói;</li>
+                                <li>Entrada #2: Armadura do segundo herói;</li>
+                                <li>Os atributos devem ser inteiros.</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Retornar 'First' se força for maior que armadura;</li>
+                                <li>Retornar 'Second' caso contrário.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+(parseInt(prompt()) > parseInt(prompt())) ? 'First' : 'Second';
+                        </code></pre>
                     </section>
                 </section>
+
+                <section>
+                    <section>
+                        <h1>Estrutura de um programa</h1>
+                    </section>
+                    <section>
+                        <h2>Variáveis</h2>
+                        <div>Armazenando valores na memória</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var strength = 5,
+    firePower;
+
+firePower = '3';
+firePower = 10;
+
+window.console.log(firePower);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Funções</h2>
+                        <div>Encapsulando pedaços de um programa</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+window.alert('Welcome to Save the Princess!');
+var name = window.prompt('What is your name?');
+window.console.log(name);
+var humanize = function (name) {
+    'use strict';
+    return name[0].toUpperCase() + name.slice(1);
+};
+window.confirm('Is your name ' + humanize(name) + '?');
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Condicionais</h2>
+                        <div>Controlando o fluxo através de condições</div>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var strength = window.prompt('What\'s your strength?');
+if (strength > 3) {
+    window.console.log('Very strong!');
+} else if (strength > 1) {
+    window.console.log('Human.');
+} else {
+    window.console.log('Weak...');
+}
+
+switch (parseInt(strength)) {
+case 4:
+case 5:
+    window.console.log('Very strong!');
+    break;
+case 2:
+case 3:
+    window.console.log('Human.');
+    break;
+case 1:
+    window.console.log('Weak...');
+}
+                        </code></pre>
+                    </section>
+                </section>
+
                 <section>
                     <h2>Point of View</h2>
                     <p>
