@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>HTML / CSS</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/theme/blood.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>HTML / CSS</h1>
+                    <h3>Treinamento da <a href="http://www.infojr.com.br/views/" target = "_blank">InfoJr - UFBA</a></h3>
+                    <p>
+                        <small>Criado por <a href="https://github.com/mateuscgc" target = "_blank">Mateus Cordeiro</a> / <a href="https://github.com/Gabrielgqa" target = "_blank">Gabriel Gomes</a> / <a href="https://github.com/vncdias" target = "_blank">Vinicius Dias</a> / <a href="https://github.com/victorcopque" target = "_blank">Victor Copque</a></small>
+                    </p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Front-End vs Back-End</h2>
+                        <p>
+                            Em ciência da computação, front-end e back-end são termos generalizados que referem-se às etapas inicial e final de um processo. O front-end é responsável por coletar a entrada em várias formas do usuário e processá-la para adequá-la a uma especificação em que o back-end possa utilizar. O front-end é uma espécie de interface entre o usuário e o back-end. Ambos podem estar distribuídos entre um ou mais sistemas.
+                        </p>
+
+                        <aside class="notes">
+                            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+                        </aside>    
+                    </section>
+                    <section>
+                            <img src="img/term-frontendvsbackend.jpeg" height="375" width="500">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <img src="img/HTML5_logo_and_wordmark.svg.png" height="500" width="500" style="background-color: white; padding: 50px; border: none;">
+                    </section>
+                    <section>
+                        <h3>HTML is a markup language for describing web documents (web pages).</h3><br/>
+                        <ul>
+                            <li class="fragment">HTML stands for Hyper Text Markup Language</li>
+                            <li class="fragment">A markup language is a set of markup tags</li>
+                            <li class="fragment">HTML documents are described by HTML tags</li>
+                            <li class="fragment">Each HTML tag describes different document content</li>
+                        </ul>   
+                    </section>  
+                </section>
+                <section>
+                    <section>
+                        <h2>Arquivo .html</h2>
+                        <h3>Estrutura Básica</h3>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;!-- Título da Página --&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Corpo da Página --&gt;
+    &lt;/body&gt;   
+&lt;/html&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>DOCTYPE</h3>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+&lt;!DOCTYPE html&gt;
+                        </code></pre>
+                        <p class="fragment">The <span class="fancy">&lt;!DOCTYPE html&gt;</span> declaration must be the very first thing in your HTML document, before the <span class="fancy">&lt;/html&gt;</span> tag.</p>
+                        <p class="fragment">The <span class="fancy">&lt;!DOCTYPE html&gt;</span> declaration is not an HTML tag; it is an instruction to the web browser about what version of HTML the page is written in.</p>
+                        <p class="fragment">There are three different <span class="fancy">&lt;!DOCTYPE html&gt;</span> declarations in HTML 4.01. In HTML5 there is only one.</p>
+                    </section>
+                    <section>
+                        <h3>&lt;html&gt;</h3>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+&lt;html&gt;&lt;/html&gt;
+                        </code></pre>
+                        <p class="fragment">The <span class="fancy">&lt;html&gt;</span> tag tells the browser that this is an HTML document.</p>
+                        <p class="fragment">The <span class="fancy">&lt;html&gt;</span> tag represents the root of an HTML document.</p>
+                        <p class="fragment">The <span class="fancy">&lt;html&gt;</span> tag is the container for all other HTML elements (except for the <!DOCTYPE> tag).</p>
+                    </section>
+                    <section>
+                        <h3>&lt;title&gt;</h3>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+&lt;title&gt;&lt;/title&gt;
+                        </code></pre>
+                        <p class="fragment">The <span class="fancy">&lt;title&gt;</span> tag is required in all HTML documents and it defines the title of the document.</p>
+                        <ul>
+                            <li class="fragment">defines a title in the browser toolbar</li>
+                            <li class="fragment">provides a title for the page when it is added to favorites</li>
+                            <li class="fragment">displays a title for the page in search-engine results</li>
+                        </ul>
+                        <!-- add images -->
+                    </section>
+                    <section>
+                        <h3>&lt;body&gt;</h3>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+&lt;body&gt;&lt;/body&gt;
+                        </code></pre>
+                        <p class="fragment">The <span class="fancy">&lt;body&gt;</span> tag defines the document's body.</p>
+                        <p class="fragment">The <span class="fancy">&lt;body&gt;</span> element contains all the contents of an HTML document, such as text, hyperlinks, images, tables, lists, etc.</p>
+                    </section>      
+                </section>
+                <section>
+                    <section>
+                        <h2>Parágrafos, cabeçalhos e texto</h2>
+                    </section>
+                    <section>
+                        <h3>p</h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="JqDjv" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/JqDjv/'>JqDjv</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>cabeçalhos (headers)</h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="HGKof" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/HGKof/'>HGKof</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>blackquote e q</h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="aBhLF" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/aBhLF/'>aBhLF</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>pre</h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="xdKvy" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/xdKvy/'>xdKvy</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3><strong>b</strong>, <strong>strong</strong>, <em>i</em>, <em>em</em></h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="zBKfn" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/zBKfn/'>zBKfn</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>dfn, cite, var, code, samp, kdb</h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="CGcwy" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/CGcwy/'>CGcwy</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>br, hr</h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="iHcog" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/iHcog/'>iHcog</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>section, article</h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="tDuvo" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/tDuvo/'>tDuvo</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                        <p class="fragment">The <span class="fancy">&lt;section&gt;</span> and <span class="fancy">&lt;article&gt;</span> tags are new in HTML5.</p>
+                    </section>  
+                </section>
+                <section>
+                    <section>
+                        <h3>Links</h3>
+                        <div data-height="350" data-theme-id="9285" data-slug-hash="gojxF" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;p&gt;This is a &lt;a href=&quot;www.google.com&quot;&gt;link&lt;/a&gt;&lt;/p&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/gojxF/'>gojxF</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="http://codepen.io/assets/embed/ei.js"></script>
+                        <p class="fragment">In HTML, links are defined with the <span class="fancy">&lt;a&gt;</span> tag.</p>
+                    </section>
+                    <section>
+                        <h3>Links - Colors and Icons</h3>
+                        <div data-height="350" data-theme-id="9285" data-slug-hash="KJCut" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;p&gt;This is a &lt;a href=&quot;www.google.com.br&quot;&gt;link&lt;/a&gt;&lt;/p&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/KJCut/'>KJCut</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="http://codepen.io/assets/embed/ei.js"></script>
+                        <p class="fragment">The link can be styled.</p>
+                    </section>
+                    <section>
+                        <h3>Links - Relative Address</h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="plHnC" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/plHnC/'>plHnC</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Links - Types of Links</h3>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="umqtx" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/umqtx/'>umqtx</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="http://codepen.io/assets/embed/ei.js"></script>                
+                        <p class="fragment">There are some types of links, including <span class="fancy">mailto</span> and <span class="fancy">tel</span></p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>&lt;div&gt;</h3>
+                        <p class="fragment">The <span class="fancy">&lt;div&gt;</span> tag defines a division or a section in an HTML document.</p>
+                        <p class="fragment">The <span class="fancy">&lt;div&gt;</span> tag is used to group block-elements to format them with CSS.</p>    
+                    </section>
+                    <section>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="tbeFB" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/tbeFB/'>tbeFB</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>&lt;span&gt;</h3>
+                        <p class="fragment">The <span class="fancy">&lt;span&gt;</span> tag is used to group inline-elements in a document.</p>
+                        <p class="fragment">The <span class="fancy">&lt;span&gt;</span> tag provides no visual change by itself.
+                        <p class="fragment">The <span class="fancy">&lt;span&gt;</span> tag provides a way to add a hook to a part of a text or a part of a document.</p>
+                    </section>
+                    <section>
+                        <p data-height="350" data-theme-id="9285" data-slug-hash="DwHua" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/DwHua/'>DwHua</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        <script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Images</h3>
+                        <p class="fragment">In HTML, images are defined with the <span class="fancy">&lt;img&gt;</span> tag.</p>
+                        <p class="fragment">The <span class="fancy">&lt;img&gt;</span> tag is empty, it contains attributes only, and does not have a closing tag.</p>
+                        <p class="fragment">The <span class="fancy">src</span> attribute defines the url (web address) of the image:</p>
+                        <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
+&lt;img src="url"&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>some attributes of tag &lt;img&gt;</h3>
+                        <p>The <span class="fancy">alt</span> attribute specifies an alternate text for the image, if it cannot be displayed.</p>
+                        <p>The value of the <span class="fancy">alt</span> attribute should describe the image in words:</p>
+                         <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
+&lt;img src="html5.gif" alt="The official HTML5 Icon"&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>some attributes of tag &lt;img&gt;</h3>
+                        <p>You can use the <span class="fancy">style</span> attribute to specify the <span class="fancy">width</span> and <span class="fancy">height</span> of an image.</p>
+                        <p>The values are specified in pixels (use px after the value):</p>
+                         <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
+&lt;img src="html5.gif" alt="HTML5 Icon" style="width:128px;height:128px"&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>some attributes of tag &lt;img&gt;</h3>
+                        <p>Alternatively, you can use <span class="fancy">width</span> and <span class="fancy">height</span> attributes.</p>
+                        <p>The values are specified in pixels (without px after the value):</p>
+                         <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
+&lt;img src="html5.gif" alt="HTML5 Icon" width="128" height="128""&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Image as Link</h3>
+                        <p class="fragment">It is common to use images as links:</p>
+                        <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
+&lt;a href="default.asp"&gt;
+  &lt;img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0"&gt;
+&lt;/a&gt;
+                        </code></pre>
+                    </section>
+                 </section>
+                 <section>
+                    <section>
+                        <h3>&lt;table&gt;</h3>
+                        <p class="fragment">Tables are defined with the <span class="fancy">&lt;table&gt;</span> tag.</p>
+                        <p class="fragment">Tables are divided into table rows with the <span class="fancy">&lt;tr&gt;</span>tag.</p>
+                        <p class="fragment">Table rows are divided into table data with the <span class="fancy">&lt;td&gt;</span> tag.</p>
+                        <p class="fragment">A table row can also be divided into table headings with the <span class="fancy">&lt;th&gt;</span>tag.</p><span class="fancy">
+                    </section>
+                    <section>
+                        <h3>Example</h3>
+                        <div data-height="350" data-theme-id="9285" data-slug-hash="Izrad" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;table&gt;
+                          &lt;tr&gt;
+                            &lt;th&gt;Firstname&lt;/th&gt;
+                            &lt;th&gt;Lastname&lt;/th&gt; 
+                            &lt;th&gt;Points&lt;/th&gt;
+                          &lt;/tr&gt;
+                          &lt;tr&gt;
+                            &lt;td&gt;Eve&lt;/td&gt;
+                            &lt;td&gt;Jackson&lt;/td&gt; 
+                            &lt;td&gt;94&lt;/td&gt;
+                          &lt;/tr&gt;
+                          &lt;tr&gt;
+                            &lt;td&gt;Ada&lt;d&gt;
+                            &lt;td&gt;Jackson&lt;/td&gt; 
+                            &lt;td&gt;78&lt;/td&gt;
+                          &lt;/tr&gt;
+                        &lt;/table&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/Izrad/'>Izrad</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>&lt;thead&gt;, &lt;tfoot&gt;, and a &lt;tbody&gt;</h3>
+                        An HTML table with a <span class="fancy">&lt;thead&gt;</span>, <span class="fancy">&lt;tfoot&gt;</span>, and a <span class="fancy">&lt;tbody&gt;</span> element:
+                        <p></p>
+                        <div data-height="350" data-theme-id="9285" data-slug-hash="Aockd" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;table&gt;
+                          &lt;thead&gt;
+                            &lt;tr&gt;
+                              &lt;th&gt;Month&lt;/th&gt;
+                              &lt;th&gt;Savings&lt;/th&gt;
+                            &lt;/tr&gt;
+                          &lt;/thead&gt;
+                          &lt;tfoot&gt;
+                            &lt;tr&gt;
+                              &lt;td&gt;Sum&lt;/td&gt;
+                              &lt;td&gt;$180&lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/tfoot&gt;
+                          &lt;tbody&gt;
+                            &lt;tr&gt;
+                              &lt;td&gt;January&lt;/td&gt;
+                              &lt;td&gt;$100&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                              &lt;td&gt;February&lt;/td&gt;
+                              &lt;td&gt;$80&lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/tbody&gt;
+                        &lt;/table&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/Aockd/'>Aockd</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Table Attributes</h3>
+                        <p><span class="fancy">Colspan:</span> To make a cell span more than one column, use the <span class="fancy">colspan</span> attribute:</p>
+                        <div data-height="350" data-theme-id="9285" data-slug-hash="IECjo" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;table style=&quot;width:100%&quot;&gt;
+                          &lt;tr&gt;
+                            &lt;th&gt;Name&lt;/th&gt;
+                            &lt;th colspan=&quot;2&quot;&gt;Telephone&lt;/th&gt;
+                          &lt;/tr&gt;
+                          &lt;tr&gt;
+                            &lt;td&gt;Bill Gates&lt;/td&gt;
+                            &lt;td&gt;555 77 854&lt;/td&gt;
+                            &lt;td&gt;555 77 855&lt;/td&gt;
+                          &lt;/tr&gt;
+                        &lt;/table&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/IECjo/'>IECjo</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Table Attributes</h3>
+                        <p><span class="fancy">Rowspan:</span> To make a cell span more than one row, use the <span class="fancy">rowspan</span> attribute:</p>
+                        <div data-height="350" data-theme-id="9285" data-slug-hash="wKLuC" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;table style=&quot;width:100%&quot;&gt;
+                          &lt;tr&gt;
+                            &lt;th&gt;First Name:&lt;/th&gt;
+                            &lt;td&gt;Bill Gates&lt;/td&gt;
+                          &lt;/tr&gt;
+                          &lt;tr&gt;
+                            &lt;th rowspan=&quot;2&quot;&gt;Telephone:&lt;/th&gt;
+                            &lt;td&gt;555 77 854&lt;/td&gt;
+                          &lt;/tr&gt;
+                          &lt;tr&gt;
+                            &lt;td&gt;555 77 855&lt;/td&gt;
+                          &lt;/tr&gt;
+                        &lt;/table&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/wKLuC/'>wKLuC</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="http://codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                 </section>
+                 <section>
+                    <section>
+                        <h3>Forms</h3>
+                        <p class="fragment">HTML forms are used to pass data to a server.</p>
+                        <p class="fragment">An HTML <span class="fancy">&lt;form&gt;</span> can contain input elements like text fields, checkboxes, radio-buttons, submit buttons and more. A <span class="fancy">&lt;form&gt;</span> can also contain select lists, textarea, fieldset, legend, and label elements.</p>
+                        <p class="fragment">The <span class="fancy">&lt;form&gt;</span> tag is used to create an HTML <span class="fancy">&lt;form&gt;</span>:</p>
+                        <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
+&lt;form&gt;
+.
+input elements
+.
+&lt;/form&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Form - The Input Element</h3>
+                        <p class="fragment">The most important <span class="fancy">form</span> element is the <span class="fancy">&lt;input&gt;</span> element.</p>
+                        <p class="fragment">The <span class="fancy">&lt;input&gt;</span> element is used to select user information.</p>
+                        <p class="fragment">An <span class="fancy">&lt;input&gt;</span> element can vary in many ways, depending on the type attribute. An <span class="fancy">&lt;input&gt;</span> element can be of type text field, checkbox, password, radio button, submit button, and more.</p>
+                        <p class="fragment">The most common <span class="fancy">input</span> types are described below.</p>
+                    </section>
+                    <section>
+                        <h3>Text Fields</h3>
+                        <p><span class="fancy">&lt;input type="text"&gt;</span> defines a one-line input field that a user can enter text into:</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="ynArH" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
+                        First name: &lt;input type=&quot;text&quot; name=&quot;firstname&quot;&gt;&lt;br&gt;
+                        Last name: &lt;input type=&quot;text&quot; name=&quot;lastname&quot;&gt;
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/ynArH/'>ynArH</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script><p>
+                    </section>
+                    <section>
+                        <h3>Password Field</h3>
+                        <p><span class="fancy">&lt;input type="password"&gt;</span> defines a password field:</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="jarlv" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
+                        Password: &lt;input type=&quot;password&quot; name=&quot;pwd&quot;&gt;
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/jarlv/'>jarlv</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Radio Buttons</h3>
+                        <p><span class="fancy">&lt;input type="radio"&gt;</span> defines a radio button. Radio buttons let a user select ONLY ONE of a limited number of choices:</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="hxzqb" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
+                        &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;Male&lt;br&gt;
+                        &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;Female
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/hxzqb/'>hxzqb</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Checkboxes</h3>
+                        <p><span class="fancy">&lt;input type="checkbox"&gt;</span> defines a checkbox. Checkboxes let a user select ZERO or MORE options of a limited number of choices.</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="hxzqb" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
+                        &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;Male&lt;br&gt;
+                        &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;Female
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/hxzqb/'>hxzqb</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Submit Button</h3>
+                        <p><span class="fancy">&lt;input type="submit"&gt;</span> defines a submit button.</p>
+                        <p>A submit button is used to send form data to a server. The data is sent to the page specified in the form's action attribute. The file defined in the action attribute usually does something with the received input:</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="ioIyk" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form name=&quot;input&quot; action=&quot;demo_form_action.asp&quot; method=&quot;get&quot;&gt;
+                        Username: &lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;
+                        &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/ioIyk/'>ioIyk</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Selects</h3>
+                        <p>The <span class="fancy">&lt;select&gt;</span> element is used to create a drop-down list.</p>
+                        <p>The <span class="fancy">&lt;option&gt;</span> tags inside the <span class="fancy">&lt;select&gt;</span> element define the available options in the list.</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="iuGDs" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;select&gt;
+                        &lt;option value=&quot;volvo&quot;&gt;Volvo&lt;/option&gt;
+                        &lt;option value=&quot;saab&quot;&gt;Saab&lt;/option&gt;
+                        &lt;option value=&quot;mercedes&quot;&gt;Mercedes&lt;/option&gt;
+                        &lt;option value=&quot;audi&quot;&gt;Audi&lt;/option&gt;
+                        &lt;/select&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/iuGDs/'>iuGDs</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Textarea</h3>
+                        <p>The <span class="fancy">&lt;textarea&gt;</span> tag defines a multi-line text input control.</p>
+                        <p>A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually Courier).</p>
+                        <p>The size of a text area can be specified by the cols and rows attributes, or even better; through CSS' height and width properties.</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="rjsCv" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;textarea rows=&quot;4&quot; cols=&quot;50&quot;&gt;
+                        At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+                        &lt;/textarea&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/rjsCv/'>rjsCv</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Input Types</h3>
+                        <p>HTML5 has several new input types for forms. These new features allow better input control and validation.</p>
+                        <p>This chapter covers the new input types:</p>
+                        <ul>
+                            <li>color</li>
+                            <li>date</li>
+                            <li>datetime</li>
+                            <li>datetime-local</li>
+                            <li>email</li>
+                            <li>month</li>
+                            <li>numember</li>
+                            <li>rage</li>
+                            <li>search</li>
+                            <li>tel</li>
+                            <li>time</li>
+                            <li>url</li>
+                            <li>week</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Examples of use</h3>
+                        <div data-height="268" data-theme-id="9314" data-slug-hash="BoIeb" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
+                          &lt;p&gt;Type number&lt;/p&gt;Quantity:
+                          &lt;input type=&quot;number&quot; name=&quot;points&quot; min=&quot;0&quot; max=&quot;100&quot; step=&quot;10&quot; value=&quot;30&quot;&gt;
+                        &lt;/form&gt;
+                        &lt;form&gt;
+                          &lt;p&gt;Type date&lt;/p&gt;Birthday:
+                          &lt;input type=&quot;date&quot; name=&quot;bday&quot;&gt;
+                        &lt;/form&gt;
+                        &lt;form&gt;
+                          &lt;p&gt;Type color&lt;/p&gt;Select your favorite color:
+                          &lt;input type=&quot;color&quot; name=&quot;favcolor&quot;&gt;
+                        &lt;/form&gt;
+                        &lt;form&gt;
+                          &lt;p&gt;Type range&lt;/p&gt;
+                          &lt;input type=&quot;range&quot; name=&quot;points&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;
+                        &lt;/form&gt;
+                        &lt;form&gt;
+                          &lt;p&gt;Type mail&lt;/p&gt;E-mail:
+                          &lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;
+                        &lt;/form&gt;
+                        &lt;form&gt;
+                          &lt;p&gt;Type tel&lt;/p&gt;Telephone:
+                          &lt;input type=&quot;tel&quot; name=&quot;usrtel&quot;&gt;
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/BoIeb/'>BoIeb</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Other Attributes</h3>
+                        <p>An HTML form with <span class="fancy">autocomplete</span> on (and off for one input field):</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="kuzvd" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form action=&quot;demo_form.asp&quot; autocomplete=&quot;on&quot;&gt;
+                        First name:&lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;&lt;br&gt;
+                        Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot;&gt;&lt;br&gt;
+                        E-mail: &lt;input type=&quot;email&quot; name=&quot;email&quot; autocomplete=&quot;off&quot;&gt;&lt;br&gt;
+                        &lt;input type=&quot;submit&quot;&gt;
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/kuzvd/'>kuzvd</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script><p>
+                        <p>The <span class="fancy">novalidate</span> attribute is a boolean attribute.</p>
+                        <p>When present, it specifies that the form-data (input) should not be validated when submitted.</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="gHadD" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form action=&quot;demo_form.asp&quot; novalidate&gt;
+                        E-mail: &lt;input type=&quot;email&quot; name=&quot;user_email&quot;&gt;
+                        &lt;input type=&quot;submit&quot;&gt;
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/gHadD/'>gHadD</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                         <h3>Other Attributes</h3>
+                         <p>The <span class="fancy">placeholder</span> attribute specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format).</p>
+                         <div data-height="150" data-theme-id="9314" data-slug-hash="HnGmf" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form action=&quot;demo_form.asp&quot;&gt;
+                          &lt;input type=&quot;text&quot; name=&quot;fname&quot; placeholder=&quot;First name&quot;&gt;&lt;br&gt;
+                          &lt;input type=&quot;text&quot; name=&quot;lname&quot; placeholder=&quot;Last name&quot;&gt;&lt;br&gt;
+                          &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+                        &lt;/form&gt; </code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/HnGmf/'>HnGmf</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script><p>
+                        <p>The <span class="fancy">required</span> attribute is a boolean attribute.</p>
+                        <p>When present, it specifies that an input field must be filled out before submitting the form.</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="svqDu" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form action=&quot;demo_form.asp&quot;&gt;
+                        Username: &lt;input type=&quot;text&quot; name=&quot;usrname&quot; required&gt;
+                        &lt;input type=&quot;submit&quot;&gt;
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/svqDu/'>svqDu</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h3>Other Attributes</h3>
+                        <p>The <span class="fancy">autofocus</span> attribute is a boolean attribute.</p>
+                        <p>When present, it specifies that an <span class="fancy">&lt;input&gt;</span> element should automatically get focus when the page loads.</p>
+                        <div data-height="268" data-theme-id="9314" data-slug-hash="LBEwq" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form action=&quot;demo_form.asp&quot;&gt;
+                          First name: &lt;input type=&quot;text&quot; name=&quot;fname&quot; autofocus&gt;&lt;br&gt;
+                          Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot;&gt;&lt;br&gt;
+                          &lt;input type=&quot;submit&quot;&gt;
+                        &lt;/form&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/LBEwq/'>LBEwq</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+
+                    </section>
+                 </section>
+                <section>
+                    <section>
+                        <img src="img/css3_cheat_sheet.jpg" height="429" width="500" style="background-color: white; border: none;">
+                    </section>
+                    <section>
+                        <h3 style="line-height: 60px;">Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents.</h3>
+                        <ul>
+                            <li class="fragment">Styles define how to display HTML elements</li>
+                            <li class="fragment">Styles were added to HTML 4.0 to solve a problem</li>
+                            <li class="fragment">External Style Sheets can save a lot of work</li>
+                            <li class="fragment">External Style Sheets are stored in CSS files</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Estrutura Básica</h3>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+Seletor {
+    propriedade : valor ;
+    propriedade : valor ;
+    propriedade : valor ;
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Inline CSS</h3>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+&lt;div style=&quot;width: 200px; height: 200px; border-radius: 6px; display: block;&quot;&gt;
+    &lt;!-- mais html --&gt;
+&lt;div&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Embendded CSS</h3>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;!-- Título da Página --&gt;&lt;/title&gt;
+        &lt;style&gt;
+            body {
+                background-color: linen;
+            }
+            h1 {
+                color: maroon;
+                margin-left: 40 px;
+            } 
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Corpo da Página --&gt;
+    &lt;/body&gt;   
+&lt;/html&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>CSS Externo</h3>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;!-- Título da Página --&gt;&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../css/stylesheet.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Corpo da Página --&gt;
+    &lt;/body&gt;   
+&lt;/html&gt;
+                        </code></pre>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+body {
+    background-color: linen;
+}
+
+h1 {
+    color: maroon;
+    margin-left: 40 px;
+} 
+                        </code></pre>
+                    </section>
+                </section>
+                <!-- <br><div class="fragment"><p><span class="fancy"></span></p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+
+                        </code></pre></div> -->
+                <section>
+                    <section>
+                        <h2>Seletores CSS</h2>
+                        <p>Seletor Universal <span class="fancy">*</span></p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+* {
+    margin : 0px ;
+    color : blue ;
+}
+                        </code></pre>
+                        
+                        <br><div class="fragment"><p><span class="fancy">.Class</span> Seleciona todos os elementos com determinada classe</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+.msg-box {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+}
+                        </code></pre></div>
+
+                        <br><div class="fragment"><p><span class="fancy">#Id</span> Seleciona o elemento com determinada id</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+#news {
+    float: left;
+    position: absolute;
+    display: inline;
+}
+                        </code></pre></div>
+                    </section>
+                    <section>
+                        <div><p><span class="fancy">tag</span> Seleciona todos os elementos da tag.</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+p {
+    color: red;
+}
+                        </code></pre></div>
+                        <br><div class="fragment"><p><span class="fancy">tag1, tag2 </span>Seleciona todos os elementos da lista.</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+div, .box, #comentario {
+    font-size: 20px;
+    font-family: arial;
+}
+                        </code></pre></div>
+                        <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
+div {
+    font-size: 20px;
+    font-family: arial;
+}
+.box {
+    font-size: 20px;
+    font-family: arial;
+}
+#comentario {
+    font-size: 20px;
+    font-family: arial;
+}
+                    </code></pre>
+                    </section>
+                    <section>
+                        <div><p><span class="fancy">tag1 tag2 </span>Seleciona todos os tag2 dentro de tag1.</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+.msg-box p {
+    color: pink;
+    text-align: center;
+}
+                        </code></pre></div>
+                        <br><div class="fragment"><p><span class="fancy">tag1 > tag2 </span>Seleciona todos os tag2 que são filhos de tag1.</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+#menu > div {
+    width: 100px;
+    margin-top: 20px;
+}
+                        </code></pre></div>
+                        <br><div class="fragment"><p><span class="fancy">tag1 + tag2 </span>Seleciona todos os tag2 ques estão imediatamente depois de tag1.</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+.title + .subtitle{
+    color: #777;
+    font-wheight: bold;
+}
+                        </code></pre></div>
+                    </section>
+                    <section>
+                        <div><p><span class="fancy">tag1 ~ tag2</span> Seleciona todos os tag2 que apareceram depois de pelo menos um tag1</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+p ~ ul {
+    background: #ff0000;
+}
+                        </code></pre></div>
+                        <div class="fragment"><p><span class="fancy">tag:active</span> Seleciona um elemento ativo</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+a {
+    background-color: blue;
+}
+a:active {
+    background-color: yellow;
+}
+                        </code></pre></div>
+                        <div class="fragment"><p><span class="fancy">tag:hover</span> Seleciona o elemento quando o mouse está em cima dele</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+div {
+    width: 70px;
+}
+div:hover {
+    width: 100px;
+}
+                        </code></pre></div>
+                    </section>
+                    <section>
+                        <p><span class="fancy">tag:first-child</span> Selecionam as tag que sejam a primeira filha de seus pais</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+.box:first-child {
+    background-color: red;
+    color: grey;
+}
+                        </code></pre>
+
+                        <br><div class="fragment"><p><span class="fancy">tag:Last-Child</span> Seleciona as tag que são a ultima filha de seus pais</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+.box:last-child {
+    background-color: red;
+    color: grey;
+}
+                        </code></pre></div>
+
+                        <br><div class="fragment"><p><span class="fancy">tag:nth-child(x)</span>Seleciona o elemento tag que é filha de número x</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+.box:nth-child(10) {
+    background-color: red;
+    color: grey;
+}
+                        </code></pre></div>
+                    </section>
+                    <section>
+                            <h2>Acesse a lista completa de seletores <a href="http://www.w3schools.com/cssref/css_selectors.asp" target="_blank">aqui!</a></h2>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Unidades</h2>
+                        <p>Em CSS temos várias unidades de medida: <span class="fancy">px</span>, <span class="fancy">pt</span>, <span class="fancy">em</span>, <span class="fancy">rem</span>, <span class="fancy">%</span>, entre outras.</p>
+                    </section>
+                    <section>
+                        <h2>Pixel</h2>
+                        <p>Você utiliza <span class="fancy">px</span> para definir a largura de um elemento, o tamanho do texto, a espessura da borda e outras coisas.
+                        
+                        A unidade <span class="fancy">px</span> é utilizada para definir o tamanho dos textos por que é a medida mais exata que você pode encontrar. Por não ser uma medida variável,  são fáceis de controlar.</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="pJLaf" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;p&gt;Esse é o texto&lt;/p&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/pJLaf/'>pJLaf</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h2>EM</h2>
+                        <p>O problema de utilizar fonts em <span class="fancy">em</span> é que elas são variáveis como a porcentagem. Diferentemente da utilização de pixels, temos que fazer um pouco de matemática para planejar nossas unidades no projeto. Não é nada de outro mundo, então pare de preguiça.</p>
+                        <p>O cálculo:  20 ÷ 16 = 1.25em</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="nBvKq" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;p&gt;Esse é o texto&lt;/p&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/nBvKq/'>nBvKq</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h2>Porcentagem</h2>
+                        <p>O uso do <span class="fancy">%</span> é bem semelhante ao do EM. Assim, ele é também variável de acordo com o contexto.</p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="txnqu" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;p&gt;Esse é o texto&lt;/p&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/txnqu/'>txnqu</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h2>Seria interessante se o valor do contexto fosse sempre o mesmo, não é?</h2>
+                    </section>
+                    <section>
+                        <h2>REM</h2>
+                        <p>A <span class="fancy">REM</span> sempre terá o valor de contexto do ROOT (é isso que significa o R do <span class="fancy">REM</span>), ou seja, sempre o body… Os valores ficariam assim se referenciando pelo body.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Fontes</h2>
+                        <p>Em CSS temos algumas propriedades específicas para estilização das fontes, são elas:</p>
+                        <li>color: cor da fonte;</li>
+                        <li>font-family: tipo de fonte</li>
+                        <li>font-size:tamanho da fonte</li>
+                        <li>font-style: estilo da fonte</li>
+                        <li>fontes maiúsculas de menor altura</li>
+                        <li>font-weight: quanto mais escura a fonte é (negrito)</li>
+                        <li>font: maneira abreviada para todas as propriedades</li>
+                    </section>
+                    <section>
+                        <h2>Exemplo de uso</h2>
+                        <div data-height="268" data-theme-id="9314" data-slug-hash="BzADb" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;p class=&quot;fs&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;ff&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;fv&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;fst&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;fw&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;f&quot;&gt;Texto formatado&lt;p&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/BzADb/'>BzADb</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Texto</h2>
+                        <p>Em CSS temos algumas propriedades específicas para estilização detextos, são elas:</p>
+                        <li>color: cor do texto</li>
+                        <li>letter-spacing: espaçamento entre letras</li>
+                        <li>word-spacing: espaçamento entre palavras</li>
+                        <li>text-align: alinhamento do texto</li>
+                        <li>text-decoration: decoração do texto</li>
+                        <li>text-ident: recuo do texto</li>
+                        <li>text-transform: forma das letras</li>
+                        <li>direction: direção do texto</li>
+                        <li>white-space: como browser trata os espaços em branco</li>
+                    </section>
+                    <section>
+                        <h2>Exemplo de uso</h2>
+                        <div data-height="268" data-theme-id="9314" data-slug-hash="fsBwL" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;p class=&quot;cl&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;ls&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;ws&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;ta&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;td&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;tt&quot;&gt;Texto formatado&lt;/p&gt;
+                        &lt;p class=&quot;dc&quot;&gt;Texto formatado&lt;/p&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/fsBwL/'>fsBwL</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Cores e Planos de Fundo</h2>
+                        <p>Como já vimos, em CSS é possível alterar as cores. Isso serve para qualquer elemento HTML.</p>
+                        <p>Para o valor da cor temos diferentes tipos de medida:</p>
+                        <pre><code data-trim contenteditable style="padding: 20px;">
+I { color: red }
+I { color: #FF0000 }
+I { color: rgb (255, 0, 0) }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Backgronds</h2>
+                        <p>A propriedade <span class="fancy">background</span> define as características (os valores na regra CSS) do fundo dos elementos HTML. Elas são:</p>
+                        <li>background-color: cor do fundo</li>
+                        <li>background-image: imagem de fundo</li>
+                        <li>background-repeat: maneira como a imagem de fundo é repetida</li>
+                        <li>background-attachment: se a imagem de fundo "rola" ou não com a tela</li>
+                        <li>background-position: como e onde a imagem de fundo é posicionada</li>
+                        <li>background: forma abreviada</li>
+                    </section>
+                    <section>
+                        <h2>Exemplo de uso</h2>
+                        <div data-height="268" data-theme-id="9314" data-slug-hash="cHJph" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;div id=&quot;bc&quot;&gt;&lt;/div&gt;
+                        &lt;div id=&quot;bi&quot;&gt;&lt;/div&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/cHJph/'>cHJph</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Cursor</h2>
+                        <p>Estiliza o cursor do mouse.</p>
+                        <p>Alguns dos valores são: </p>
+                        <li>auto: Aspecto idêntico ao cursor padrão no tag que tem o atributo, não muda nada.</li>
+                        <li>default: Cursor padrão do navegador.</li>
+                        <li>pointer: Cursor em forma de mão com o dedo reto.</li>
+                        <li>text: Cursor de edição de texto.</li>
+                        <li>help: Cursor de ajuda.</li>
+                        <li>wait: Cursor de espera.</li>
+                        <li>progress: Cursor de progressão.</li>
+                        <li>move: Cursor de deslocamento.</li>
+                        <li>crosshair: Cursor em forma de cruz.</li>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>A propriedade borda</h2>
+                        <p>Esta propriedade é usada para definir o estilo, cor e espessura da borda do elemento.</p>
+                        <p></p>
+                        <div data-height="150" data-theme-id="9314" data-slug-hash="tpaAq" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;p&gt;Esse é um parágrafo&lt;/p&gt;</code></pre>
+                        <p>See the Pen <a href='http://codepen.io/Gabrielgqa/pen/tpaAq/'>tpaAq</a> by Gabriel Gomes (<a href='http://codepen.io/Gabrielgqa'>@Gabrielgqa</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div><script async src="//codepen.io/assets/embed/ei.js"></script>
+                    </section>
+                    <section>
+                        <h2>Margens e paddings</h2>
+                        <p>A definição é bem simples: <span class="fancy">Padding</span> é a distância entre o conteúdo e a borda do elemento e <span class="fancy">margin</span> é a distância entre o elemento e outros elementos do conteúdo.</p>
+                    </section>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="../vendor/assets/lib/js/head.min.js"></script>
+        <script src="../vendor/assets/js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../vendor/assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../vendor/assets/js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
