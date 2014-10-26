@@ -322,8 +322,8 @@ typeof(dieRoll);
                         <h2>Object</h2>
                         <div>Representação de uma estrutura de dados complexa</div>
                         <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
-var array = [];
-var object = {};
+var array = [0, 'Marc', {}, 1, 'James', {}];
+var object = { name: 'Marc', strength: 3 };
 var date = new Date();
 
 typeof(array);
@@ -378,47 +378,149 @@ var strength = 5,
 firePower = '3';
 firePower = 10;
 
-window.console.log(firePower);
+console.log(firePower);
                         </code></pre>
                     </section>
                     <section>
                         <h2>Funções</h2>
                         <div>Encapsulando pedaços de um programa</div>
                         <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
-window.alert('Welcome to Save the Princess!');
-var name = window.prompt('What is your name?');
-window.console.log(name);
+alert('Welcome to Save the Princess!');
+var name = prompt('What is your name?');
+console.log(name);
 var humanize = function (name) {
-    'use strict';
     return name[0].toUpperCase() + name.slice(1);
 };
-window.confirm('Is your name ' + humanize(name) + '?');
+confirm('Is your name ' + humanize(name) + '?');
                         </code></pre>
                     </section>
                     <section>
                         <h2>Condicionais</h2>
                         <div>Controlando o fluxo através de condições</div>
                         <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
-var strength = window.prompt('What\'s your strength?');
+var strength = prompt('What\'s your strength?');
 if (strength > 3) {
-    window.console.log('Very strong!');
+    console.log('Very strong!');
 } else if (strength > 1) {
-    window.console.log('Human.');
+    console.log('Human.');
 } else {
-    window.console.log('Weak...');
+    console.log('Weak...');
 }
 
 switch (parseInt(strength)) {
 case 4:
 case 5:
-    window.console.log('Very strong!');
+    console.log('Very strong!');
     break;
 case 2:
 case 3:
-    window.console.log('Human.');
+    console.log('Human.');
     break;
 case 1:
-    window.console.log('Weak...');
+    console.log('Weak...');
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Loops</h2>
+                        <div>Repetindo um conjunto de operações</div>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var strength = 3, counter = 0, totalDamage = 0;
+while (counter < strength) {
+    totalDamage += Math.floor(Math.random() * 6) + 1;
+    counter++;
+}
+console.log(totalDamage);
+
+counter = 0;
+totalDamage = 0;
+do {
+    totalDamage += Math.floor(Math.random() * 6) + 1;
+    counter++;
+} while (counter <= strength)
+console.log(totalDamage);
+
+totalDamage = 0;
+for (counter = 0; counter < strength; counter += 1) {
+    totalDamage += Math.floor(Math.random() * 6) + 1;
+}
+console.log(totalDamage);
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <h3>Primeiro, um pouco de 3D&T</h3>
+                        <br>
+                        <ul>
+                            <li>Um personagem é composto por Força, Armadura e Resistência.</li>
+                            <li>Esses atributos devem ter no máximo 5 pontos.</li>
+                            <li>Pontos de vida são então derivados da Resistência.</li>
+                            <li>Para cada ponto de Resistência, um personagem terá 5 pontos de vida.</li>
+                            <li>
+                            O cálculo de um turno é feito da seguinte forma:
+                            <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+totalDamage = strengthOne * random(1, 6) - armorTwo * random(1, 6);
+                            </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">25 min</div>
+                        <h3>Simulador de Batalha 2</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Atributos devem ser gerados aleatoriamente.</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Atributos dos personagens;</li>
+                                <li>Marcar com asterisco o nome do personagem vencendor.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var strength1 = Math.floor(Math.random() * 5) + 1,
+    armor1 = Math.floor(Math.random() * 5) + 1,
+    resistance1 = Math.floor(Math.random() * 5) + 1,
+    hP1 = resistance1 * 5,
+    currentHP1 = hP1,
+    strength2 = Math.floor(Math.random() * 5) + 1,
+    armor2 = Math.floor(Math.random() * 5) + 1,
+    resistance2 = Math.floor(Math.random() * 5) + 1,
+    hP2 = resistance2 * 5,
+    currentHP2 = hP2,
+    damage = 0;
+
+while (currentHP1 > 0 && currentHP2 > 0) {
+    currentHP2 -=
+        Math.max(0, strength1 * (Math.floor(Math.random() * 6) + 1)
+        - armor2 * (Math.floor(Math.random() * 6) + 1));
+    if (currentHP2 > 0) {
+        currentHP1 -=
+            Math.max(0, strength2 * (Math.floor(Math.random() * 6) + 1)
+            - armor1 * (Math.floor(Math.random() * 6) + 1));
+    }
+}
+
+if (currentHP1 > 0) {
+    console.log('* First\nStrength: ', strength1, '\nArmor: ', armor1, '\nResistance: ', resistance1, '\nHP: ', currentHP1, '/', hP1);
+    console.log('\n\nSecond\nStrength: ', strength2, '\nArmor: ', armor2, '\nResistance: ', resistance2, '\nHP: ', currentHP2, '/', hP2);
+} else {
+    console.log('\n\nFirst\nStrength: ', strength1, '\nArmor: ', armor1, '\nResistance: ', resistance1, '\nHP: ', currentHP1, '/', hP1);
+    console.log('* Second\nStrength: ', strength2, '\nArmor: ', armor2, '\nResistance: ', resistance2, '\nHP: ', currentHP2, '/', hP2);
 }
                         </code></pre>
                     </section>
@@ -527,6 +629,7 @@ case 1:
                         Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
                     </p>
                     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+}
 Reveal.addEventListener( 'customevent', function() {
     console.log( '"customevent" has fired' );
 } );
