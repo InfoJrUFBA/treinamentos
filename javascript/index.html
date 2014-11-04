@@ -599,17 +599,20 @@ var strength1 = 1,
     hp2 = 5,
     battle = function (strength1, armor1, hp1, strength2, armor2, hp2) {
         'use strict';
-        var attack = function (strength, armor) {
-            return Math.max(strength * dieRoll() - armor * dieRoll(), 0);
+        var attack = function (strength) {
+            return strength * dieRoll();
+        },
+            defend = function () {
+                return armor * dieRoll();
         },
             dieRoll = function () {
                 return Math.ceil(Math.random() * 6) ;
         };
 
         while (hp1 > 0 && hp2 > 0) {
-            hp2 -= attack(strength1, armor2);
+            hp2 -= Math.max(attack(strength1) - defend(armor2), 0);
             if (hp2 > 0) {
-                hp1 -= attack(strength2, armor1);
+                hp1 -= Math.max(attack(strength2) - defend(armor1), 0);
             }
         }
 
@@ -640,20 +643,78 @@ var dieRoll = function (sides) {
                 </section>
 
                 <section>
-                    <h2>Point of View</h2>
-                    <p>
-                        Press <strong>ESC</strong> to enter the slide overview.
-                    </p>
-                    <p>
-                        Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-                    </p>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">20 min</div>
+                        <h3>Função geradora de personagens</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Nome do personagem;</li>
+                                <li>Quantidade máxima de pontos</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Array com nome e o valor dos atributos do 3D&amp;T;</li>
+                                <li>Atributos não podem ter mais de 5 pontos;</li>
+                                <li>A soma dos atributos não pode passar o número dado.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var randomCharacter = function (name, limit) {
+    'use strict';
+    var strength = 0,
+        skill = 0,
+        resistance = 0,
+        armor = 0,
+        firePower = 0,
+        randomStatus = function () {
+            return Math.floor(Math.random() * 6);
+        };
+
+    if (limit >= 0) {
+        strength = Math.min(generateStatus(), limit);
+        limit -= strength;
+    }
+    if (limit >= 0) {
+        skill = Math.min(generateStatus(), limit);
+        limit -= skill;
+    }
+    if (limit >= 0) {
+        resistance = Math.min(generateStatus(), limit);
+        limit -= resistance;
+    }
+    if (limit >= 0) {
+        armor = Math.min(generateStatus(), limit);
+        limit -= armor;
+    }
+    if (limit >= 0) {
+        firePower = Math.min(generateStatus(), limit);
+        limit -= firePower;
+    }
+
+    return [name, strength, skill, resistance, armor, firePower];
+}
+                        </code></pre>
+                    </section>
                 </section>
 
                 <section>
-                    <h2>Works in Mobile Safari</h2>
-                    <p>
-                        Try it out! You can swipe through the slides and pinch your way to the overview.
-                    </p>
+                    <section>
+                        <h1>Estrutura de dados</h1>
+                    </section>
+                    <section>
+
+                    </section>
                 </section>
 
                 <section>
