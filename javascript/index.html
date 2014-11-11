@@ -713,7 +713,231 @@ var randomCharacter = function (name, limit) {
                         <h1>Estrutura de dados</h1>
                     </section>
                     <section>
+                        <h2>Arrays</h2>
+                        <p>Representação de um conjunto de valores</p>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = ['Marc', 1, 4, 2, 3, 0],
+    monster = ['Bat', 1, 2, 2, 1, 0];
 
+character[0];
+// => 'Marc'
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Propriedades</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = ['Marc', 1, 4, 2, 3, 0];
+
+character.length;
+character['length'];
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Métodos</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = ['Marc', 1, 4, 2, 3, 0];
+
+character.push(character[4] * 5);
+// => 7
+character.pop();
+// => 15
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = {
+    name: 'Marc',
+    strength: 1,
+    skill: 4,
+    armor: 2,
+    resistance: 3,
+    firePower: 0
+};
+
+character.name;
+// => "Marc"
+character['strength'];
+// => 1
+character.healthPoints = character.resistance * 5;
+// => 15
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Mutabilidade</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = {
+    name: 'Marc',
+    strength: 1,
+    skill: 4,
+    armor: 2,
+    resistance: 3,
+    firePower: 0
+};
+
+character.name;
+// => "Marc"
+character['strength'];
+// => 1
+character.healthPoints = character.resistance * 5;
+// => 15
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Conjunto de dados</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var characters = [
+    { name: 'Marc', strength: 1, skill: 4, armor: 2, resistance: 3, firePower: 0 },
+    { name: 'James', strength: 1, skill: 3, armor: 1, resistance: 1, firePower: 4 },
+    { name: 'Leon', strength: 2, skill: 3, armor: 2, resistance: 1, firePower: 2 }],
+    strongestCharacter = function (characters) {
+        var strongest = characters[0],
+            index;
+
+        for (index = 0; index < characters.length; index += 1) {
+            if (strongest.strength < characters[index].strength) {
+                strongest = characters[index];
+            }
+        }
+
+        return strongest;
+    };
+
+strongestCharacter(characters);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Métodos em objetos</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var Die = {
+        roll: function () {
+            return Math.ceil(Math.random() * 6);
+        }
+    };
+
+Die.roll();
+// => 5
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>this</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var Die = {
+        roll: function () {
+            return Math.ceil(Math.random() * 6);
+        }
+    },
+    attack = function () {
+        return this.strength * Die.roll();
+    },
+    defend = function () {
+        return this.armor * Die.roll();
+    },
+    marc = { name: 'Marc', strength: 1, skill: 4, armor: 2, resistance: 3, firePower: 0, attack: attack, defend: defend },
+    james = { name: 'James', strength: 1, skill: 3, armor: 1, resistance: 1, firePower: 4 };
+
+window.attack();
+// => NaN
+
+james.attack = attack;
+james.defend = defend;
+
+james.currentHealthPoints = james.resistance * 5;
+james.currentHealthPoints -= Math.max(marc.attack() - james.defend(), 0);
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">25 min</div>
+                        <h3>Simulador de batalha 3</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Dois personagens gerados aleatoriamente;</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Retorne o personagem que ganhou a batalha</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var Die = {
+        roll: function () {
+            'use strict';
+            return Math.ceil(Math.random() * 6);
+        }
+    },
+
+    randomCharacter = function (name, limit) {
+        'use strict';
+        var character = {
+                name: name,
+                attack: function () {
+                    return Die.roll() * Math.max(this.strength, this.firePower);
+                },
+                defend: function () {
+                    return Die.roll() * this.armor;
+                }
+            },
+            randomStatus = function () {
+                return Math.floor(Math.random() * 6);
+            };
+
+        if (limit >= 0) {
+            character.strength = Math.min(randomStatus(), limit);
+            limit -= character.strength;
+        }
+        if (limit >= 0) {
+            character.skill = Math.min(randomStatus(), limit);
+            limit -= character.skill;
+        }
+        if (limit >= 0) {
+            character.resistance = Math.min(randomStatus(), limit);
+            limit -= character.resistance;
+        }
+        if (limit >= 0) {
+            character.armor = Math.min(randomStatus(), limit);
+            limit -= character.armor;
+        }
+        if (limit >= 0) {
+            character.firePower = Math.min(Math.min(randomStatus(), limit), 5);
+            limit -= character.firePower;
+        }
+        character.healthPoints = character.resistance * 5;
+
+        return character;
+    },
+
+    battle = function (character, opponent) {
+        var winner;
+
+        while (character.healthPoints > 0 && opponent.healthPoints > 0) {
+            opponent.healthPoints -= character.attack() - opponent.defend();
+            if (opponent.healthPoints > 0) {
+                character.healthPoints -= opponent.attack() - character.defend();
+            }
+        }
+        winner = (character.healthPoints > 0) ? character : opponent
+
+        return winner;
+    };
+
+    marc = randomCharacter('Marc', 10);
+    james = randomCharacter('James', 10);
+    battle(marc, james);
+                        </code></pre>
                     </section>
                 </section>
 
