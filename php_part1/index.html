@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+
+        <title>InfoJr UFBA - PHP Parte 1</title>
+
+        <meta name="description" content="Primeiro treinamento de PHP">
+        <meta name="author" content="Marco Antonio Oliveira">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/theme/simple.css">
+        <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../vendor/assets/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '../vendor/assets/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <header class="header">
+            </header>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section data-background="../assets/img/logo.svg" data-background-repeat="no-repeat" data-background-size="18%" data-background-position="1.2em 2.3em" class="introduction">
+                    <div class="logo"></div>
+                    <h2 class="align-right">PHP Parte 1</h2>
+                    <p class="align-right">
+                        <time>14 de Novembro 2014</time>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>O que é PHP?</h2>
+                </section>
+
+                <!-- Example of nested vertical slides -->
+                <section>
+                    <section>
+                        <h2>A parte boa</h2>
+                    </section>
+                    <section>
+                        <h3>Simples e fácil</h3>
+                    </section>
+                    <section>
+                        <h3>Tem um amplo suporte a diversas ferramentas: DB, arquivos, imagens</h3>
+                    </section>
+                    <section>
+                        <h3>Suporte à Orientação a Objetos</h3>
+                    </section>
+                    <section>
+                        <h3>Evolução gigantesca nos últimos anos.</h3>
+                    </section>
+                    <section>
+                        <h3>Fracamente e dinamicamente tipado</h3>
+                    </section>
+                    <section>
+                        <h3>Namespace</h3>
+                    </section>
+                    <section>
+                        <h3>Métodos Mágicos</h3>
+                    </section>
+                    <section>
+                        <h3>Metaprogramação</h3>
+                    </section>
+                    <section>
+                        <h3>Closures</h3>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Sintaxe</h2>
+                    </section>
+
+                    <section>
+                        <h3>Tags</h3>
+                        <section data-markdown>
+                            <script type="text/template">
+                            ``` php
+                                <?php ?>
+                                <? ?>
+                                <?= ?>
+                            ```
+                            </script>
+                        </section>
+                    </section>
+
+                    <section>
+                        <h3>Blocos Condicionais</h3>
+                        <section data-markdown>
+                            <script type="text/template">
+                            ``` php
+                                if(true):
+                                    echo "Hello World";
+                                endif;
+                                if(true){
+                                    echo "Hello World";
+                                }
+                                if(false){
+                                    echo "Não deu";
+                                }elseif(true){
+                                    echo "Ruau";
+                                }else{
+                                    echo "Só alegria";
+                                }
+                            ```
+                            </script>
+                        </section>
+                    </section>
+
+                    <section>
+                        <h3>Blocos condicionais - Operador ternário</h3>
+                        <section data-markdown>
+                            <script type="text/template">
+                            ``` php
+                                $a>$b? print("$a é maior que $b") : print("$a é menor que $b");
+                            ```
+                            </script>
+                        </section>
+                    </section>
+
+                    <section>
+                        <h3>Blocos condicionais - Switch</h3>
+
+                    </section>
+
+                     <section>
+                        <h3>Laços de repetição</h3>
+                        <ul>
+                            <li>For</li>
+                            <li>Foreach</li>
+                            <li>While</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Tipos de Dados</h2>
+                    </section>
+                    <section>
+                        <h3>Tipos simples</h3>
+                        <h4>Integer, Float, Double, String, Boolean</h4>
+                        <p>$a=2; $b='3'; $c=$a+$b; echo gettype($c);</p>
+                    </section>
+                    <section>
+                        <h3>Tipos compostos</h3>
+                        <h4>Array</h4>
+                    </section>
+                    <section>
+                        <img src="images/tumblr_mbfs0qEEXB1rubj5uo1_500.gif">
+                    </section>
+                    <section>
+                        <h3>Peguei a manha! Agora é só decorar as outras funções?</h3>
+                        <h4>Eh.... não</h4>
+                        <h4>http://php.net/manual/pt_BR/book.array.php</h4>
+                    </section>
+
+                    <section>
+                        <h3>Tipos especiais</h3>
+                        <h4>Resource</h4>
+                        <h4>NULL</h4>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>A parte funcional</h2>
+                    </section>
+                    <section>
+                        <h2>O que é função?</h2>
+                    </section>
+                     <section>
+                        <img src="images/tumblr_mbfs0qEEXB1rubj5uo1_500.gif">
+                    </section>
+                    <section>
+                        <h2>Lambda</h2>
+                        <h4>Funções anonimas</h4>
+                    </section>
+                    <section>
+                        <img src="images/tumblr_mbfs0qEEXB1rubj5uo1_500.gif">
+                    </section>
+                    <section>
+                        <h2>Callback</h2>
+                    </section>
+                    <section>
+                        <img src="images/tumblr_mbfs0qEEXB1rubj5uo1_500.gif">
+                    </section>
+                    <section>
+                        <h2>Closures</h2>
+                    </section>
+                    <section>
+                        <img src="images/tumblr_mbfs0qEEXB1rubj5uo1_500.gif">
+                    </section>
+                    <section>
+                        <h2>Faça você mesmo!</h2>
+                    </section>
+                    <section>
+                        <img src="images/tumblr_mbfs0qEEXB1rubj5uo1_500.gif">
+                    </section>
+
+                </section>
+                <section>
+                    <h1>O FIM</h1>
+                    <h3>Vlw Flw</h3>
+                </section>
+
+            </div>
+            <footer class="footer">
+                <ul class="list">
+                    <li class="list-linkedin">
+                        <i class="fa fa-linkedin-square"></i><a href="https://www.linkedin.com/in/marcoaacoliveira">marcoaacoliveira</a>
+                    </li>
+                    <li class="list-github">
+                        <i class="fa fa-github-square"></i><a href="https://www.github.com/marcoantoniooliveira">marcoantoniooliveira</a>
+                    </li>
+                    <li class="list-twitter">
+                        <i class="fa fa-twitter-square"></i><a href="https://twitter.com/MarcoAACO">@marcoAACO</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+
+        <script src="../vendor/assets/lib/js/head.min.js"></script>
+        <script src="../vendor/assets/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../vendor/assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../vendor/assets/js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+        <script src="../assets/js/theme/infojr.js"></script>
+    </body>
+</html>
