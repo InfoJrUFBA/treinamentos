@@ -1,0 +1,98 @@
+.slides .logo {
+  background: url(../img/logo.svg) no-repeat;
+  background-size: 20%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.reveal .timeline {
+  border: 5px solid #7cb124;
+  margin: 45% 0 25% 0;
+  position: relative;
+}
+
+.reveal .timeline > .point-in-time {
+  border: 5px solid #7cb124;
+  height: 30px;
+  position: absolute;
+  top: -20px;
+}
+
+.reveal .timeline .event {
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  top: -165px;
+}
+
+.reveal .timeline .time {
+  font-size: 26px;
+  position: absolute;
+  margin-top: 2%;
+}
+
+.reveal .timeline .event > img {
+  border: 5px solid #7cb124;
+  border-radius: 50%;
+  margin: 0;
+  height: 90px;
+  width: 90px;
+}
+
+.reveal .timeline .event > p {
+  left: inherit;
+  font-size: 26px;
+  top: 110px;
+}
+
+.reveal .cross hr {
+  position: absolute;
+  border: 5px solid #ff4219;
+  left: -5%;
+  width: 110%;
+  top: 50%;
+}
+
+.reveal .cross.success hr {
+  border-color: #7cb124;
+}
+
+.reveal .cross hr:nth-child(1) {
+  transform: rotate(-15deg);
+}
+
+.reveal .cross hr:nth-child(2) {
+  transform: rotate(15deg);
+}
+
+.reveal .testimony {
+  position: relative;
+  padding: 15px 0;
+}
+
+.reveal .testimony .profile-picture {
+  display: inline-block;
+}
+
+.reveal .testimony .profile-picture img {
+  width: 150px;
+  height: 150px;
+  border: 5px solid #7cb124;
+  border-radius: 50%;
+}
+
+.reveal .testimony .message {
+  display: inline-block;
+  color: #333;
+  font-size: .7em;
+  line-height: 1.4em;
+}
+
+.reveal .testimony .message:before {
+  left: -2%;
+}
+
+.reveal .testimony .message footer {
+  text-shadow: none;
+}
