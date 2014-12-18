@@ -287,3 +287,7 @@ body {
 
 .reveal ul.unstyled > li {
   margin-bottom: .3em; }
+
+.reveal .no-border {
+  border: 0;
+  box-shadow: 0 0 0; }
