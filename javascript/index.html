@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+
+        <title>InfoJr UFBA - Empreendendo o futuro</title>
+
+        <meta name="description" content="Treinamento de JavaScript para InfoJr UFBA">
+        <meta name="author" content="Marco Antonio Almeida">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme">
+        <link rel="stylesheet" href="assets/css/javascript.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../vendor/assets/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '../vendor/assets/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <header class="header">
+            </header>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section data-background="../assets/img/logo.svg" data-background-repeat="no-repeat" data-background-size="18%" data-background-position="1.2em 2.3em" class="introduction">
+                    <div class="logo"></div>
+                    <h2 class="align-right">JavaScript</h2>
+                    <p class="align-right">
+                        <time>19 e 20 de Dezembro</time>
+                    </p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>JavaScript?</h2>
+                    </section>
+                    <section class="javascript-browsers">
+                        <h2>Navegadores</h2>
+                        <div class="snippet">
+                            <a href="javascript:void(0);">JavaScript manipula conteúdo</a>
+                        </div>
+
+                        <script>
+                        var link = document.querySelector('a'),
+                            snippet = document.querySelector('.javascript-browsers > .snippet');
+
+                        link.addEventListener('click', function () {
+                            window.alert('Gerencia eventos');
+                            var input = document.createElement('input'),
+                                helper,
+                                helperText;
+                            snippet.replaceChild(input, this);
+                            input.focus();
+                            input.addEventListener('keyup', function (event) {
+                                this.classList = [];
+                                if (this.value === 'JavaScript não funciona!') {
+                                    this.classList.add('error');
+                                    if (!snippet.contains(helper)) {
+                                        helper = document.createElement('div');
+                                        helper.classList.add('error');
+                                        helper.classList.add('helper');
+                                        helperText = document.createTextNode('* Altera estilo');
+                                        helper.appendChild(helperText);
+                                        snippet.appendChild(helper);
+                                    }
+                                }
+                                if (this.value === 'JavaScript é bom demais!') {
+                                    this.classList.add('error');
+                                    helper.classList.add('error');
+                                    this.classList.add('success');
+                                    helper.classList.add('success');
+                                    helperText.replaceWholeText('* Realiza animações e muito mais...');
+                                    this.blur();
+                                    setTimeout(function () {
+                                        setInterval(function () {
+                                            snippet.style.opacity = snippet.style.opacity || 1
+                                            if (snippet.style.opacity > 0) {
+                                                snippet.style.opacity = parseFloat(snippet.style.opacity) - 0.1;
+                                            }
+                                        }, 100)
+                                    }, 5000);
+                                }
+                            });
+                        });
+                        </script>
+                    </section>
+                    <section>
+                        <h2>Terminais</h2>
+                        <a href="http://phantomjs.org/">
+                            <img src="assets/img/PhantomJS.png" alt="PhamtomJS">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Aplicativos móveis</h2>
+                        <a href="http://phonegap.com/">
+                            <img src="assets/img/PhoneGap.png" alt="PhoneGap">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Servidores Web</h2>
+                        <a href="http://nodejs.org/">
+                            <img src="assets/img/node.png" alt="node.js">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Aplicativos desktop</h2>
+                        <a href="http://appjs.com/">
+                            <img src="assets/img/appjs.png" alt="appjs">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Editores de texto</h2>
+                        <a href="http://brackets.io/">
+                            <img src="assets/img/Brackets.png" alt="Brackets">
+                        </a>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>O Projeto</h1>
+                    </section>
+                    <section data-background="assets/img/Project1.png" data-background-size="100%">
+                        <h2>Save the Princess</h2>
+                        <img src="assets/img/save-the-princess.png" alt="Save the Princess">
+                        <p><a href="https://github.com/marcoafilho/save-the-princess">https://github.com/marcoafilho/save-the-princess</a></p>
+                    </section>
+                    <section>
+                        <h2>Prêmios</h2>
+                        <br>
+                        <h4>1º Lugar</h4>
+                        <ul class="unstyled">
+                            <li>2 camisas do GitHub</li>
+                            <li>JavaScript the definitive guide e JavaScript &amp; jQuery</li>
+                            <li>40 adesivos do GitHub</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Prêmios</h2>
+                        <br>
+                        <h4>2º Lugar</h4>
+                        <ul class="unstyled">
+                            <li>2 camisas do GitHub</li>
+                            <li>30 adesivos do GitHub</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Prêmios</h2>
+                        <br>
+                        <h4>3º Lugar</h4>
+                        <ul class="unstyled">
+                            <li>20 adesivos do GitHub</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Instalação</h1>
+                    </section>
+                    <section>
+                        <div>JavaScript é embutido na maioria dos navegadores modernos.</div>
+                        <br>
+                        <h4>Inline JavaScript</h4>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+&lt;a href="javascript:void(0)"&gt;&lt;/a&gt;
+                        </code></pre>
+                        <br>
+                        <h4>Internal JavaScript</h4>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+&lt;script&gt;
+    console.log(1 + 1);
+&lt;/script>
+                        </code></pre>
+                        <br>
+                        <h4>External JavaScript</h4>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+&lt;script src="assets/js/filename.js"&gt;&lt;/script&gt;
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Ferramentas</h1>
+                    </section>
+                    <section>
+                        <h2>REPL</h2>
+                        <div>Read Eval Print Loop</div>
+                        <br>
+                        <h4>Chrome Developer Tools</h4>
+                        <div class="kbd-shortcut">
+                            <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd>
+                        </div>
+                        <img src="assets/img/developer-tools.png" alt="Developer tools">
+                    </section>
+                    <section>
+                        <h2>Brackets</h2>
+                        <img src="assets/img/Brackets2.png" alt="Brackets" class="unstyled">
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">3 min</div>
+                        <br>
+                        <ul>
+                            <li>Configurar Git;</li>
+                            <li>Criar projeto no GitHub;</li>
+                            <li>Criar um arquivo README, html, css e js;</li>
+                            <li>Git push!</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <div>Configuração Git</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+$ git config --global user.name "Marco Almeida"
+$ git config --global user.email "marcoantonio@infojr.com.br"
+                        </code></pre>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+$ ssh-keygen -t rsa -C "marcoantonio@infojr.com.br"
+                        </code></pre>
+                        <div>Lembre-se de registrar as chaves no GitHub</div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Valores, tipos e operadores</h1>
+                    </section>
+                    <section>
+                        <h2>Number</h2>
+                        <div>Representação em formato numérico</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+// Integer
+13;
+// Float
+9.81;
+// Exponent
+2.998e8;
+// Arithmetic
+100 + 4 * 11;
+// Infinity
+Infinity - 1;
+// Not a Number
+NaN;
+0/0;
+
+typeof(4);
+// number
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>String</h2>
+                        <div>Representação em formato de texto</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+"Patch my boat with chewing gum";
+'Monkeys wave goodbye';
+// Concatenate
+"con" + "cat" + "e" + "nate";
+
+typeof('This is the first line\nAnd this is the second');
+//string
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Boolean</h2>
+                        <div>Representação de verdadeiro e falso</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+3 > 2;
+// true
+
+3 < 2;
+// false
+
+"Aardvark" < "Zoroaster";
+// true
+
+"Itchy" !== "Scratchy";
+// false
+
+NaN === NaN;
+// false
+
+true && false;
+// false
+
+true || false;
+// true
+
+true ? 1 : 2;
+// 1
+
+typeof(true);
+// boolean
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Undefined</h2>
+                        <div>Representação da falta de um valor</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var a;
+null;
+undefined;
+
+typeof(undefined);
+// undefined
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Function</h2>
+                        <div>Representação de um conjunto de operações</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var dieRoll = function () {
+    return Math.ceil(Math.random() * 6);
+};
+
+var age = parseInt(window.prompt('What\'s your age?'));
+
+console.log(dieRoll());
+
+typeof(dieRoll);
+// function
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Object</h2>
+                        <div>Representação de uma estrutura de dados complexa</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var array = [0, 'Marc', {}, 1, 'James', {}];
+var object = { name: 'Marc', strength: 3 };
+var date = new Date();
+
+typeof(array);
+// object
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">3 min</div>
+                        <h3>Simulador de batalhas</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Entrada #1: Força do primeiro herói;</li>
+                                <li>Entrada #2: Armadura do segundo herói;</li>
+                                <li>Os atributos devem ser inteiros.</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Retornar 'First' se força for maior que armadura;</li>
+                                <li>Retornar 'Second' caso contrário.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+(parseInt(prompt()) > parseInt(prompt())) ? 'First' : 'Second';
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Estrutura de um programa</h1>
+                    </section>
+                    <section>
+                        <h2>Variáveis</h2>
+                        <div>Armazenando valores na memória</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var strength = 5,
+    firePower;
+
+firePower = '3';
+firePower = 10;
+
+console.log(firePower);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Funções</h2>
+                        <div>Encapsulando pedaços de um programa</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+alert('Welcome to Save the Princess!');
+var name = prompt('What is your name?');
+console.log(name);
+var humanize = function (name) {
+    return name[0].toUpperCase() + name.slice(1);
+};
+confirm('Is your name ' + humanize(name) + '?');
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Condicionais</h2>
+                        <div>Controlando o fluxo através de condições</div>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var strength = prompt('What\'s your strength?');
+if (strength > 3) {
+    console.log('Very strong!');
+} else if (strength > 1) {
+    console.log('Human.');
+} else {
+    console.log('Weak...');
+}
+
+switch (parseInt(strength)) {
+case 4:
+case 5:
+    console.log('Very strong!');
+    break;
+case 2:
+case 3:
+    console.log('Human.');
+    break;
+case 1:
+    console.log('Weak...');
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Loops</h2>
+                        <div>Repetindo um conjunto de operações</div>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var strength = 3, counter = 0, totalDamage = 0;
+while (counter < strength) {
+    totalDamage += Math.ceil(Math.random() * 6);
+    counter++;
+}
+console.log(totalDamage);
+
+counter = 0;
+totalDamage = 0;
+do {
+    totalDamage += Math.ceil(Math.random() * 6);
+    counter++;
+} while (counter <= strength)
+console.log(totalDamage);
+
+totalDamage = 0;
+for (counter = 0; counter < strength; counter += 1) {
+    totalDamage += Math.ceil(Math.random() * 6);
+}
+console.log(totalDamage);
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <h3>Primeiro, um pouco de 3D&T</h3>
+                        <br>
+                        <ul>
+                            <li>Um personagem é composto por Força, Armadura e Resistência.</li>
+                            <li>Esses atributos devem ter no máximo 5 pontos.</li>
+                            <li>Pontos de vida são então derivados da Resistência.</li>
+                            <li>Para cada ponto de Resistência, um personagem terá 5 pontos de vida.</li>
+                            <li>
+                            O cálculo de um turno é feito da seguinte forma:
+                            <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+totalDamage = strengthOne * random(1, 6) - armorTwo * random(1, 6);
+                            </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">25 min</div>
+                        <h3>Simulador de Batalha 2</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Atributos devem ser gerados aleatoriamente.</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Atributos dos personagens;</li>
+                                <li>Marcar com asterisco o nome do personagem vencendor.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var strength1 = Math.ceil(Math.random() * 5),
+    armor1 = Math.ceil(Math.random() * 5),
+    resistance1 = Math.ceil(Math.random() * 5),
+    hP1 = resistance1 * 5,
+    currentHP1 = hP1,
+    strength2 = Math.ceil(Math.random() * 5),
+    armor2 = Math.ceil(Math.random() * 5),
+    resistance2 = Math.ceil(Math.random() * 5),
+    hP2 = resistance2 * 5,
+    currentHP2 = hP2,
+    damage = 0;
+
+while (currentHP1 > 0 && currentHP2 > 0) {
+    currentHP2 -=
+        Math.max(0, strength1 * (Math.ceil(Math.random() * 6) + 1)
+        - armor2 * (Math.ceil(Math.random() * 6)));
+    if (currentHP2 > 0) {
+        currentHP1 -=
+            Math.max(0, strength2 * (Math.ceil(Math.random() * 6) + 1)
+            - armor1 * (Math.ceil(Math.random() * 6)));
+    }
+}
+
+if (currentHP1 > 0) {
+    console.log('* First\nStrength: ', strength1, '\nArmor: ', armor1, '\nResistance: ', resistance1, '\nHP: ', currentHP1, '/', hP1);
+    console.log('\n\nSecond\nStrength: ', strength2, '\nArmor: ', armor2, '\nResistance: ', resistance2, '\nHP: ', currentHP2, '/', hP2);
+} else {
+    console.log('\n\nFirst\nStrength: ', strength1, '\nArmor: ', armor1, '\nResistance: ', resistance1, '\nHP: ', currentHP1, '/', hP1);
+    console.log('* Second\nStrength: ', strength2, '\nArmor: ', armor2, '\nResistance: ', resistance2, '\nHP: ', currentHP2, '/', hP2);
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Funções</h1>
+                    </section>
+                    <section>
+                        <h2>Declarando funções</h2>
+                        <div>Maneiras de definir uma função em JavaScript</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var rollDie = function (sides) {
+    return Math.ceil(Math.random() * sides);
+};
+
+function rollDie(sides) {
+    return Math.ceil(Math.random() * sides);
+}
+
+rollDie();
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Modo estrito</h2>
+                        <div>Optando por uma variação mais estrita do JavaScript</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var rollDie = function (sides) {
+    'use strict';
+    return Math.ceil(Math.random() * (sides || 6));
+};
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Parâmetros e Escopo</h2>
+                        <div>Representação em formato de texto</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var strength = 3,
+    armor = 5,
+    attack = function (strength, armor) {
+        'use strict';
+        return (strength * rollDie(6)) - (armor * rollDie(6));
+    };
+
+attack(strength, armor, 5, 6);
+
+var strength = 1,
+    newStrength = function () {
+    'use strict';
+    var strength = 4;
+};
+newStrength();
+console.log(strength);
+// => 1
+
+var strength = 1,
+    newStrength = function () {
+    'use strict';
+    strength = 4;
+};
+newStrength();
+console.log(strength);
+// => 4
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Aninhamento de funções</h2>
+                        <div>Definição de funções dentro de funções</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var strength1 = 1,
+    armor1 = 2,
+    hp1 = 5,
+    strength2 = 2,
+    armor2 = 1,
+    hp2 = 5,
+    battle = function (strength1, armor1, hp1, strength2, armor2, hp2) {
+        'use strict';
+        var attack = function (strength) {
+            return strength * dieRoll();
+        },
+            defend = function () {
+                return armor * dieRoll();
+        },
+            dieRoll = function () {
+                return Math.ceil(Math.random() * 6) ;
+        };
+
+        while (hp1 > 0 && hp2 > 0) {
+            hp2 -= Math.max(attack(strength1) - defend(armor2), 0);
+            if (hp2 > 0) {
+                hp1 -= Math.max(attack(strength2) - defend(armor1), 0);
+            }
+        }
+
+        return (hp1 <= 0) ? [strength2, armor2, hp2] : [strength1, armor1, hp1];
+    };
+
+battle(strength1, armor1, hp1, strength2, armor2, hp2);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Parâmetros opcionais</h2>
+                        <div>Representação da falta de um valor</div>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var dieRoll = function (sides) {
+    'use strict';
+    if (sides === undefined) {
+        sides = 6;
+    }
+    return Math.ceil(Math.random() * sides);
+};
+
+var dieRoll = function (sides) {
+    'use strict';
+    return Math.ceil(Math.random() * (sides || 6));
+};
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">20 min</div>
+                        <h3>Função geradora de personagens</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Nome do personagem;</li>
+                                <li>Quantidade máxima de pontos</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Array com nome e o valor dos atributos do 3D&amp;T;</li>
+                                <li>Atributos não podem ter mais de 5 pontos;</li>
+                                <li>A soma dos atributos não pode passar o número dado.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var randomCharacter = function (name, limit) {
+    'use strict';
+    var strength = 0,
+        skill = 0,
+        resistance = 0,
+        armor = 0,
+        firePower = 0,
+        randomStatus = function () {
+            return Math.floor(Math.random() * 6);
+        };
+
+    if (limit >= 0) {
+        strength = Math.min(generateStatus(), limit);
+        limit -= strength;
+    }
+    if (limit >= 0) {
+        skill = Math.min(generateStatus(), limit);
+        limit -= skill;
+    }
+    if (limit >= 0) {
+        resistance = Math.min(generateStatus(), limit);
+        limit -= resistance;
+    }
+    if (limit >= 0) {
+        armor = Math.min(generateStatus(), limit);
+        limit -= armor;
+    }
+    if (limit >= 0) {
+        firePower = Math.min(generateStatus(), limit);
+        limit -= firePower;
+    }
+
+    return [name, strength, skill, resistance, armor, firePower];
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Estrutura de dados</h1>
+                    </section>
+                    <section>
+                        <h2>Arrays</h2>
+                        <p>Representação de um conjunto de valores</p>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = ['Marc', 1, 4, 2, 3, 0],
+    monster = ['Bat', 1, 2, 2, 1, 0];
+
+character[0];
+// => 'Marc'
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Propriedades</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = ['Marc', 1, 4, 2, 3, 0];
+
+character.length;
+character['length'];
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Métodos</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = ['Marc', 1, 4, 2, 3, 0];
+
+character.push(character[4] * 5);
+// => 7
+character.pop();
+// => 15
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = {
+    name: 'Marc',
+    strength: 1,
+    skill: 4,
+    armor: 2,
+    resistance: 3,
+    firePower: 0
+};
+
+character.name;
+// => "Marc"
+character['strength'];
+// => 1
+character.healthPoints = character.resistance * 5;
+// => 15
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Mutabilidade</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var character = {
+    name: 'Marc',
+    strength: 1,
+    skill: 4,
+    armor: 2,
+    resistance: 3,
+    firePower: 0
+};
+
+character.name;
+// => "Marc"
+character['strength'];
+// => 1
+character.healthPoints = character.resistance * 5;
+// => 15
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Conjunto de dados</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var characters = [
+    { name: 'Marc', strength: 1, skill: 4, armor: 2, resistance: 3, firePower: 0 },
+    { name: 'James', strength: 1, skill: 3, armor: 1, resistance: 1, firePower: 4 },
+    { name: 'Leon', strength: 2, skill: 3, armor: 2, resistance: 1, firePower: 2 }],
+    strongestCharacter = function (characters) {
+        var strongest = characters[0],
+            index;
+
+        for (index = 0; index < characters.length; index += 1) {
+            if (strongest.strength < characters[index].strength) {
+                strongest = characters[index];
+            }
+        }
+
+        return strongest;
+    };
+
+strongestCharacter(characters);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Métodos em objetos</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var Die = {
+        roll: function () {
+            return Math.ceil(Math.random() * 6);
+        }
+    };
+
+Die.roll();
+// => 5
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>this</h2>
+                        <pre><code data-trim style="font-size: 18px; margin-top: 20px;">
+var Die = {
+        roll: function () {
+            return Math.ceil(Math.random() * 6);
+        }
+    },
+    attack = function () {
+        return this.strength * Die.roll();
+    },
+    defend = function () {
+        return this.armor * Die.roll();
+    },
+    marc = { name: 'Marc', strength: 1, skill: 4, armor: 2, resistance: 3, firePower: 0, attack: attack, defend: defend },
+    james = { name: 'James', strength: 1, skill: 3, armor: 1, resistance: 1, firePower: 4 };
+
+window.attack();
+// => NaN
+
+james.attack = attack;
+james.defend = defend;
+
+james.currentHealthPoints = james.resistance * 5;
+james.currentHealthPoints -= Math.max(marc.attack() - james.defend(), 0);
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">25 min</div>
+                        <h3>Simulador de batalha 3</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Dois personagens gerados aleatoriamente;</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Retorne o personagem que ganhou a batalha</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                        <br>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var Die = {
+        roll: function () {
+            'use strict';
+            return Math.ceil(Math.random() * 6);
+        }
+    },
+
+    randomCharacter = function (name, limit) {
+        'use strict';
+        var character = {
+                name: name,
+                attack: function () {
+                    return Die.roll() * Math.max(this.strength, this.firePower);
+                },
+                defend: function () {
+                    return Die.roll() * this.armor;
+                }
+            },
+            randomStatus = function () {
+                return Math.floor(Math.random() * 6);
+            };
+
+        if (limit >= 0) {
+            character.strength = Math.min(randomStatus(), limit);
+            limit -= character.strength;
+        }
+        if (limit >= 0) {
+            character.skill = Math.min(randomStatus(), limit);
+            limit -= character.skill;
+        }
+        if (limit >= 0) {
+            character.resistance = Math.min(randomStatus(), limit);
+            limit -= character.resistance;
+        }
+        if (limit >= 0) {
+            character.armor = Math.min(randomStatus(), limit);
+            limit -= character.armor;
+        }
+        if (limit >= 0) {
+            character.firePower = Math.min(Math.min(randomStatus(), limit), 5);
+            limit -= character.firePower;
+        }
+        character.healthPoints = character.resistance * 5;
+
+        return character;
+    },
+
+    battle = function (character, opponent) {
+        var winner;
+
+        while (character.healthPoints > 0 && opponent.healthPoints > 0) {
+            opponent.healthPoints -= character.attack() - opponent.defend();
+            if (opponent.healthPoints > 0) {
+                character.healthPoints -= opponent.attack() - character.defend();
+            }
+        }
+        winner = (character.healthPoints > 0) ? character : opponent
+
+        return winner;
+    };
+
+    marc = randomCharacter('Marc', 10);
+    james = randomCharacter('James', 10);
+    battle(marc, james);
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>A vida secreta dos objetos</h1>
+                    </section>
+                    <section>
+                        <h2>Construtores</h2>
+                        <div>Maneira mais conveniente de se instanciar um objeto</div>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var Character = function (attrs) {
+    this.strength = attrs.strength;
+    this.skill = attrs.skill;
+    // ...
+};
+
+var marc = new Character({ strength: 2, skill: 4 });
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Prototypes</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+Character.prototype.attack = function () {
+    // ...
+};
+var marc = new Character({ strength: 2, skill: 4 });
+marc.attack();
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>O DOM</h1>
+                    </section>
+                    <section>
+                        <h2>Árvores</h2>
+                        <img src="assets/img/dom-tree.gif" alt="DOM Tree" class="no-border">
+                    </section>
+                    <section>
+                        <h2>Navegando na árvore</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+<div class="character">
+    <img src="link-to-img" alt="Character profile">
+    <div class="name">Marc</div>
+    <div class="strength" id="strongest">3</div>
+</div>
+<script>
+    var character = document.querySelector('div'),
+        divs = document.querySelectorAll('div');
+
+    console.log(character.querySelector('.name').innerText);
+    console.log(character.querySelector('.character > img').src);
+    console.log(character.getElementById('strongest'));
+</script>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Alterando a estrutura</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+<div class="character">
+    <img src="link-to-img" alt="Character profile">
+    <div class="name">Marc</div>
+    <div class="strength" id="strongest">3</div>
+</div>
+<script>
+    var character = document.querySelector('div'),
+        divs = document.querySelectorAll('div'),
+        name = character.querySelector('.name');
+        strength = character.querySelector('.strength');
+
+    character.insertBefore(strength, name);
+    name.innerHTML = '<b>Marc</b>';
+</script>
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Criando nós</h2>
+                    <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+<div class="character"></div>
+<script type="text/javascript">
+    var character = document.querySelector('.character'),
+        node = document.createElement('div');
+        text = document.createTextNode('Marc');
+
+        character.appendChild(node);
+        node.appendChild(text);
+</script>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Atributos</h2>
+                    <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+<div class="character"></div>
+<script>
+    var character = document.querySelector('.character');
+    character.setAttribute('id', 'character_1');
+    character.getAttribute('id');
+    character.style.color = '#333';
+</script>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">30 min</div>
+                        <h3>Lista de personagens</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Função createCharacter que recebe um objeto personagem.</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Apresente uma seção com os atributos do personagem;</li>
+                                <li>Cada chamada de método o novo personagem deve ser listado abaixo do anterior.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Solução</h2>
+                    </section>
+                </section>
+            </div>
+            <footer class="footer">
+                <ul class="list">
+                    <li class="list-linkedin">
+                        <i class="fa fa-linkedin-square"></i><a href="https://www.linkedin.com/in/marcoafilho">marcoafilho</a>
+                    </li>
+                    <li class="list-github">
+                        <i class="fa fa-github-square"></i><a href="https://www.github.com/marcoafilho">marcoafilho</a>
+                    </li>
+                    <li class="list-facebook">
+                        <i class="fa fa-facebook-square"></i><a href="https://www.facebook.com/marcoafilho">marcoafilho</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+
+        <script src="../vendor/assets/lib/js/head.min.js"></script>
+        <script src="../vendor/assets/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../vendor/assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../vendor/assets/js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+        <script src="../assets/js/theme/infojr.js"></script>
+    </body>
+</html>
