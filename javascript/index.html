@@ -1097,7 +1097,166 @@ marc.attack();
                         </div>
                     </section>
                     <section>
-                        <h2>Solução</h2>
+                        <h2>Exercício</h2>
+                        <div class="align-right">15 min</div>
+                        <h3>HUD de batalha</h3>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Liste o personagem e o inimigo.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Eventos</h1>
+                    </section>
+                    <section>
+                        <h2>Lidando com eventos</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+addEventListener('click', function() {
+    alert('You clicked!);
+});
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Eventos com elementos</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var button = document.querySelector('button');
+button.addEventListener('click', function () {
+    console.log('Character 1 attacks Character 2');
+});
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">20 min</div>
+                        <h3>Batalha</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Cliques no botão atacar.</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Usuário ataca e adversário ataca;</li>
+                                <li>Apresentar quem foi o usuário vencedor.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">20 min</div>
+                        <h3>Sondar</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Mouse sobre o nome do inimigo.</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Usuário ataca e adversário ataca;</li>
+                                <li>Nome do usuário vencedor deve ser marcado com uma cor diferente.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Objetos de eventos</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var link = document.querySelector('a');
+link.addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log('Character 1 attacks Character 2');
+});
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Propragacao</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+<div style="padding: 20px;">
+    <button>Click me!</button>
+<div>
+
+<script>
+    var div = document.querySelector('div'), button = document.querySelector('button');
+    button.addEventListener('click', function (event) {
+        alert('I was clicked!');
+    });
+    div.addEventListener('click', function (event) {
+        alert('I was clicked!!');
+    });
+</script>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Eventos de teclado</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var keyboardComponent = function (event) {
+    swtich(event.which) {
+    case 13: // Enter
+        select();
+        break;
+    case 38: // Up
+        selectUp();
+        break;
+    case 40: // Down
+        selectDown();
+        break;
+    }
+};
+
+window.addEventListener('keyup', keyboardComponent);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+window.addEventListener('load', function () {
+    alert('Page is loaded');
+});
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Cronômetro</h2>
+document.body.style.background = 'blue';
+setTimeout(function () {
+    document.body.style.background = 'yellow';
+}, 2000);
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">50 min</div>
+                        <h3>Personagem contra vários inimigos</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Usuário pode clicar em atacar ou apertar enter;</li>
+                                <li>Usuário pode clicar no inimigo ou selecionar com os direcionais;</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Todos os inimigos atacam o personagem;</li>
+                                <li>Inimigos vencidos devem desaparecer.</li>
+                            </ul>
+                        </div>
                     </section>
                 </section>
             </div>
