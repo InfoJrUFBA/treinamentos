@@ -1259,6 +1259,165 @@ setTimeout(function () {
                         </div>
                     </section>
                 </section>
+                <section>
+                    <section>
+                        <h1>Formulários</h1>
+                    </section>
+                    <section>
+                        <h2>Forms</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+<form action="new.html" method="GET">
+    <input type="text" name="name" value="" placeholder="">
+    <input type="submit" value="Criar">
+</form>
+&lt;script>
+var form = document.querySelector('#new_character');
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    console.log(this.firstElementChild.name);
+    console.log(this.firstElementChild.value);
+});
+&lt;/script>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">25 min</div>
+                        <h3>Criação de personagens</h3>
+                        <br>
+                        <div>
+                            <h4>Entrada</h4>
+                            <ul>
+                                <li>Formulário com atributos do jogador.</li>
+                            </ul>
+                            <br>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Seção com atributos do jogador e inimigo;</li>
+                                <li>Formulário deve ser removido após envio.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>HTTP</h1>
+                    </section>
+                    <section>
+                        <h2>Requisição x Resposta</h2>
+                        <h4>Requisição</h4>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+GET /index.html HTTP/1.1
+Host: save-the-princess.com
+User-Agent: Google Chrome
+                        </code></pre>
+                        <h4>Resposta</h4>
+HTTP/1.1 200 OK
+Content-Length: 3122
+Content-Type: text/html
+Last-Modified: Wed, 19 Dez 2014 10:48:09 GMT
+
+<!doctype html>
+... the rest of the document”
+                    </section>
+                    <section>
+                        <h2>GET x POST</h2>
+                        <h4>Requisição</h4>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+GET /index.html?name=Marco&amp;strength=3 HTTP/1.1
+Host: save-the-princess.com
+User-Agent: Google Chrome
+                        </code></pre>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+POST /index.html HTTP/1.1
+Host: save-the-princess.com
+User-Agent: Google Chrome
+
+name=Marc&amp;strength=3
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>XMLHttpRequest</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var request = new XMLHttpRequest();
+request.open('GET', 'new.html', false);
+request.send();
+console.log(request.status);
+console.log(request.statusText);
+console.log(request.responseText);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">25 min</div>
+                        <h3>Criação de personagens</h3>
+                        <br>
+                        <div>
+                            Formulário deve ser enviado ao servidor e retornar um template para ser preenchido com os valores preenchidos.
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Requisições assíncronas</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+var request = new XMLHttpRequest();
+request.open('GET', 'new.html', true);
+request.addEventListener('load', function () {
+    // Code here...
+});
+request.send();
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>JSON</h2>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+// enemies.json
+[{ "name": "Skeleton", "strength": 2 }, { "name": "Bat", "strength": 1 }, { "name": "Pikachu", "strength": 5 }]
+
+var request = new XMLHttpRequest();
+request.open('GET', 'enemies.json', true);
+request.addEventListener('load', function () {
+    console.log(JSON.parse(this.responseText));
+});
+request.send();
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Exercício</h2>
+                        <div class="align-right">25 min</div>
+                        <h3>Banco de dados de inimigos</h3>
+                        <br>
+                        <div>
+                            <h4>Saída</h4>
+                            <ul>
+                                <li>Inimigos são selecionados aleatoriamente para batalhar;</li>
+                                <li>Caso vença a batalha, um novo inimigo é selecionado para batalhar.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <pre><code contenteditable data-trim style="font-size: 18px; margin-top: 20px;">
+// enemies.json
+[{ "name": "Skeleton", "strength": 2 }, { "name": "Bat", "strength": 1 }, { "name": "Pikachu", "strength": 5 }]
+
+var request = new XMLHttpRequest();
+request.open('GET', 'enemyes.json', true);
+request.addEventListener('load', function () {
+    if (this.status < 400) {
+        console.log(JSON.parse(this.responseText));
+    } else {
+        console.log('Oops!');
+    }
+});
+request.send();
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <h1>Obrigado</h1>
+                </section>
             </div>
             <footer class="footer">
                 <ul class="list">
