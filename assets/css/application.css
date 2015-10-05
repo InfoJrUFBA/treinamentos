@@ -18,6 +18,11 @@
     font-size: 35px;
 }
 
+.icon-4x {
+    font-size: 2em;
+    margin-left: 10px;
+}
+
 .icon-link {
     margin-right: 10px;
 }
@@ -47,6 +52,11 @@
     color: #7cb124;
 }
 
+<<<<<<< HEAD
 .php-color {
     color: #222530;
+=======
+.tagging-color{
+    color: #004060;
+>>>>>>> first interaction
 }

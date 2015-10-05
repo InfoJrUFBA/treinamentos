@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+
+        <title>InfoJr UFBA - Semântica de Versionamento e tags no Git</title>
+
+        <meta name="description" content="Apresentação Semântica de Versionamento e tags no Git">
+        <meta name="author" content="Marino Hohenheim">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/devicons.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme">
+        <link rel="stylesheet" href="assets/css/tagging-in-git.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../vendor/assets/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '../vendor/assets/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <header class="header">
+            </header>
+
+            <div class="slides">
+                <section data-background="../assets/img/logo.svg" data-background-repeat="no-repeat" data-background-size="18%" data-background-position="1.2em 2.3em" class="introduction">
+                    <!-- <div class="logo"></div> -->
+                    <h2 class="align-right">Semântica de Versionamento e tags no Git</h2>
+                    <p class="align-right">
+                        <time>Outubro 2015</time>
+                    </p>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        <!-- .slide: data-background="#004060" -->
+
+                        - Item 1 <!-- .element: class="fragment" data-fragment-index="1" -->
+                        - Item 2 <!-- .element: class="fragment" data-fragment-index="2" -->
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                    <!-- .slide: data-background="assets/img/lego.jpg" -->
+                        Markdown content
+                    </script>
+                </section>
+
+                <section data-markdown="assets/md/test.md"
+                         data-separator="^\n\n\n"
+                         data-separator-vertical="^\n\n"
+                         data-separator-notes="^Note:"
+                         data-charset="iso-8859-15">
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Uso</h2>
+                    </section>
+                    <section data-background="assets/img/scrum.svg" data-background-size="65%">
+                    </section>
+                    <section data-background="assets/img/github.svg" data-background-size="75%">
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Onde eu estou?</h2>
+                    </section>
+                    <section>
+                        <ul class="unstyled">
+                            <li class="fragment fade-in">
+                                <span class="icon-box">
+                                  <i class="fa fa fa-beer fa-inverse"></i>
+                                </span>
+                                Confraternizações mensais
+                            </li>
+                            <li class="fragment fade-in">
+                                <span class="icon-box">
+                                    <i class="fa fa-group fa-inverse"></i>
+                                </span>
+                                Equipe qualificada
+                            </li>
+                            <li class="fragment fade-in">
+                                <div class="icon-box">
+                                    <i class="fa fa-plane fa-inverse"></i>
+                                </div>
+                                Conferências
+                            </li>
+                            <li class="fragment fade-in">
+                                <span class="icon-box">
+                                    <i class="fa fa-laptop fa-inverse"></i>
+                                </span>
+                                MacBook Pro e iPhone
+                            </li>
+                            <li class="fragment fade-in">
+                                <span class="icon-box">
+                                    <i class="fa fa-database fa-inverse"></i>
+                                </span>
+                                Tecnologias inovadoras
+                            </li>
+                            <li class="fragment fade-in">
+                                <span class="icon-box">
+                                    <i class="fa fa-home fa-inverse"></i>
+                                </span>
+                                Em casa
+                            </li>
+                            <!-- engloba uma tag superiro numa fade-in pra surgir antes -->
+                            <li class="fragment fade-in">
+                                <span class="icon-box">
+                                    <i class="fa fa-bicycle fa-inverse"></i>
+                                </span>
+                                <!-- faz uma tag filha desaparecer após ser chamada com o fade-out -->
+                                10 minutos de distância <span class="fragment fade-out">de bicicleta</span>
+                            </li>
+                            <li class="fragment fade-in">
+                                <span class="icon-box">
+                                    <i class="fa fa-gamepad fa-inverse"></i>
+                                </span>
+                                6 semanas de férias
+                            </li>
+                            <li class="fragment fade-in">
+                                <span class="icon-box">
+                                    <i class="fa fa-level-up fa-inverse"></i>
+                                </span>
+                                Promoção em menos de 6 meses
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>onde</h2>
+                    </section>
+                    <section>
+                        <h2>repo remoto</h2>
+                        <img src="assets/img/github.svg" alt="GitHub" class="no-border">
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Dúvidas?</h2>
+                    </section>
+                    <section>
+                        <h2>Obrigado!</h2>
+                    </section>
+                </section>
+
+            </div>
+            <!-- <footer class="footer">
+                <ul class="list">
+                    <li class="list-linkedin">
+                        <i class="fa fa-linkedin-square"></i><a href="https://www.linkedin.com/in/marcoafilho">marcoafilho</a>
+                    </li>
+                    <li class="list-github">
+                        <i class="fa fa-github-square"></i><a href="https://www.github.com/marcoafilho">marcoafilho</a>
+                    </li>
+                    <li class="list-facebook">
+                        <i class="fa fa-facebook-square"></i><a href="https://www.facebook.com/marcoafilho">marcoafilho</a>
+                    </li>
+                </ul>
+            </footer> -->
+            <footer class="footer"></footer>
+        </div>
+
+        <script src="../vendor/assets/lib/js/head.min.js"></script>
+        <script src="../vendor/assets/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../vendor/assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../vendor/assets/js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+        <script src="../assets/js/theme/infojr.js"></script>
+    </body>
+</html>
