@@ -291,3 +291,11 @@ body {
 .reveal .no-border {
   border: 0;
   box-shadow: 0 0 0; }
+
+.color-chiaroscuro-blue{
+  color: #236FAD;
+}
+
+.liista{
+  list-style: none;
+}

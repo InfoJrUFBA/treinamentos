@@ -14,6 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
+        <link rel="stylesheet" href="../assets/css/theme/infojr.css">
         <link rel="stylesheet" href="../vendor/assets/css/theme/blood.css" id="theme">
 
         <!-- For syntax highlighting -->
@@ -89,7 +90,7 @@
                     <img src="img/version-control-3.png" height="240" width="337" alt="controle de versão">
                 </section>
 
-                <section data-markdown>
+                <section data-markdown contenteditable>
                         ## Inicializando o git
 
                         Inicialize seu projeto
@@ -402,15 +403,41 @@ master (non-fast-forward)
                 </section>
 
                 <section>
-                    <h2>Resolvendo conflitos</h2>
-                    <p>Arquivo com conflito</p>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <h2>Resolvendo conflitos</h2>
+                        <p>Arquivo com conflito</p>
+                        <pre><code data-trim contenteditable>
 <<<<<<< HEAD
         <title>DungeonCrawlers Generations</title>
 =======
         <title>Dungeon  Crawlers</title>
 >>>>>>> 7a61a9b596cdd07120e36f4f916ee65036d5c179
-                    </code></pre>
+                        </code></pre>
+                    </section>
+                </section>
+                <section data-background="img/conflito-git.jpg">
+                    <section>
+                        <h3>Natureza do Conflito</h2>
+                        <ul class="color-chiaroscuro-blue">
+                            <li class="fragment liista" data-fragment-index="1">
+                                Desatenção ao <code>git fetch</code> <strong class="fragment" data-fragment-index="2">**evitável**</strong>
+                            </li>
+                            <li class="fragment liista" data-fragment-index="3">
+                                Mesmo arquivo modificado em paralelo <strong class="fragment" data-fragment-index="4">**Quase inevitável (necessário)**</strong>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Integrar uma ferramenta ao git</h3>
+                        <ul class="color-chiaroscuro-blue">
+                            <li class="fragment liista" data-fragment-index="1">Meld Merge <img src="img/meld.png" alt="meld-merge" width="50px" height="50px" border="none"></li>
+                            <li class="fragment liista" data-fragment-index="2">Faz essa mágina toda de forma lindamente linda!!</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <li class="fragment liista" data-fragment-index="3"><img src="img/meld-mary.png" width="700px" height="500px"></li>
+                    </section>
+
                 </section>
 
                 <section data-background="img/the-end.gif">
