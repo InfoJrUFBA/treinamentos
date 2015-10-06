@@ -17,8 +17,10 @@
         <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
         <link rel="stylesheet" href="../vendor/assets/css/devicons.min.css">
         <link rel="stylesheet" href="../vendor/assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme">
+        <!-- <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme"> -->
         <link rel="stylesheet" href="assets/css/tagging-in-git.css">
+
+        <link rel="stylesheet" href="../vendor/assets/css/theme/blood.css" id="theme">
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="../vendor/assets/lib/css/zenburn.css">
@@ -52,21 +54,82 @@
                     </p>
                 </section>
 
-                <section data-markdown>
-                    <script type="text/template">
-                        <!-- .slide: data-background="#004060" -->
+                <section>
+                    <section>
+                        <h2>O que é e porque usar</h2>
+                    </section>
 
-                        - Item 1 <!-- .element: class="fragment" data-fragment-index="1" -->
-                        - Item 2 <!-- .element: class="fragment" data-fragment-index="2" -->
-                    </script>
+                    <section>
+                        <ul class="unstyled">
+                            <li class="fragment fade-in linone">
+                                <span class="icon-box">
+                                    <i class="fa fa-group fa-inverse"></i>
+                                </span>
+                                Todo mundo já fez alguma vez isso ou algo próximo
+                                <ul>
+                                    <li class="fragment fade-in linone">Só que próximo não é suficiente</li>
+                                </ul>
+                                <span></span>
+                            </li>
+                            <li class="fragment fade-in linone">
+                                <span class="icon-box">
+                                    <i class="fa fa-laptop fa-inverse"></i>
+                                </span>
+                                PC
+                            </li>
+                            <li class="fragment fade-in linone">
+                                <span class="icon-box">
+                                    <i class="fa fa-database fa-inverse"></i>
+                                </span>
+                                armazenar
+                                <span class="icon-box">
+                                    <i class="fa fa-tag fa-inverse"></i>
+                                </span>
+                            </li>
+                            <li class="fragment fade-in linone">
+                                <span class="icon-box">
+                                    <i class="fa fa-home fa-inverse"></i>
+                                </span>
+                                Em casa
+                            </li>
+                            <!-- engloba uma tag superiro numa fade-in pra surgir antes -->
+                            <li class="fragment fade-in linone">
+                                <!-- faz uma tag filha desaparecer após ser chamada com o fade-out -->
+                                in <span class="fragment fade-out">out</span>
+                            </li>
+                            <li class="fragment fade-in linone">
+                                <span class="icon-box">
+                                    <i class="fa fa-level-up fa-inverse"></i>
+                                </span>
+                                Promoção em menos de 6 meses
+                            </li>
+                        </ul>
+                    </section>
                 </section>
 
                 <section data-markdown>
-                    <script type="text/template">
-                    <!-- .slide: data-background="assets/img/lego.jpg" -->
-                        Markdown content
+                    ###O que é e por que usar?
+
+                    como
+                    ```
+                    $ git tag -a v.x.y.z <commit>
+                    ```
+                    sem label
+
+                    ```
+                    $ git tag v.x.y.z <commit>
+                    ```
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template" class='slide'>
+                        - vX.Y.Z-label <!-- .element: class="fragment" data-fragment-index="1" -->
+                        - vMajor.Minor.Patch-label <!-- .element: class="fragment" data-fragment-index="2" -->
                     </script>
                 </section>
+
+                <!-- <section data-markdown data-background="assets/img/lego.jpg"> -->
+                <!-- </section> -->
 
                 <section data-markdown="assets/md/test.md"
                          data-separator="^\n\n\n"
