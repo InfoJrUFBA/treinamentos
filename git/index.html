@@ -435,7 +435,30 @@ master (non-fast-forward)
                         </ul>
                     </section>
                     <section>
-                        <li class="fragment liista" data-fragment-index="3"><img src="img/meld-mary.png" width="700px" height="500px"></li>
+                        <img src="img/meld-mary.png" width="700px" height="500px">
+                    </section>
+
+                    <section>
+                        <h4>Instalação</h4>
+                        <pre><code data-trim contenteditable>
+$ apt-get install meld
+                        </code></pre>
+                        <h4>Configuração</h4>
+                        <pre><code data-trim contenteditable>
+$ git config --global merge.tool meld
+$ git config --global diff.guitool meld
+                        </code></pre>
+                        <p class="fragment">Ferramenta para merge e diff</p>
+                    </section>
+                    <section>
+                        <h4>Execução para merge</h4>
+                        <pre><code>
+$ git mergetool
+                        </code></pre>
+                        <h4>Ou para Diff</h4>
+                        <pre><code>
+$ git difftool
+                        </code></pre>
                     </section>
 
                 </section>
