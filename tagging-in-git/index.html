@@ -25,6 +25,9 @@
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="../vendor/assets/lib/css/zenburn.css">
 
+        <!-- eca Jquery -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"/>
+
         <!-- If the query includes 'print-pdf', include the PDF print sheet -->
         <script>
             if( window.location.search.match( /print-pdf/gi ) ) {
@@ -149,69 +152,14 @@
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Onde eu estou?</h2>
-                    </section>
-                    <section>
-                        <ul class="unstyled">
-                            <li class="fragment fade-in">
-                                <span class="icon-box">
-                                  <i class="fa fa fa-beer fa-inverse"></i>
-                                </span>
-                                Confraternizações mensais
-                            </li>
-                            <li class="fragment fade-in">
-                                <span class="icon-box">
-                                    <i class="fa fa-group fa-inverse"></i>
-                                </span>
-                                Equipe qualificada
-                            </li>
-                            <li class="fragment fade-in">
-                                <div class="icon-box">
-                                    <i class="fa fa-plane fa-inverse"></i>
-                                </div>
-                                Conferências
-                            </li>
-                            <li class="fragment fade-in">
-                                <span class="icon-box">
-                                    <i class="fa fa-laptop fa-inverse"></i>
-                                </span>
-                                MacBook Pro e iPhone
-                            </li>
-                            <li class="fragment fade-in">
-                                <span class="icon-box">
-                                    <i class="fa fa-database fa-inverse"></i>
-                                </span>
-                                Tecnologias inovadoras
-                            </li>
-                            <li class="fragment fade-in">
-                                <span class="icon-box">
-                                    <i class="fa fa-home fa-inverse"></i>
-                                </span>
-                                Em casa
-                            </li>
-                            <!-- engloba uma tag superiro numa fade-in pra surgir antes -->
-                            <li class="fragment fade-in">
-                                <span class="icon-box">
-                                    <i class="fa fa-bicycle fa-inverse"></i>
-                                </span>
-                                <!-- faz uma tag filha desaparecer após ser chamada com o fade-out -->
-                                10 minutos de distância <span class="fragment fade-out">de bicicleta</span>
-                            </li>
-                            <li class="fragment fade-in">
-                                <span class="icon-box">
-                                    <i class="fa fa-gamepad fa-inverse"></i>
-                                </span>
-                                6 semanas de férias
-                            </li>
-                            <li class="fragment fade-in">
-                                <span class="icon-box">
-                                    <i class="fa fa-level-up fa-inverse"></i>
-                                </span>
-                                Promoção em menos de 6 meses
-                            </li>
-                        </ul>
-                    </section>
+                        <h3>Title</h3>
+                        <p data-fragment-index="0" class="fragment">element1</p>
+                        <p data-fragment-index="1" class="fragment">element2</p>
+                        <p data-fragment-index="2" class="fragment">
+                            <span data-fragment-index="3" class="fragment fade-out" id='prog'>element3</span>
+                        </p>
+                        <p data-fragment-index="4" class="fragment">element4</p>
+                        <p data-fragment-index="5" class="fragment">element5</p>
                 </section>
 
                 <section>
@@ -269,6 +217,9 @@
                 // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
                 // parallaxBackgroundSize: '2100px 900px',
 
+                // parallaxBackgroundImage: "imgs/parallax.png",
+                // parallaxBackgroundSize: '2100px 900px',
+
                 // Optional libraries used to extend on reveal.js
                 dependencies: [
                     { src: '../vendor/assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -278,6 +229,41 @@
                     { src: '../vendor/assets/js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
                     { src: '../vendor/assets/js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
                 ]
+            });
+
+/*
+            Reveal.configure({
+                keyboard: {
+                    39: 'next',
+                    37: 'prev'
+                }
+            });
+*/
+            $(function() {
+                disCount =  0;
+                ids      = [];
+                displays = [];
+                function makeDisappearAfterFragment(id) {
+                    if(!$("#" + id)) return;
+
+                    ids[disCount] = id;
+                    displays[disCount] = $("#" + id).css("display");
+                    disCount++;
+                    Reveal.addEventListener( 'fragmentshown', function( event ) {
+                        if ($(event.fragment).attr("id") === id) {
+                            $(event.fragment).css("display", "none");
+                        }
+                    } );
+
+                    Reveal.addEventListener( 'fragmenthidden', function( event ) {
+                        if ($(event.fragment).attr("id") === id) {
+                            $(event.fragment).css("display", displays[ids.indexOf(id)]);
+                        }
+                    } );
+                }
+
+                makeDisappearAfterFragment("prog");
+                // makeDisappearAfterFragment("liImg1");
             });
         </script>
         <script src="../assets/js/theme/infojr.js"></script>
