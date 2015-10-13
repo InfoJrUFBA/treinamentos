@@ -84,42 +84,194 @@
                             </li>
                             <li data-fragment-index="3" class="fragment linone">
                                 <span class="icon-box">
-                                    <i class="fa fa-laptop fa-inverse"></i>
+                                    <i class="fa fa-warning fa-inverse"></i>
                                 </span>
-                                PC
+                                Sem uso de especificação formal alguma, os números serão inúteis
                             </li>
                             <li data-fragment-index="4" class="fragment linone">
                                 <span class="icon-box">
-                                    <i class="fa fa-database fa-inverse"></i>
+                                    <i class="fa fa-tag"></i>
                                 </span>
-                                armazenar
-                                <span class="icon-box">
-                                    <i class="fa fa-tag fa-inverse"></i>
-                                </span>
+                                Se uma aplicação X usa uma lib na versão 2.1.0 ...
                             </li>
                             <li data-fragment-index="5" class="fragment linone">
                                 <span class="icon-box">
-                                    <i class="fa fa-home fa-inverse"></i>
+                                    <i class="fa fa-cog fa-spin"></i>
                                 </span>
-                                Em casa
-                            </li>
-                            <!-- engloba uma tag superiro numa fade-in pra surgir antes -->
-                            <li data-fragment-index="6" class="fragment linone">
-                                <!-- faz uma tag filha desaparecer após ser chamada com o fade-out -->
-                                in <span class="fragment fade-out">out</span>
+                                Saberemos que ela funcionará com essa lib numa versão >= 2.1.0 porém < 3.0.0
                             </li>
                             <li data-fragment-index="7" class="fragment linone">
                                 <span class="icon-box">
                                     <i class="fa fa-level-up fa-inverse"></i>
                                 </span>
-                                Promoção em menos de 6 meses
+                                Um projeto nem sempre chegará a sua versão 1.0.0
                             </li>
                         </ul>
                     </section>
                 </section>
 
-                <section data-markdown>
-                    ###O que é e por que usar?
+                <section>
+                    <section>
+                        <h3>Definição formal</h3>
+                        <ul class="unstyled">
+                                <li data-fragment-index="0" class="fragment linone fade-out" id="fade-over">
+                                    <span class="icon-box">
+                                        <i class="fa fa-tag fa-inverse"></i>
+                                    </span>
+                                    <span>
+                                        vX.Y.Z-label
+                                    </span>
+                                </li>
+                                <li data-fragment-index="1" class="fragment linone">
+                                    <span class="icon-box">
+                                        <i class="fa fa-tags fa-inverse"></i>
+                                    </span>
+                                    <span>
+                                        vMajor.Minor.Patch-label
+                                    </span>
+                                </li>
+                                <ul>
+                                    <li data-fragment-index="2" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>Patch:</strong> Otimização e correções;
+                                        </span>
+                                    </li>
+                                    <li data-fragment-index="3" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>Minor:</strong> Novas features, compatibilidade da API anterior;
+                                        </span>
+                                    </li>
+                                    <li data-fragment-index="4" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>Major:</strong> Novo release, imcompatibilidade da API anterior;
+                                        </span>
+                                    </li>
+                                    <li data-fragment-index="5" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            Major == 0 significa não oficial <span data-fragment-index="6" class="fragment" >(não necessáriamente)</span>
+                                            <!-- citar contra-exemplos -->
+                                        </span>
+                                    </li>
+                                </ul>
+                                <li data-fragment-index="7" class="fragment linone">
+                                    <span class="icon-box">
+                                        <i class="fa fa-tags fa-inverse"></i>
+                                    </span>
+                                    <span>
+                                        <strong>label:</strong>
+                                    </span>
+                                </li>
+                                <ul>
+                                    <li data-fragment-index="8" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>pre-release:</strong>
+                                        </span>
+                                    </li>
+                                    <li data-fragment-index="9" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>build:</strong>
+                                        </span>
+                                    </li>
+                                    <li data-fragment-index="10" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>Ambos</strong>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </ul>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template" class='slide'>
+                    ###Indo mais a fundo
+```
+    <valid semver> ::= <version core>
+            | <version core> "-" <pre-release>
+            | <version core> "+" <build>
+            | <version core> "-" <pre-release> "+" <build>
+
+    <version core> ::= <major> "." <minor> "." <patch>
+
+    <major> ::= <numeric identifier>
+
+    <minor> ::= <numeric identifier>
+
+    <patch> ::= <numeric identifier>
+
+    <pre-release> ::= <dot-separated pre-release identifiers>
+
+    <dot-separated pre-release identifiers> ::= <pre-release identifier>
+                                              | <pre-release identifier> "." <dot-separated pre-release identifiers>
+
+    <build> ::= <dot-separated build identifiers>
+
+    <dot-separated build identifiers> ::= <build identifier>
+                                        | <build identifier> "." <dot-separated build identifiers>
+
+    <pre-release identifier> ::= <alphanumeric identifier>
+                               | <numeric identifier>
+
+    <build identifier> ::= <alphanumeric identifier>
+                         | <digits>
+
+    <alphanumeric identifier> ::= <non-digit>
+                                | <non-digit> <identifier characters>
+                                | <identifier characters> <non-digit>
+                                | <identifier characters> <non-digit> <identifier characters>
+
+    <numeric identifier> ::= "0"
+                           | <positive digit>
+                           | <positive digit> <digits>
+
+    <identifier characters> ::= <identifier character>
+                              | <identifier character> <identifier characters>
+
+    <identifier character> ::= <digit>
+                             | <non-digit>
+
+    <non-digit> ::= <letter>
+                  | "-"
+
+    <digits> ::= <digit>
+               | <digit> <digits>
+
+    <digit> ::= "0"
+              | <positive digit>
+
+    <positive digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+    <letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+               | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+               | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+               | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+               | "y" | "z"
+
+```
+    </script>
+                </section>
+                    <section data-markdown>
+                    ###Definição formal
 
                     como
                     ```
@@ -130,17 +282,21 @@
                     ```
                     $ git tag v.x.y.z <commit>
                     ```
+                    </section>
                 </section>
+
 
                 <section data-markdown>
                     <script type="text/template" class='slide'>
+                        ###Definição formal
+
                         - vX.Y.Z-label <!-- .element: class="fragment" data-fragment-index="1" -->
                         - vMajor.Minor.Patch-label <!-- .element: class="fragment" data-fragment-index="2" -->
                     </script>
                 </section>
 
                 <!-- <section data-markdown data-background="assets/img/lego.jpg"> -->
-                <!-- </section> -->
+                </section>
 
                 <section data-markdown="assets/md/test.md"
                          data-separator="^\n\n\n"
@@ -181,14 +337,14 @@
             </div>
             <!-- <footer class="footer">
                 <ul class="list">
-                    <li class="list-linkedin">
-                        <i class="fa fa-linkedin-square"></i><a href="https://www.linkedin.com/in/marcoafilho">marcoafilho</a>
+                    <li class="linone">
+                        <i class="fa fa-linkedin-square"></i><a href="https://br.linkedin.com/in/marinosouza">Marino Souza</a>
                     </li>
-                    <li class="list-github">
-                        <i class="fa fa-github-square"></i><a href="https://www.github.com/marcoafilho">marcoafilho</a>
+                    <li class="linone">
+                        <i class="fa fa-github-square"></i><a href="https://www.github.com/marinofull">Marinofull</a>
                     </li>
-                    <li class="list-facebook">
-                        <i class="fa fa-facebook-square"></i><a href="https://www.facebook.com/marcoafilho">marcoafilho</a>
+                    <li class="linone">
+                        <i class="fa fa-square"></i><a href="http://about.me/hohenheimmarino">hohenheimmarino</a>
                     </li>
                 </ul>
             </footer> -->
