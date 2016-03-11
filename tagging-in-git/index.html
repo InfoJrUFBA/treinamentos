@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="../vendor/assets/lib/css/zenburn.css">
 
         <!-- eca Jquery -->
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"/>
+        <script src="../vendor/assets/js/jquery.min.js"/>
 
         <!-- If the query includes 'print-pdf', include the PDF print sheet -->
         <script>
@@ -52,9 +52,6 @@
                 <section data-background="../assets/img/logo.svg" data-background-repeat="no-repeat" data-background-size="18%" data-background-position="1.2em 2.3em" class="introduction">
                     <!-- <div class="logo"></div> -->
                     <h2 class="align-right">Semântica de Versionamento e tags no Git</h2>
-                    <p class="align-right">
-                        <time>Outubro 2015</time>
-                    </p>
                 </section>
 
                 <section>
@@ -170,7 +167,7 @@
                                         <i class="fa fa-tags fa-inverse"></i>
                                     </span>
                                     <span>
-                                        <strong>label:</strong>
+                                        <strong>label</strong>
                                     </span>
                                 </li>
                                 <ul>
@@ -179,7 +176,7 @@
                                             <i class="fa fa-tag fa-inverse"></i>
                                         </span>
                                         <span>
-                                            <strong>pre-release:</strong>
+                                            <strong>pre-release</strong>
                                         </span>
                                     </li>
                                     <li data-fragment-index="9" class="fragment linone">
@@ -187,7 +184,7 @@
                                             <i class="fa fa-tag fa-inverse"></i>
                                         </span>
                                         <span>
-                                            <strong>build:</strong>
+                                            <strong>build</strong>
                                         </span>
                                     </li>
                                     <li data-fragment-index="10" class="fragment linone">
@@ -200,10 +197,14 @@
                                     </li>
                                 </ul>
                             </ul>
+                            <aside class="notes">
+                                Dependendo do autor, Major = 0 indica versão não oficial, enquanto outros estão abaixo da 1 e ainda assim já são oficiais e possuem LTS e talz.
+                            </aside>
                     </section>
                     <section data-markdown>
                         <script type="text/template" class='slide'>
-                    ###Indo mais a fundo
+                    ####Aumentando o nível de formalidade
+                    #### BNF
 ```
     <valid semver> ::= <version core>
             | <version core> "-" <pre-release>
@@ -261,6 +262,77 @@
     <positive digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
     <letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+               | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+               | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+               | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+               | "y" | "z"
+
+```
+    </script>
+                </section>
+
+                    <section data-markdown>
+                        <script type="text/template" class='slide'>
+                    ####Aumentando o nível de formalidade
+                    #### E-BNF
+```
+    valid-semver = version-core
+            | version-core "-" pre-release
+            | version-core "+" build
+            | version-core "-" pre-release "+" build
+
+    version-core = major "." minor "." patch
+
+    major = numeric-identifier
+
+    minor = numeric-identifier
+
+    patch = numeric-identifier
+
+    pre-release = dot-separated_pre-release_identifiers
+
+    dot-separated pre-release identifiers = pre-release identifier
+                                              | pre-release identifier "." dot-separated pre-release identifiers
+
+    build = dot-separated build identifiers
+
+    dot-separated build identifiers = build identifier
+                                        | build identifier "." dot-separated build identifiers
+
+    pre-release identifier = alphanumeric identifier
+                               | numeric identifier
+
+     build identifier = alphanumeric identifier
+                         | digits
+
+    alphanumeric identifier = non-digit
+                                | non-digit identifier characters
+                                | identifier characters non-digit
+                                | identifier characters non-digit identifier characters
+
+    numeric identifier = "0"
+                           | positive-digit
+                           | positive-digit digits
+
+    identifier characters = identifier character
+                              | identifier character identifier characters
+
+    identifier character = digit
+                             | non-digit
+
+    non-digit = letter
+                  | "-"
+
+    digits = digit
+               | digit digits
+
+    digit = "0"
+              | positive digit
+
+    positive digit = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+    letter = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
                | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
                | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
                | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
@@ -381,33 +453,33 @@
                 ]
             });
 
-            $(function() {
-                disCount =  0;
-                ids      = [];
-                displays = [];
-                function makeDisappearAfterFragment(id) {
-                    if(!$("#" + id)) return;
+    $(function() {
+        disCount =  0;
+        ids      = [];
+        displays = [];
+        function makeDisappearAfterFragment(id) {
+            if(!$("#" + id)) return;
 
-                    ids[disCount] = id;
-                    displays[disCount] = $("#" + id).css("display");
-                    disCount++;
-                    Reveal.addEventListener( 'fragmentshown', function( event ) {
-                        if ($(event.fragment).attr("id") === id) {
-                            $(event.fragment).css("display", "none");
-                        }
-                    } );
-
-                    Reveal.addEventListener( 'fragmenthidden', function( event ) {
-                        if ($(event.fragment).attr("id") === id) {
-                            $(event.fragment).css("display", displays[ids.indexOf(id)]);
-                        }
-                    } );
+            ids[disCount] = id;
+            displays[disCount] = $("#" + id).css("display");
+            disCount++;
+            Reveal.addEventListener( 'fragmentshown', function( event ) {
+                if ($(event.fragment).attr("id") === id) {
+                    $(event.fragment).css("display", "none");
                 }
+            } );
 
-                makeDisappearAfterFragment("fade-over");
-                // makeDisappearAfterFragment("liImg1");
-            });
-        </script>
+            Reveal.addEventListener( 'fragmenthidden', function( event ) {
+                if ($(event.fragment).attr("id") === id) {
+                    $(event.fragment).css("display", displays[ids.indexOf(id)]);
+                }
+            } );
+        }
+
+        makeDisappearAfterFragment("fade-over");
+        // makeDisappearAfterFragment("liImg1");
+    });
+</script>
         <script src="../assets/js/theme/infojr.js"></script>
     </body>
 </html>
