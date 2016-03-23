@@ -44,6 +44,9 @@
                 <section>
                     <h1></h1>
                     <h2>Controle de versão com Git&Github</h2>
+                    <aside class="notes">
+                    interagir com a turma. Quem é até 3º semestre, ja fez trabalho em equipe versionando com e-mail
+                    </aside>
                 </section>
 
 
@@ -57,10 +60,9 @@
 
                 <section data-background="img/explosion.gif">
                     <h2 class="fragment">problemas de colaboração</h2>
-                </section>
-
-                <section>
-                    <h2>Bom, outras pessoas já passaram por isso...</h2>
+                    <aside class="notes">
+                        Bom, outras pessoas já passaram por isso.
+                    </aside>
                 </section>
 
                 <section data-background="#007777">
@@ -69,6 +71,9 @@
                         <h2>Linus Torvalds</h2>
                         <p>Um dos criadores do linux</p>
                     </div>
+                    <aside class="notes">
+                        existem algumas histórias de como ele iniciou a criação. Wikipedia contém os primeiros e-mails antes da ideia surgir
+                    </aside>
                 </section>
 
                 <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
@@ -78,8 +83,13 @@
                 </section>
 
                 <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+                    <h2>Controle de versão centralizado</h2><!--Controle de versão -->
+                    <img src="img/version-control-2.png" height="500" width="800" alt="controle de versão">
+                </section>
+
+                <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
                     <h2>Controle de versão distribuído</h2><!--Controle de versão -->
-                    <img src="img/version-control-3.png" height="240" width="337" alt="controle de versão">
+                    <img src="img/version-control-3.png" height="500" width="800" alt="controle de versão">
                 </section>
 
                 <section data-markdown contenteditable>
@@ -98,14 +108,16 @@
                         ```
                 </section>
 
-                <section>
-                    <h2>Exercício</h2>
-                    <h3 style="color: #27ae60">Objetivo</h3>
-                    <p>Configurar e inicializar um repositório e adicionar alguns arquivos</p>
-                    <h3 style="color: #c0392b">Método</h3>
-                    <p>Iniciar um repositório</p>
-                    <p>Configurar seu usuário</p>
-                    <p>Escrever um arquivo adventure.md</p>
+                <section data-background="img/marvel-avengers-civil-war.png">
+                    <div class="fragment"><!-- seria bom meter um fade no background pra o texto ficar mais legivel-->
+                        <h2 style="color: #100daa">Exercício</h2>
+                        <br>
+                        <p>Configurar e inicializar um repositório e adicionar alguns arquivos</p>
+                        <h3 style="color: #c0392b">Método</h3>
+                        <p>Iniciar um repositório</p>
+                        <p>Configurar seu usuário</p>
+                        <p>Escrever um arquivo nomeDoPlayer.md</p>
+                    </div>
                 </section>
 
                 <section data-background="img/flow.gif">
@@ -135,14 +147,14 @@ $git status
 # Initial commit
 # Untracked files:(use "git add <!--file-->..." to include in what will be committed)
 #
-# adventure.md
+# nomeDoPlayer.md
                     </code></pre>
                 </section>
                 <section>
                     <h2>Adicionando ao palco</h2>
                     <p>Devemos começar a rastrear as mudanças</p>
                     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-$git add adventure.md
+$git add nomeDoplayer.md
 $git status
 # On branch master
 #
@@ -150,7 +162,7 @@ $git status
 # Changes to be commited:
 #    (use "git rm --cached <"file">..." to unstage)
 #
-#   new file: adventure.md
+#   new file: nomeDoplayer.md
                     </code></pre>
                 </section>
                 <section>
@@ -207,7 +219,7 @@ index   9d1d09d..61f26f8    100644
 +
 +Andando pela rua, você vê ao longe um gnomo carregando uma sacola cheia de ouro
 +a) Você segue o gnomo [(vá para 2)](2.md)
-$   git add adventure.md
+$   git add nomeDoplayer.md
 $   git diff
                     </code></pre>
                 </section>
@@ -221,11 +233,11 @@ $   git status
 #   Changes to  be  committed:
 #           (use    "git    reset   HEAD    <file>..."  to  unstage)
 #
-# modified:         adventure.md
+# modified:         nomeDoplayer.md
 #
-$   git reset   HEAD    adventure.md
+$   git reset   HEAD    nomeDoplayer.md
 Unstaged    changes after   reset:
-M adventure.md
+M nomeDoplayer.md
                     </code></pre>
                 </section>
 
@@ -240,10 +252,10 @@ $   git status
 #           (use    "git    checkout    --  <file>..."  to  discard changes in  working
 directory)
 #
-# modified:         adventure.md
+# modified:         nomeDoplayer.md
 #
 no  changes added   to  commit  (use    "git    add"    and/or  "git    commit  -a")
-$   git checkout    --  adventure.md
+$   git checkout    --  nomeDoplayer.md
 $   git status
                     </code></pre>
                 </section>
@@ -258,7 +270,7 @@ $   git status
 #   Changes to  be  committed:
 #           (use    "git    reset   HEAD    <file>..."  to  unstage)
 #
-# modified:         adventure.md
+# modified:         nomeDoplayer.md
 # new   file:           2.md
 #
                     </code></pre>
