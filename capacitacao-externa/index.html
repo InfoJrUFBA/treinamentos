@@ -15,6 +15,7 @@
 
         <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
         <link rel="stylesheet" href="../assets/css/theme/infojr.css">
+        <link rel="stylesheet" href="../capacitacao-externa/assets/css/capacitacao.css">
         <link rel="stylesheet" href="../vendor/assets/css/theme/blood.css" id="theme">
 
         <!-- For syntax highlighting -->
@@ -46,6 +47,7 @@
                     <h2>Controle de versão com Git&Github</h2>
                     <aside class="notes">
                     interagir com a turma. Quem é até 3º semestre, ja fez trabalho em equipe versionando com e-mail
+                    Pedir para criarem(lembrarem) suas contas no GitHub
                     </aside>
                 </section>
 
@@ -93,18 +95,12 @@
                 </section>
 
                 <section data-markdown contenteditable>
-                        ## Inicializando o git
+                        ## Via Terminal
 
                         Inicialize seu projeto
                         ```
-                        $ mkdir choose-your-adventure
-                        $ cd choose-your-adventure
-                        $ git init
-                        ```
-                        Configure o seu usuário do git
-                        ```
-                        $ git config user.name "John Doe"
-                        $ git config user.email johnd@infojr.com.br
+                        $ mkdir myAdventure
+                        $ cd myAdventure
                         ```
                 </section>
 
@@ -120,21 +116,61 @@
                     </div>
                 </section>
 
+                <section data-markdown contenteditable>
+                        ## Inicializando o git
+
+                        Inicialize seu projeto
+                        ```
+                        $ git init
+                        ```
+                        Configure o seu usuário do git
+                        ```lisp
+                        $ git config user.name "John Doe"
+                        $ git config user.email johnd@infojr.com.br
+                        ```
+                        Conferindo
+                        ```lisp
+                        $ git config -l
+                        ```
+                        <aside class="notes">
+                            nesta etapa criamos os arquivos nomeDoPlayer.md e vemos o preview no sublime-text
+                        </aside>
+                </section>
+
                 <section data-background="img/flow.gif">
                     <h2>Fluxo Git</h2>
                 </section>
 
                 <section>
                     <img src="img/work-flow.png" height="605" width="738" alt="fluxo de trabalho no git">
+                    <aside class="notes">
+                        checkout e merge digamos que navega e altera a linha do tempo do git. Veremos em mais detalhes mais adiante
+                    </aside>
                 </section>
 
-                <section data-background="img/fotografia.jpg">
-                    <h2>A analogia da fotografia</h2>
-                    <code>
-                        <h4 class="fragment">Arquivo = Modelo</h4>
-                        <h4 class="fragment">Git add = posicionar o modelo (arquivo) no palco (staging area)</h4>
-                        <h4 class="fragment">Git commit = Tirar foto</h4>
-                    </code>
+                <section>
+                    <section>
+                        <!-- <h2>analogia</h2> -->
+                        <div class="analogy">
+                            <img class="analogy-fig1" src="img/coulson.jpg" alt="fluxo de trabalho no git">
+                        </div>
+                        <div class="analogy">
+                            <p class="fragment">Arquivo = Agente</p>
+                            <br>
+                            <p class="fragment"><code>git add </code> = Posiciona o Agente para uma foto</p>
+                        </div>
+                    </section>
+                    <section>
+                        <!-- <h2>analogia</h2> -->
+                        <div class="analogy">
+                            <img class="analogy-fig2" src="img/coulson-id.jpg" alt="fluxo de trabalho no git">
+                        </div>
+                        <div class="analogy">
+                            <p class="">Arquivo = Agente</p>
+                            <p class="fragment"><code>git commit</code> = Tira a foto para o crachá</p>
+                            <p class="fragment"><code>git push </code> = Envia o cadastro (commit) para a unidade do porta aviões da SHIELD (repositório remoto)</p>
+                        </div>
+                    </section>
                 </section>
 
                 <section data-background="#007777">
@@ -151,7 +187,7 @@ $git status
                     </code></pre>
                 </section>
                 <section>
-                    <h2>Adicionando ao palco</h2>
+                    <h2>Posicionando o Agente</h2>
                     <p>Devemos começar a rastrear as mudanças</p>
                     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 $git add nomeDoplayer.md
@@ -166,7 +202,7 @@ $git status
                     </code></pre>
                 </section>
                 <section>
-                    <h2>Armazenando uma foto</h2>
+                    <h2>Criando o crachá</h2>
                     <p>Guardando uma foto no repositório local</p>
                     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 $git commit -m "Initial commit"
@@ -174,6 +210,8 @@ $git status
 # On branch master
 nothing to commit (working directory clean)
                     </code></pre>
+                    <aside class="notes">
+                    </aside>
                 </section>
 
                 <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
