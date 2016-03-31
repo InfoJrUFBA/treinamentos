@@ -114,27 +114,32 @@
                         <p>Configurar seu usuário</p>
                         <p>Escrever um arquivo nomeDoPlayer.md</p>
                     </div>
-                        <aside class="notes">
-                            no slide seguinte criamos os arquivos nomeDoPlayer.md e vemos o preview no sublime-text. essa nota não é colocavel em sections pra markdown n vu, essa nota era pra ser do proximo
-                        </aside>
                 </section>
 
-                <section data-markdown contenteditable>
-                        ## Inicializando o git
+                <section>
+                    <section data-markdown contenteditable>
+                         ## Inicializando o git
 
-                        Inicialize seu projeto
-                        ```
-                        $ git init
-                        ```
-                        Configure o seu usuário do git
-                        ```lisp
-                        $ git config user.name "John Doe"
-                        $ git config user.email johnd@infojr.com.br
-                        ```
-                        Conferindo
-                        ```lisp
-                        $ git config -l
-                        ```
+                         Inicialize seu projeto
+                         ```
+                         $ git init
+                         ```
+                         Configure o seu usuário do git
+                         ```lisp
+                         $ git config user.name "John Doe"
+                         $ git config user.email johnd@infojr.com.br
+                         ```
+                         Conferindo
+                         ```lisp
+                         $ git config -l
+                         ```
+                    </section>
+                    <section data-background="img/agent-shield.png">
+                        <h2></h2>
+                        <aside class="notes">
+                            Aqui criamos o arquivo nomeDoPlayer.md e vemos o preview no sublime-text.
+                        </aside>
+                    </section>
                 </section>
 
                 <section data-background="img/flow.gif">
@@ -338,6 +343,31 @@ $   git add partnerShield.md
 $   git commit  --amend -m  "appending partner"
                     </code></pre>
                 </section>
+                </section>
+
+                <section>
+                <section data-background="img/dogs-sharing.gif">
+                    <h2 class="fragment">Compartilhando repositórios</h2>
+                </section>
+
+                <section>
+                    <img src="img/github-logo.jpg" alt="github">
+                    <h2>Github</h2>
+                    <aside class="notes">
+                        o que é o GitHub, incentivar a usar como portifólio
+                    </aside>
+                </section>
+                </section>
+
+                <section>
+                <section>
+                    <h2>Adicionando servidor remoto</h2>
+                    <p>Precisamos definir quem vai ser o nosso servidor central</p>
+                    <pre><code data-trim contenteditable>
+$   git remote  add origin  https://github.com/<"user">/<"project">.git
+$   git push    -u  origin  master
+                    </code></pre>
+                </section>
 
                 <section>
                     <p>Para que seja possível pegar as modificações do repositório remoto</p>
@@ -348,43 +378,6 @@ $   git pull
                     <pre><code data-trim contenteditable>
 $   git clone   https://github.com/usuario/projeto.git [folder]
                     </code></pre>
-                </section>
-                </section>
-
-                <section data-background="img/dogs-sharing.gif">
-                    <h2 class="fragment">Compartilhando repositórios</h2>
-                </section>
-
-                <section>
-                    <img src="img/github-logo.jpg" alt="github">
-                    <h2>Github</h2>
-                </section>
-
-                <section>
-                    <h2>Adicionando servidor remoto</h2>
-                    <p>Precisamos definir quem vai ser o nosso servidor central</p>
-                    <pre><code data-trim contenteditable>
-$   git remote  add origin  https://github.com/<"user">/<"project">.git
-$   git push    -u  origin  master
-                    </code></pre>
-                </section>
-
-                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-                    <h2>Exercício</h2>
-                    <h3 style="color: #27ae60">Objetivo</h3>
-                    <p>Crie um repositório remoto e colabore com o do colega</p>
-                    <h3 style="color: #c0392b">Método</h3>
-                    <p>Crie o seu repositório no github e envie o seu código (dica: git remote e git push); </p>
-                    <p>Adicione o colega do seu lado como colaborador como colaborador; </p>
-                    <p>Crie uma cópia do repositório do seu colega (dica: git clone); </p>
-                    <p>Sem contar o que está fazendo, faça as alterações que desejar no projeto dele; </p>
-                    <p>Envie as suas alterações para o github (dica: git push); </p>
-                    <p>Volte para o diretório do seu projeto e pegue as alterações feitas pelo seu colega (dica: git pull); </p>
-                    <p>Identifique as alterações feitas sem perguntar para o colega que as modificou.</p>
-                    <aside class="notes">
-                        Add o cara do lado como contribuidor; cada um cria uma branch fazendo a mesma coisa
-                        instruçoes para criar branch no proximos
-                    </aside>
                 </section>
 
                 <section data-background="img/women-colaboration.gif">
@@ -420,10 +413,32 @@ $ git branch
                 </section>
 
                 <section>
+                    <p>Enviar branch</p>
+                    <pre><code data-trim contenteditable>
+git push origin nomeDaBranch
+                    </code></pre>
                     <p>Baixar branch</p>
                     <pre><code data-trim contenteditable>
-git checkout -t origin/<"branch">
+git checkout -t origin/nomeDaBranch
                     </code></pre>
+                </section>
+                </section>
+
+                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+                    <h2>Exercício</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Crie um repositório remoto e colabore com o do colega</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Crie o seu repositório no github e envie o seu código (dica: git remote e git push); </p>
+                    <p>Adicione o colega do seu lado como colaborador; </p>
+                    <p>Crie uma cópia do repositório do seu colega (dica: git clone); </p>
+                    <p>Crie uma branch (dica: git branch, git checkout);</p>
+                    <p>Envie as suas alterações para o github (dica: git push); </p>
+                    <p>Pegue as alterações feitas pelo seu colega (dica: git pull); </p>
+                    <aside class="notes">
+                        Add o cara do lado como contribuidor; cada um cria uma branch fazendo a mesma coisa
+                        instruçoes para criar branch no proximos
+                    </aside>
                 </section>
 
                 <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
@@ -484,11 +499,11 @@ master (non-fast-forward)
         <title>DungeonCrawlers Generations</title>
 =======
         <title>Dungeon  Crawlers</title>
->>>>>>> 7a61a9b596cdd07120e36f4f916ee65036d5c179
+>>>>>>> c0ffeebabacac001deadbeebada55bada1aca0ff
                         </code></pre>
                     </section>
                 </section>
-                <section data-background="img/conflito-git.jpg">
+                <section data-background="img/conflito.jpg">
                     <section>
                         <h3>Natureza do Conflito</h2>
                         <ul class="color-chiaroscuro-blue">
