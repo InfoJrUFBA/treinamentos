@@ -220,15 +220,16 @@ nothing to commit (working directory clean)
                 <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
                     <h2>Exercício</h2>
                     <h3 style="color: #27ae60">Objetivo</h3>
-                    <p>Armazenar os arquivos no repositório local através dos commits</p>
+                    <p>Alterar o arquivo commitado</p>
+                    <p>Adicionar um arquivo <code>README.md</code></p>
                     <h3 style="color: #c0392b">Método</h3>
-                    <p>Adicionar arquivos para a staging area (dica: git add);</p>
-                    <p>Salvar alterações no repositório local (dica: git commit);</p>
-                    <p>Criar uma cena e mais 3 cenas que possam ser desencadeadas pela primeira (dungeons);</p>
+                    <p>Adicionar arquivos para a staging area (dica: <code>git add</code>);</p>
+                    <p>Salvar alterações no repositório local (dica: <code>git commit</code>);</p>
                     <p>Realizar mesmo processo para salvar alterações no repositório local;</p>
-                    <p>Bônus: Adicionar css à página.</p>
+                    <!-- <p>Bônus: Adicionar css à página.</p> -->
                 </section>
 
+                <section>
                 <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
                     <h2>Histórico</h2>
                     <p>É possível ver quais alterações feitas</p>
@@ -258,8 +259,9 @@ index   9d1d09d..61f26f8    100644
     Minha aventura
     ===================
 +
-+Andando pela rua, você vê ao longe um gnomo carregando uma sacola cheia de ouro
-+a) Você segue o gnomo [(vá para 2)](2.md)
++John Doe
++ * __age:__ 22
++ * __role:__ Agent Shield
 $   git add nomeDoplayer.md
 $   git diff
                     </code></pre>
@@ -280,6 +282,10 @@ $   git reset   HEAD    nomeDoplayer.md
 Unstaged    changes after   reset:
 M nomeDoplayer.md
                     </code></pre>
+                    <aside class="notes">
+                        apartir daqui começa a vir mt comando, pedir pro pessoal anotar por topicos o que aprendeu
+                    </aside>
+
                 </section>
 
                 <section>
@@ -303,7 +309,7 @@ $   git status
 
                 <section>
                     <h2>REFAZENDO COMMITS</h2>
-                    <p>E se eu esqueci de adicionar alguma coisa?</p>
+                    <p>E se não era a hora daquele commit??</p>
                     <pre><code data-trim contenteditable>
 $   git reset   --soft  HEAD^
 $   git status
@@ -321,17 +327,21 @@ $   git status
                     <h2>Adicionando a um commit</h2>
                     <p>E se eu esqueci de adicionar alguma coisa?</p>
                     <pre><code data-trim contenteditable>
-$   git add dungeon_new.html
-$   git commit  --amend -m  "Adding new option"
+$   git add partnerShield.md
+$   git commit  --amend -m  "appending partner"
                     </code></pre>
-                    <p>Para que as pessoas peguem as modificações do repositório remoto</p>
+                </section>
+
+                <section>
+                    <p>Para que seja possível pegar as modificações do repositório remoto</p>
                     <pre><code data-trim contenteditable>
 $   git pull
                     </code></pre>
                     <p>Para que as pessoas peguem o repositório remoto</p>
                     <pre><code data-trim contenteditable>
-$   git clone   https://github.com/<"user">/<"project">.git [<"folder">]
+$   git clone   https://github.com/usuario/projeto.git [folder]
                     </code></pre>
+                </section>
                 </section>
 
                 <section data-background="img/dogs-sharing.gif">
