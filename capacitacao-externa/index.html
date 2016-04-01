@@ -138,7 +138,10 @@
                         <h2></h2>
                         <aside class="notes">
                             Aqui criamos o arquivo nomeDoPlayer.md e vemos o preview no sublime-text.
+                            <br>
                             Momento certo de dar os livretos de Markdown
+                            <br>
+                            configurar o packege-control do sublime
                         </aside>
                     </section>
                 </section>
@@ -487,6 +490,13 @@ $ git branch -d adventure
                     <p>Envia as alterações locais</p>
                     <pre><code data-trim contenteditable>
 $ git push origin master
+Counting objects: 15, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.47 KiB | 0 bytes/s, done.
+Total 5 (delta 3), reused 0 (delta 0)
+To https://github.com/Marinofull/war
+   7725303..1d84a0e  master -> master
                     </code></pre>
                 </section>
 
@@ -496,6 +506,8 @@ $ git push origin master
                     <p class="fragment">Pega as alterações remotas (dica: fetch, pull)</p>
                     <p class="fragment">Executa o merge da sua branch na master</p>
                     <pre class="fragment"><code data-trim contenteditable>
+$ git fetch origin
+$ git pull origin master
 $ git checkout master
 $ git merge adventure2
                     </code></pre>
@@ -533,15 +545,35 @@ master (non-fast-forward)
                         </code></pre>
                     </section>
                 </section>
-                <section data-background="img/conflito.jpg">
+
+                <section>
+                    <section data-background="img/conflito.jpg">
+                        <h3>Natureza do Conflito</h2>
+                    </section>
+                    <section>
+                        <img width="400px" height="700px" src="img/reason1.jpg">
+                    </section>
+                    <section>
+                        <img width="400px" height="700px" src="img/reason2.jpg">
+                    </section>
+                    <section>
+                        <img width="400px" height="700px" src="img/reason3.jpg">
+                    </section>
+                    <section>
+                        <img width="400px" height="700px" src="img/reason4.jpg">
+                    </section>
                     <section>
                         <h3>Natureza do Conflito</h2>
                         <ul class="color-chiaroscuro-blue">
                             <li class="fragment liista" data-fragment-index="1">
                                 Desatenção ao <code>git fetch</code> <strong class="fragment" data-fragment-index="2">**evitável**</strong>
+                    <pre class="fragment" data-fragment-index="3"><code data-trim contenteditable>
+! [rejected]        master  ->
+master (non-fast-forward)
+                    </code></pre>
                             </li>
-                            <li class="fragment liista" data-fragment-index="3">
-                                Mesmo arquivo modificado em paralelo <strong class="fragment" data-fragment-index="4">**Quase inevitável (necessário)**</strong>
+                            <li class="fragment liista" data-fragment-index="4">
+                                Mesmo arquivo modificado em paralelo <strong class="fragment" data-fragment-index="5">**Quase inevitável (necessário)**</strong>
                             </li>
                         </ul>
                     </section>
@@ -582,18 +614,18 @@ $ git difftool
                 </section>
 
                 <section>
-                    <p>Powered By:</p>
                     <ul>
+                        <li>Marino Hohenheim</li>
+                            <ul>
+                                <li>Gerente de Provisão - InfoJr UFBA</li>
+                                <li>Ciência da Computação</li>
+                            </ul>
                         <li>Rafael Coelho</li>
                             <ul>
                                 <li>Pós Júnior</li>
                                 <li>Ciência da Computação</li>
                             </ul>
-                        <li>Marino Hohenheim</li>
-                            <ul>
-                                <li>Gerente de Provisão</li>
-                                <li>Ciência da Computação</li>
-                            </ul>
+                        <li>Criado com Reveal.js</li>
                     </ul>
                 </section>
 
