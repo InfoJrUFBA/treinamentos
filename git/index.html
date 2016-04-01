@@ -14,6 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
+        <link rel="stylesheet" href="../assets/css/theme/infojr.css">
         <link rel="stylesheet" href="../vendor/assets/css/theme/blood.css" id="theme">
 
         <!-- For syntax highlighting -->
@@ -45,14 +46,6 @@
                     <h2></h2>
                 </section>
 
-                <section>
-                    <h1>Eu</h1>
-                    <img src="img/foto_eu_2.jpg" height="320" width="240" alt="eu">
-                    <h2 class="fragment">Rafael Coelho</h2>
-                    <p class="fragment">Ciência da Computação</p>
-                    <p class="fragment">Marketing</p>
-                    <p class="fragment">Gamification</p>
-                </section>
 
                 <!-- Example of nested vertical slides -->
                 <section>
@@ -89,7 +82,7 @@
                     <img src="img/version-control-3.png" height="240" width="337" alt="controle de versão">
                 </section>
 
-                <section data-markdown>
+                <section data-markdown contenteditable>
                         ## Inicializando o git
 
                         Inicialize seu projeto
@@ -100,8 +93,8 @@
                         ```
                         Configure o seu usuário do git
                         ```
-                        $ git config user.name "Rafael Coelho"
-                        $ git config user.email rafaellima@infojr.com.br
+                        $ git config user.name "John Doe"
+                        $ git config user.email johnd@infojr.com.br
                         ```
                 </section>
 
@@ -189,11 +182,11 @@ nothing to commit (working directory clean)
                     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 $ git log
 commit  19dd00d4913497107ef6de07e0ee00a9b9315304
-Author: Rafael Coelho   <"rafaellima@infojr.com.br">
+Author: John Doe   <"johnd@infojr.com.br">
 Date:           Sun Oct 12  02:51:03    2014    -0300
                 Creating    index   and modifying README.md
 commit  a44995e61542e54aa88e55908cf09133578a43f6
-Author: Rafael Coelh    <"rafaellima@infojr.com.br">
+Author: John Doe    <"johnd@infojr.com.br">
 Date:           Sun Oct 12  02:37:13    2014    -0300
                 Initial commit
                     </code></pre>
@@ -318,6 +311,10 @@ $   git push    -u  origin  master
                     <p>Envie as suas alterações para o github (dica: git push); </p>
                     <p>Volte para o diretório do seu projeto e pegue as alterações feitas pelo seu colega (dica: git pull); </p>
                     <p>Identifique as alterações feitas sem perguntar para o colega que as modificou.</p>
+                    <aside class="notes">
+                        Add o cara do lado como contribuidor; cada um cria uma branch fazendo a mesma coisa
+                        instruçoes para criar branch no proximos
+                    </aside>
                 </section>
 
                 <section data-background="img/women-colaboration.gif">
@@ -370,6 +367,9 @@ git checkout -t origin/<"branch">
                     <p>Faça o commit dessa funcionalidade;</p>
                     <p>Volte para a branch master.</p>
                     <p>O que foi que aconteceu?</p>
+                    <aside class="notes">
+                        submete apenas o merge da sua branch
+                    </aside>
                 </section>
 
                 <section>
@@ -399,21 +399,94 @@ $ git push
 master (non-fast-forward)
                     </code></pre>
                     <p><code>IMPORTANTE! REALIZAR GIT PULL ANTES DE GIT PUSH!</code></p>
+                    <aside class="notes">
+                        executa o merge da branch do colega
+
+                    </aside>
                 </section>
 
                 <section>
-                    <h2>Resolvendo conflitos</h2>
-                    <p>Arquivo com conflito</p>
-                    <pre><code data-trim contenteditable>
+                    <section>
+                        <h2>Resolvendo conflitos</h2>
+                        <p>Arquivo com conflito</p>
+                        <pre><code data-trim contenteditable>
 <<<<<<< HEAD
         <title>DungeonCrawlers Generations</title>
 =======
         <title>Dungeon  Crawlers</title>
 >>>>>>> 7a61a9b596cdd07120e36f4f916ee65036d5c179
-                    </code></pre>
+                        </code></pre>
+                    </section>
+                </section>
+                <section data-background="img/conflito-git.jpg">
+                    <section>
+                        <h3>Natureza do Conflito</h2>
+                        <ul class="color-chiaroscuro-blue">
+                            <li class="fragment liista" data-fragment-index="1">
+                                Desatenção ao <code>git fetch</code> <strong class="fragment" data-fragment-index="2">**evitável**</strong>
+                            </li>
+                            <li class="fragment liista" data-fragment-index="3">
+                                Mesmo arquivo modificado em paralelo <strong class="fragment" data-fragment-index="4">**Quase inevitável (necessário)**</strong>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Integrar uma ferramenta ao git</h3>
+                        <ul class="color-chiaroscuro-blue">
+                            <li class="fragment liista" data-fragment-index="1"><b style="color: #FFF;">Meld Merge</b> <img src="img/meld.png" alt="meld-merge" width="50px" height="50px" border="none"></li>
+                                <li class="fragment liista" data-fragment-index="2"><b style="color: #FFF;">Faz essa mágina toda de forma lindamente linda!!</b></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="img/meld-mary.png" width="700px" height="500px">
+                    </section>
+
+                    <section>
+                        <h4>Instalação</h4>
+                        <pre><code data-trim contenteditable>
+$ apt-get install meld
+                        </code></pre>
+                        <h4>Configuração</h4>
+                        <pre><code data-trim contenteditable>
+$ git config --global merge.tool meld
+$ git config --global diff.guitool meld
+                        </code></pre>
+                        <p class="fragment">Ferramenta para merge e diff</p>
+                    </section>
+                    <section>
+                        <h4>Execução para merge</h4>
+                        <pre><code>
+$ git mergetool
+                        </code></pre>
+                        <h4>Ou para Diff</h4>
+                        <pre><code>
+$ git difftool
+                        </code></pre>
+                    </section>
+
+                </section>
+
+                <section>
+                    <p>Powered By:</p>
+                    <ul>
+                        <li>Rafael Coelho</li>
+                            <ul>
+                                <li>Pós Júnior</li>
+                                <li>Ciência da Computação</li>
+                            </ul>
+                        <li>Marino Hohenheim</li>
+                            <ul>
+                                <li>Gerente de Provisão</li>
+                                <li>Ciência da Computação</li>
+                            </ul>
+                    </ul>
                 </section>
 
                 <section data-background="img/the-end.gif">
+                    <aside class="notes">
+                        os cara tem q ter vivência em git conlitos
+                        bota pra forkar o presentation-base e prosseguir
+                    </aside>
                 </section>
 
         </div>
