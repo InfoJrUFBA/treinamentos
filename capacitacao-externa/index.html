@@ -138,6 +138,7 @@
                         <h2></h2>
                         <aside class="notes">
                             Aqui criamos o arquivo nomeDoPlayer.md e vemos o preview no sublime-text.
+                            Momento certo de dar os livretos de Markdown
                         </aside>
                     </section>
                 </section>
@@ -236,6 +237,9 @@ nothing to commit (working directory clean)
                     <p>Salvar alterações no repositório local (dica: <code>git commit</code>);</p>
                     <p>Realizar mesmo processo para salvar alterações no repositório local;</p>
                     <!-- <p>Bônus: Adicionar css à página.</p> -->
+                    <aside class="notes">
+                        Fazer mais edições com o arquivo do player e commitar
+                    </aside>
                 </section>
 
                 <section>
@@ -277,12 +281,15 @@ index   deadc001..c0ffeee    100644
 $   git add nomeDoplayer.md
 $   git diff
                     </code></pre>
+                    <aside class="notes">
+                        fazer mais algumas alterações para ser possível enxergar no git diff
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Add acidental</h2>
                     <p>Como fazer para remover arquivos adicionados acidentalmente?</p>
-                    <pre><code data-trim contenteditable>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 $   git status
 #   On  branch  master
 #   Changes to  be  committed:
@@ -297,13 +304,12 @@ M nomeDoplayer.md
                     <aside class="notes">
                         apartir daqui começa a vir mt comando, pedir pro pessoal anotar por topicos o que aprendeu
                     </aside>
-
                 </section>
 
                 <section>
                     <h2>Descartando modificações</h2>
                     <p>E se eu quiser voltar como estava antes?</p>
-                    <pre><code data-trim contenteditable>
+                    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 $   git status
 #   On  branch  master
 #   Changes not staged  for commit:
@@ -364,7 +370,7 @@ $   git commit  --amend -m  "appending partner"
                     <h2>Adicionando servidor remoto</h2>
                     <p>Precisamos definir quem vai ser o nosso servidor central</p>
                     <pre><code data-trim contenteditable>
-$   git remote  add origin  https://github.com/<"user">/<"project">.git
+$   git remote  add origin  https://github.com/user/project
 $   git push    -u  origin  master
                     </code></pre>
                 </section>
@@ -372,11 +378,15 @@ $   git push    -u  origin  master
                 <section>
                     <p>Para que seja possível pegar as modificações do repositório remoto</p>
                     <pre><code data-trim contenteditable>
-$   git pull
+$   git pull origin nomeDaBranch
+                    </code></pre>
+                    <p>Ou ...</p>
+                    <pre><code data-trim contenteditable>
+$   git fetch origin
                     </code></pre>
                     <p>Para que as pessoas peguem o repositório remoto</p>
                     <pre><code data-trim contenteditable>
-$   git clone   https://github.com/usuario/projeto.git [folder]
+$   git clone https://github.com/usuario/projeto [folder]
                     </code></pre>
                 </section>
 
@@ -413,13 +423,21 @@ $ git branch
                 </section>
 
                 <section>
-                    <p>Enviar branch</p>
+                    <p>Enviar branch específica</p>
                     <pre><code data-trim contenteditable>
-git push origin nomeDaBranch
+$ git push origin nomeDaBranch
                     </code></pre>
-                    <p>Baixar branch</p>
+                    <p>Baixar branch específica</p>
                     <pre><code data-trim contenteditable>
-git checkout -t origin/nomeDaBranch
+$ git checkout -t origin/nomeDaBranch
+                    </code></pre>
+                    <p>Atualizar Branch específica e mover a HEAD</p>
+                    <pre><code data-trim contenteditable>
+$ git pull origin nomeDaBranch
+                    </code></pre>
+                    <p>Baixar o que há de novo (não move a HEAD)</p>
+                    <pre><code data-trim contenteditable>
+$ git fetch origin
                     </code></pre>
                 </section>
                 </section>
@@ -429,50 +447,63 @@ git checkout -t origin/nomeDaBranch
                     <h3 style="color: #27ae60">Objetivo</h3>
                     <p>Crie um repositório remoto e colabore com o do colega</p>
                     <h3 style="color: #c0392b">Método</h3>
-                    <p>Crie o seu repositório no github e envie o seu código (dica: git remote e git push); </p>
-                    <p>Adicione o colega do seu lado como colaborador; </p>
-                    <p>Crie uma cópia do repositório do seu colega (dica: git clone); </p>
-                    <p>Crie uma branch (dica: git branch, git checkout);</p>
-                    <p>Envie as suas alterações para o github (dica: git push); </p>
-                    <p>Pegue as alterações feitas pelo seu colega (dica: git pull); </p>
+                    <p>Crie uma cópia do repositório do seu colega (dica: git clone);</p>
+                    <p>Crie sua branch (dica: git branch, git checkout, nome diferente do seu colega);</p>
+                    <p>Crie os asquivos <code>main.md</code> e <code>teamMyName.md</code></p>
+                    <p>Envie as suas alterações para o github (dica: git push);</p>
+                    <p>Pegue as alterações feitas pelo seu colega (dica: git fetch, git pull); </p>
                     <aside class="notes">
-                        Add o cara do lado como contribuidor; cada um cria uma branch fazendo a mesma coisa
-                        instruçoes para criar branch no proximos
-                    </aside>
-                </section>
-
-                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-                    <h2>Exercício</h2>
-                    <h3 style="color: #27ae60">Objetivo</h3>
-                    <p>Crie uma branch e nessa branch crie mais cenas para sua história</p>
-                    <h3 style="color: #c0392b">Método</h3>
-                    <p>Crie uma branch (dica: git branch);</p>
-                    <p>Vá para a branch (dica: git checkout);</p>
-                    <p>Crie um formulário para salvar personagens;</p>
-                    <p>Faça o commit dessa funcionalidade;</p>
-                    <p>Volte para a branch master.</p>
-                    <p>O que foi que aconteceu?</p>
-                    <aside class="notes">
-                        submete apenas o merge da sua branch
+                        Deve ser descrito o contexto de Guerra Civil no arquivo main.md.
+                        Contendo a causa que o player escolheu (devem ser rivais).
+                        <br>
+                        Outro arquivo contendo os heróis escalados pro seu time: teamMyName.md
                     </aside>
                 </section>
 
                 <section>
+                <section>
                     <h2>Merge Branches</h2>
-                    <p>Terminamos de criar as outras cenas da nossa história. É hora de fundir as branches</p>
+                    <p>Terminamos de criar diferentes pontos de vista da nossa história. É hora de fundir as branches</p>
+                    <p>Somente um dos desenvolvedores executa</p>
                     <pre><code data-trim contenteditable>
 $ git checkout master
-$ git merge char
-Updating c8541d6..a226599
+$ git merge adventure
+Updating deadc001.. c0ffeee
 Fast-forward
- 0 files changed, 0 insertions(+),
-0 deletions(-)
- create mode 100644 chars_new.html
+ 2 files changed, 45 insertions(+),
+7 deletions(-)
+ create mode 100644 main.md
+ create mode 100644 teamHohenheim.md
                     </code></pre>
                     <p>Remover branch</p>
                     <pre><code data-trim contenteditable>
-$ git branch -d char
+$ git branch -d adventure
                     </code></pre>
+                </section>
+
+                <section>
+                    <h2>Merge Branches</h2>
+                    <p>Ainda o mesmo desenvolvedor executa</p>
+                    <p>Envia as alterações locais</p>
+                    <pre><code data-trim contenteditable>
+$ git push origin master
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Merge Branches</h2>
+                    <p>Desta vez o segundo desenvolvedor:</p>
+                    <p class="fragment">Pega as alterações remotas (dica: fetch, pull)</p>
+                    <p class="fragment">Executa o merge da sua branch na master</p>
+                    <pre class="fragment"><code data-trim contenteditable>
+$ git checkout master
+$ git merge adventure2
+                    </code></pre>
+                    <p class="fragment">O que aconteceu?</p>
+                    <aside class="notes">
+                        tentar sem ajuda dos monitores, intereja apenas com seu colega
+                    </aside>
+                </section>
                 </section>
 
                 <section>
@@ -486,7 +517,6 @@ master (non-fast-forward)
                     <p><code>IMPORTANTE! REALIZAR GIT PULL ANTES DE GIT PUSH!</code></p>
                     <aside class="notes">
                         executa o merge da branch do colega
-
                     </aside>
                 </section>
 
