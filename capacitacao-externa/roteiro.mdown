@@ -1,0 +1,24 @@
+Roteiro
+=======
+
+1. **Slide principal**
+    1. Interação com os participantes;
+    2. Explicação de sistema de versionamento e um pouco do que é o Git;
+    2. Contextualização das atividades em Guerra Civil
+        1. Criação do arquivo de personagem;
+        1. Trabalhar os conceitos de repositório remoto e colaboração;
+        1. Separar em duplas, para trabalhar via Git&Github;
+        1. Em cada branch, Criar arquivo `main` descrevendo o centexto da história e qual visão defende;
+        1. Criar um arquivo contendo os outros heróis do seu lado da batalha;
+        1. Iniciar processo de merge;
+        1. Iniciar a parte de resolução de conflitos.
+
+1. **Slide auxiliar**
+    1. Forkar repositório apresentado;
+    1. Submeter um merge da `master` em `gh-pages` (explicar da colé);
+    1. Executar a branch `gh-pages` localmente, ver o erro e iniciar o conceito de submodulos.
+    1. Alterar o conteúdo da apresentação com seus dados;
+    1. Dar merge da primeira branch: `part1` e resolver os possíveis conflitos;
+    1. Fazer o mesmo para as demais branches.
+
+1. Ao final os participantes estarão capatados em Git&GitHub, e possuirão uma página online para armazenar apresentações em Reveal.js
