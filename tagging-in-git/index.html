@@ -198,7 +198,7 @@
                                 </ul>
                             </ul>
                             <aside class="notes">
-                                Dependendo do autor, Major = 0 indica versão não oficial, enquanto outros estão abaixo da 1 e ainda assim já são oficiais e possuem LTS e talz.
+                                Dependendo do autor, Major = 0 indica versão não oficial, enquanto outros estão abaixo da 1 e ainda assim já são oficiais e possuem LTS e talz. Tomem nota disso para definir qual será a sua política.
                             </aside>
                     </section>
                     <section data-markdown>
@@ -278,11 +278,11 @@
                     #### E-BNF
 ```
     valid-semver = version-core
-            | version-core "-" pre-release
-            | version-core "+" build
-            | version-core "-" pre-release "+" build
+            | version-core '-' pre-release
+            | version-core '+' build
+            | version-core '-' pre-release '+' build
 
-    version-core = major "." minor "." patch
+    version-core = major '.' minor '.' patch
 
     major = numeric-identifier
 
@@ -293,12 +293,12 @@
     pre-release = dot-separated_pre-release_identifiers
 
     dot-separated pre-release identifiers = pre-release identifier
-                                              | pre-release identifier "." dot-separated pre-release identifiers
+                                              | pre-release identifier '.' dot-separated pre-release identifiers
 
     build = dot-separated build identifiers
 
     dot-separated build identifiers = build identifier
-                                        | build identifier "." dot-separated build identifiers
+                                        | build identifier '.' dot-separated build identifiers
 
     pre-release identifier = alphanumeric identifier
                                | numeric identifier
@@ -311,9 +311,8 @@
                                 | identifier characters non-digit
                                 | identifier characters non-digit identifier characters
 
-    numeric identifier = "0"
-                           | positive-digit
-                           | positive-digit digits
+    numeric identifier = '0'
+                           | positive-digit {digits}
 
     identifier characters = identifier character
                               | identifier character identifier characters
@@ -322,12 +321,11 @@
                              | non-digit
 
     non-digit = letter
-                  | "-"
+                  | '-'
 
-    digits = digit
-               | digit digits
+    digits = digit {digit}
 
-    digit = "0"
+    digit = '0'
               | positive digit
 
     positive digit = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
@@ -343,16 +341,16 @@
     </script>
                 </section>
                     <section data-markdown>
-                    ###Definição formal
+                    ###Tags com o Git
 
                     como
                     ```
-                    $ git tag -a v.x.y.z <commit>
+                    $ git tag -a vX.Y.Z commit
                     ```
                     sem label
 
                     ```
-                    $ git tag v.x.y.z <commit>
+                    $ git tag vX.Y.Z commit
                     ```
                     </section>
                 </section>
