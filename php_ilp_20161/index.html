@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+
+        <title>InfoJr UFBA - Empreendendo o futuro</title>
+
+        <meta name="description" content="Treinamento de JavaScript para InfoJr UFBA">
+        <meta name="author" content="Marco Antonio Almeida">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme">
+        <link rel="stylesheet" href="assets/css/javascript.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../vendor/assets/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '../vendor/assets/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <header class="header">
+            </header>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section data-background="../assets/img/logo.svg" data-background-repeat="no-repeat" data-background-size="18%" data-background-position="1.2em 2.3em" class="introduction">
+                    <div class="logo"></div>
+                    <h2 class="align-right">PHP e ILP</h2>
+                    <p class="align-right">
+                        <time>08 de Abril de 2016</time>
+                    </p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>PHP: Hypertext Preprocessor</h2>
+                        <ul>
+                            <li>Linguagem de script de propósito geral</li>
+                            <li>Popular para desenvolvimento Web (server-side)</li>
+                            <li>Início: 1994</li>
+                            <li>Fracamente e dinamicamente tipada</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>PHP: Hypertext Preprocessor</h4>
+                        <h3>Pode ser embutida no HTML</h3>
+<pre>
+    <code data-trim data-noescape>
+<!DOCTYPE HTML>
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Example&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;?php
+            echo &quot;Hi, I'm a PHP script!&quot;;
+        ?&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+    </code>
+</pre>
+                    </section>
+                    <section>
+                        <h3>Criando um script PHP</h3>
+                        <ul>
+                            <li>Extensão: nome_do_arquivo<b>.php</b></li>
+                            <li>PHP tag</li>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php /* php code goes here */ ?&gt;
+
+&lt;?php
+    /* php code goes here */
+?&gt;
+    </code>
+</pre>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>echo</h3>
+                        <p>Função de impressão</p>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    echo &quot;Hello World!&quot;
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Exercício</h3>
+                        <p>Crie seu primeiro script que irá imprimir Hello World!</p>
+                        <p>Como executar um script?</p>
+<pre>
+    <code data-trim data-noescape>
+$ php nome_do_arquivo.php
+    </code>
+</pre>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>Comentários</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    echo 'This is a test'; // This is a one-line c++ style comment
+    /* This is a multi line comment
+       yet another line of comment */
+?&gt;
+    </code>
+</pre>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Tipos</h3>
+                        <p>PHP tem 8 tipos primitivos</p>
+                        <ul>
+                            <li>4 tipos escalares</li>
+                            <li>2 tipos compostos</li>
+                            <li>2 tipos especiais</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Tipos escalares</h3>
+                        <p>tipos associados a variáveis que podem conter apenas um valor</p>
+                    </section>
+                    <section>
+                        <h3>boolean</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    //Tipo mais simples, expressa TRUE ou FALSE
+    $bool_var =  true;
+?&gt;
+    </code>
+</pre>
+                    </section>
+                    <section>
+                        <h3>integer</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    //número do conjunto dos inteiros Z = {...-2, -1, 0, 1, 2, ...}
+    $integer_var = 25;
+    $integer_var = -12;
+?&gt;
+    </code>
+</pre>
+                    </section>
+                    <section>
+                        <h3>float / double</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $float_var = 27.55123;
+    $float_var = -12.124;
+?&gt;
+    </code>
+</pre>
+                    </section>
+                    <section>
+                        <h3>string</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $string_var = '27.55123';
+    $string_var = &quot;abcdefg&quot;;
+?&gt;
+    </code>
+</pre>
+                    </section>
+                    <section>
+                        <h3>Cuidado!</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    echo 'Hello World!\n';
+    echo &quot;Hello World!\n&quot;;
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Tipos compostos</h3>
+                        <p>Podem conter mais de um valor ao mesmo tempo</p>
+                        <ul>
+                            <li>array</li>
+                            <li>objeto</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Tipos especiais</h4>
+                        <h3>NULL</h3>
+                        <p>Representa que a variavel não tem nenhum valor</p>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $var = NULL;
+?&gt;
+    </code>
+</pre>
+                    </section>
+                    <section>
+                        <h4>Tipos especiais</h4>
+                        <h3>resource</h3>
+                        <p>Referência para um recurso externo</p>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $result = mysql_query($query);
+?&gt;
+    </code>
+</pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Operadores aritméticos</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Operador</th>
+                                    <th>Nome</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Negação</td>
+                                </tr>
+                                <tr>
+                                    <td>+</td>
+                                    <td>Adição</td>
+                                </tr>
+                                <tr>
+                                    <td>-</td>
+                                    <td>Subtração</td>
+                                </tr>
+                                <tr>
+                                    <td>*</td>
+                                    <td>Multiplicação</td>
+                                </tr>
+                                <tr>
+                                    <td>/</td>
+                                    <td>Divisão</td>
+                                </tr>
+                                <tr>
+                                    <td>%</td>
+                                    <td>Módulo</td>
+                                </tr>
+                                <tr>
+                                    <td>**</td>
+                                    <td>Potenciação</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $var = -7; // -7
+    echo 2+3,&quot;\n&quot;; // 5
+    $var = 3-2; // 1
+    $var = 5*2.5; // 12.5
+    $var = 8/4; // 4
+    echo 8%3,&quot;\n&quot;; // 2
+    echo 2**3,&quot;\n&quot;; // 8 --> Introduzido a partir do PHP 5.6
+?&gt;
+    </code>
+</pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Operadores de atribuição</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Atribuição</th>
+                                    <th>Mesmo que</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$a += $b</td>
+                                    <td>$a = $a + $b</td>
+                                    <td>Adição</td>
+                                </tr>
+                                <tr>
+                                    <td>$a -= $b</td>
+                                    <td>$a = $a - $b</td>
+                                    <td>Subtração</td>
+                                </tr>
+                                <tr>
+                                    <td>$a *= $b</td>
+                                    <td>$a = $a * $b</td>
+                                    <td>Multiplicação</td>
+                                </tr>
+                                <tr>
+                                    <td>$a /= $b</td>
+                                    <td>$a = $a / $b</td>
+                                    <td>Divisão</td>
+                                </tr>
+                                <tr>
+                                    <td>$a %= $b</td>
+                                    <td>$a = $a % $b</td>
+                                    <td>Módulo</td>
+                                </tr>
+                                <tr>
+                                    <td>$a .= $b</td>
+                                    <td>$a = $a . $b</td>
+                                    <td>Concatenação</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Exercício</h3>
+                        <p>Leia dois números (a e b) da entrada padrão e imprima o resultado da seguinte expressão:</p>
+                        <h4>dobro de a somado com b módulo a</h4>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>Operadores de comparação</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Exemplo</th>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$a == $b</td>
+                                <td>Igual</td>
+                            </tr>
+                            <tr>
+                                <td>$a === $b</td>
+                                <td>Idêntico</td>
+                            </tr>
+                            <tr>
+                                <td>$a != $b</td>
+                                <td>Não iguais</td>
+                            </tr>
+                            <tr>
+                                <td>$a &lt;&gt; $b</td>
+                                <td>Não iguais</td>
+                            </tr>
+                            <tr>
+                                <td>$a !== $b</td>
+                                <td>Não idênticos</td>
+                            </tr>
+                            <tr>
+                                <td>$a &lt; $b</td>
+                                <td>Menor que</td>
+                            </tr>
+                            <tr>
+                                <td>$a &gt; $b</td>
+                                <td>Maior que</td>
+                            </tr>
+                            <tr>
+                                <td>$a &lt;= $b</td>
+                                <td>Menor ou igual que</td>
+                            </tr>
+                            <tr>
+                                <td>$a &gt;= $b</td>
+                                <td>Maior ou igual que</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Estruturas de controle</h2>
+                    </section>
+
+                    <section>
+                        <h4>if else</h4>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    if(/*conddição*/) {
+        // Comandos
+    } else if (/*condição*/) {
+        // Comandos
+    } else {
+        // Comandos
+    }
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Operador ternário</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    echo $a > $b ? $a : $b,&quot;\n&quot;;
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Exercício 2</h3>
+                        <p>Como todos sabem a nota mínima para ser aprovado em uma matéria na UFBA é 5, e tem muita gente com nota abaixo disso. O reitor preocupado com o baixo desempenho dos estudantes sancionou que para utilizar alguns serviços da UFBA como o RU e a biblioteca o estudante deve estar com o coeficiente de rendimento (CR) com valor 5 no mínimo.</p>
+
+
+                    </section>
+                    <section>
+                        <h4>Exercício 2</h4>
+                        <p>Rafael sempre almoça e janta no RU e está preocupado se poderá continuar a frequentar esse maravilhoso restaurante, então ele pede sua ajuda.</p>
+                        <p>Sua tarefa é criar um script que deverá calcular a média aritmética (CR) de Rafael a partir das notas das 3 matérias que ele pegou no ultimo semestre.</p>
+                    </section>
+
+                    <section>
+                        <h4>Exercício 2</h4>
+                        <ul>
+                            <li>
+                                Entrada:
+                                <p>A entrada é composta por uma única linha com 3 números inteiros separados por espaços.</p>
+                            </li>
+                            <li>
+                                Saída:
+                                <p>Se o CR de Rafael for pelo menos 5 você deve imprimir a mensagem "RU", caso contrário a mensagem deve ser "Chumbinho". A mensagem deve ser seguida de uma quebra de linha</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Switch</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    switch ($i) {
+        case 0:
+            echo &quot;i equals 0&quot;;
+            break;
+        case 1:
+        case 2:
+            echo &quot;i equals 1 or 2&quot;;
+            break;
+        default:
+           echo &quot;i is not equal to 0, 1 or 2&quot;;
+    }
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Exercício 3</h3>
+                        <p>Francisco começou a estagiar na biblioteca da UFBA, sua primeira tarefa é de arrumar diversos livros nas estante seguindo o padrão da biblioteca.</p>
+                        <p>A estante é dividida em 5 seções (A, B, C, D, E e F) em cada uma delas devem estar os livros em que o código começa com um determinado dígito, seguindo esse padrão.</p>
+                        <ul>
+                            <li>A ==> 1...</li>
+                            <li>B ==> 2...</li>
+                            <li>...</li>
+                            <li>E ==> 5...</li>
+                        </ul>
+                        <p>Todos os livros com primeiro dígito do código diferente dos definidos acima deve ser colocados na seção F.</p>
+                    </section>
+
+                    <section>
+                        <h4>Exercício 3</h4>
+                        <p>Você quer que Francisco lhe ajude a estudar Discreta 1, e para isso irá ajuda-lo a terminar sua tarefa mais rapidamente construindo um script que dirá qual é a estante que um livro deve ser colocado.</p>
+                        <ul>
+                            <li>
+                                Entrada
+                                <p>A entrada é composta por uma única linha com um inteiro indicando o primeiro dígito do código do livro.</p>
+                            </li>
+                            <li>
+                                Saída
+                                <p>Você deve imprimir o código da seção que o livro deve ser colocado.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Operadores lógicos</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Exemplo</th>
+                                    <th>Nome</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$a and $b</td>
+                                    <td>And</td>
+                                </tr>
+                                <tr>
+                                    <td>$a or $b</td>
+                                    <td>Or</td>
+                                </tr>
+                                <tr>
+                                    <td>$a xor $b</td>
+                                    <td>Xor</td>
+                                </tr>
+                                <tr>
+                                    <td>!$a</td>
+                                    <td>Not</td>
+                                </tr>
+                                <tr>
+                                    <td>$ && $b</td>
+                                    <td>and</td>
+                                </tr>
+                                <tr>
+                                    <td>$a || $b</td>
+                                    <td>Or</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Operadores em php sempre retornam valores booleanos</p>
+                    </section>
+
+                    <section>
+                        <h4>Como calcular o CR de 50 alunos?</h4>
+                        <h4>Como saber a seção correta para guardar 100 livros diferentes?</h4>
+                    </section>
+
+                    <section>
+                        <h3>Estruturas de repetição</h3>
+                    </section>
+
+                    <section>
+                        <h3>while</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $i = 1;
+    while ($i &lt;= 10) { // Condição de parada
+        echo $i++;
+    }
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>do-while</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $i = 0;
+    do {
+        echo $i;
+    } while ($i &gt; 0);
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>for</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    for ($i = 1; $i &lt;= 10; $i++) {
+        echo $i;
+    }
+
+    for ($i = 1; ; $i++) {
+        echo $i;
+        if ($i &gt; 10)
+            break;
+    }
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Exercício 4</h3>
+                        <p>Um dos professores ficou interessado  no seu trabalho de calcular o CR dos alunos, ele pede sua ajuda para saber quantos alunos estão com CR acima de 7.</p>
+                    </section>
+
+                    <section>
+                        <h4>Exercício 4</h4>
+                        <ul>
+                            <li>
+                                Entrada:
+                                <p>A primeira linha da entrada terá um inteiro n que representa o número de notas, a seguir cada grupo de n linhas representará as notas de um aluno. A quantidade de alunos não é definida, um inteiro -1 indicará que não tem mais alunos
+</p>
+                            </li>
+                            <li>
+                                Saída
+                                <p>Sua saída deve ter apenas um inteiro indicando a quantidade de alunos com CR  acima de 7.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Exemplo de entrada</h4>
+<pre>
+    <code data-trim data-noescape>
+3
+5
+8
+9
+4
+7
+5
+9
+9
+6
+-1
+    </code>
+</pre>
+                    <p>Saída: 2</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Arrays</h3>
+                        <p>Armazena multiplos valores em apenas uma variável</p>
+                        <img src="img/objects-tenElementArray.gif" height="145" width="400" alt="">
+                    </section>
+
+                    <section>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $a = array(); // Cria array vazio
+
+    $cargos = array(&quot;Gerente&quot;, &quot;Assessor&quot;, &quot;Diretor&quot;, &quot;Conselheiro&quot;);
+    echo $cargos[2],&quot;\n&quot;; // Diretor
+
+    $cargos[10] = &quot;Trainee&quot;;
+    echo $cargos[10],&quot;\n&quot;; // Trainee
+
+    $cargos[] = &quot;Consultor&quot;;
+
+    unset($cargos[1]);
+
+    print_r($cargos);
+    /*
+    Array
+    (
+        [0] =&gt; Gerente
+        [2] =&gt; Diretor
+        [3] =&gt; Conselheiro
+        [10] =&gt; Trainee
+        [11] =&gt; Consultor
+    )
+    */
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h4>Array multidimensional</h4>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $cargos = array(
+        array(&quot;Gerente de Projetos&quot;),
+        array(&quot;Gerente de próvisão&quot;, &quot;Gerente de Treinamentos&quot;),
+        array(&quot;Gerente de Qualidade&quot;, &quot;Gerente de Gestão&quot;),
+        array(&quot;Gerente de Mercado&quot;, &quot;Gerente de Comunicação&quot;),
+        array(&quot;Gerente ADM-FIN&quot;),
+        array(&quot;Gerente de Negócios&quot;),
+    );
+
+    echo $cargos[2][1],"\n";
+
+    print_r($cargos);
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h4>foreach</h4>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $nums = array(1, 4, 2, 7, 9, 6, 5);
+
+    foreach($nums as $n)
+        echo $n,&quot; &quot;;
+    echo &quot;\n&quot;;
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Exercício 5</h3>
+                        <ul>
+                            <li>
+                                Entrada:
+                                <p>A primeira linha terá um inteiro n indicando a quantidade de números. As próximas n linhas conterão um inteiro cada.</p>
+                            </li>
+                            <li>
+                                Saída
+                                <p>Você deve imprimir duas linhas, a primeira com os números pares e a segunda com os ímpares, a ordem deve ser mantida.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Arrays associativos</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $array = array(
+        &quot;foo&quot; =&gt; &quot;bar&quot;,
+        &quot;bar&quot; =&gt; &quot;foo&quot;,
+        100   =&gt; -100,
+        -100  =&gt; 100,
+    );
+    var_dump($array);
+    /*
+    array(4) {
+        [&quot;foo&quot;]=&gt;
+        string(3) &quot;bar&quot;
+        [&quot;bar&quot;]=&gt;
+        string(3) &quot;foo&quot;
+        [100]=&gt;
+        int(-100)
+        [-100]=&gt;
+        int(100)
+    }
+    */
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $cargos = array(
+        &quot;DPRJ&quot; =&gt; array(&quot;Gerente de Projetos&quot;),
+        &quot;DGP&quot; =&gt; array(&quot;Gerente de próvisão&quot;, &quot;Gerente de Treinamentos&quot;),
+        &quot;DVP&quot; =&gt; array(&quot;Gerente de Qualidade&quot;, &quot;Gerente de Gestão&quot;),
+        &quot;DMKT&quot; =&gt; array(&quot;Gerente de Mercado&quot;, &quot;Gerente de Comunicação&quot;),
+        &quot;DAF&quot; =&gt; array(&quot;Gerente ADM-FIN&quot;),
+        &quot;DPRE&quot; =&gt; array(&quot;Gerente de Negócios&quot;),
+    );
+
+    foreach ($cargos as $diretoria =&gt; $cd) {
+        echo $diretoria,&quot; =&gt; &quot;;
+        foreach ($cd as $c) {
+            echo $c,&quot; &quot;;
+        }
+        echo &quot;\n&quot;;
+    }
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    /*
+    DPRJ =&gt; Gerente de Projetos
+    DGP =&gt; Gerente de próvisão Gerente de Treinamentos
+    DVP =&gt; Gerente de Qualidade Gerente de Gestão
+    DMKT =&gt; Gerente de Mercado Gerente de Comunicação
+    DAF =&gt; Gerente ADM-FIN
+    DPRE =&gt; Gerente de Negócios
+    */
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Exercício 6</h3>
+                        <p>Dessa vez seu professor quer saber quais são os alunos que tem nota par e quais tem nota ímpar</p>
+                        <ul>
+                            <li>
+                                Entrada:
+                                <p>A primeira linha terá um inteiro n indicando a quantidade de alunos. As próximas n linhas serão formadas pelo nome do aluno e pela nota (inteiro), separados por um espaço.</p>
+                            </li>
+                            <li>
+                                Saída:
+                                <p>Na primeira linha você deve imprimir as o nome dos alunos com nota par e na segunda os com nota ímpar.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    // Create a simple array.
+    $array = array(1, 2, 3, 4, 5);
+    print_r($array);
+
+    // Now delete every item, but leave the array itself intact:
+    foreach ($array as $i =&gt; $value) {
+        unset($array[$i]);
+    }
+    print_r($array);
+
+    // Append an item (note that the new key is 5, instead of 0).
+    $array[] = 6;
+    print_r($array);
+
+    // Re-index:
+    $array = array_values($array);
+    $array[] = 7;
+    print_r($array);
+?&gt;
+    </code>
+</pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Strings</h3>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $st = &quot;InfoJr UFBA&quot;;
+    echo strlen($st),&quot;\n&quot;; // 11
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+                        <h3>Exercício 7</h3>
+                        <p>Você deve criar um script para verificar se uma string é ou não um palíndromo</p>
+                        <ul>
+                            <li>
+                                Entrada:
+                                <p>A entrada tem apenas uma linha com uma string</p>
+                            </li>
+                            <li>
+                                Saída:
+                                <p>Se a string for um palíndromo imprima &quot;S&quot;, caso contrário imprima &quot;N&quot;.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $in = fscanf(STDIN, &quot;%s&quot;);
+    list($st) = $in;
+
+    echo $st == strrev($st) ? &quot;S\n&quot; : &quot;N\n&quot;;
+?&gt;
+    </code>
+</pre>
+                    </section>
+
+                    <section>
+<pre>
+    <code data-trim data-noescape>
+&lt;?php
+    $st = &quot;GitHub Gmail Trello Drive&quot;;
+
+    $ferramentas = explode(&quot; &quot;, $st);
+    print_r($ferramentas);
+
+    $comma = implode(&quot;, &quot;, $ferramentas);
+    echo $comma,&quot;\n&quot;;
+
+    echo strlen($comma),&quot;\n&quot;;
+
+    echo strpos($comma, &quot;Tre&quot;),&quot;\n&quot;;
+
+    echo strtolower($comma),&quot;\n&quot;;
+    echo strtoupper($comma),&quot;\n&quot;;
+?&gt;
+    </code>
+</pre>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>Querem mais?</h3>
+                    <ul>
+                        <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
+                        <li><a href="https://secure.php.net/manual/pt_BR/index.php" target="_blank">Manual PHP</a></li>
+                        <li><a href="https://www.hackerrank.com" target="_blank">HackerRank</a></li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="../vendor/assets/lib/js/head.min.js"></script>
+        <script src="../vendor/assets/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../vendor/assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../vendor/assets/js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+        <script src="../assets/js/theme/infojr.js"></script>
+    </body>
+</html>
