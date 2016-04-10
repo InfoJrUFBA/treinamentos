@@ -340,57 +340,96 @@
 ```
     </script>
                 </section>
-                    <section data-markdown>
-                    ###Tags com o Git
+            </section>
 
-                    como
-                    ```
-                    $ git tag -a vX.Y.Z commit
-                    ```
-                    sem label
-
-                    ```
-                    $ git tag vX.Y.Z commit
-                    ```
-                    </section>
+            <section>
+                <section>
+                    <h2>Versionamento no Git com Tags</h2>
+                    <ul>
+                        <li class="fragment linone"><i class="fa fa-tag"></i>A função tag sua real habilidade;</li>
+                        <li class="fragment linone"><i class="fa fa-tag"></i>Asociar tags ao hash do commit alvo de versão;</li>
+                        <li class="fragment linone"><i class="fa fa-tag"></i>Troca de versão ultra rápida.</li>
+                        <li class="fragment linone"><i class="fa fa-tag"></i>Tags leves e tags anotadas</li>
+                    </ul>
                 </section>
-
 
                 <section data-markdown>
-                    <script type="text/template" class='slide'>
-                        ###Definição formal
+                    ###Tags com o Git
 
-                        - vX.Y.Z-label <!-- .element: class="fragment" data-fragment-index="1" -->
-                        - vMajor.Minor.Patch-label <!-- .element: class="fragment" data-fragment-index="2" -->
-                    </script>
+                    Tags Anotadas
+                    ```
+                    $ git tag -a vX.Y.Z -m "message"
+                    ```
+                    Tags Leves
+
+                    ```
+                    $ git tag vX.Y.Z
+                    ```
                 </section>
+                <section data-markdown>
+                    Listando Tags
 
-                <!-- <section data-markdown data-background="assets/img/lego.jpg"> -->
+                    ```
+                    $ git tag
+                    v0.8
+                    v1.0-rc
+                    v1.1
+                    v2.0
+                    v2.1
+                    v2.2
+                    ```
+                    ```
+                    $ git tag -l 'v2.*'
+                    v2.0
+                    v2.1
+                    v2.2
+                    ```
                 </section>
+                <section data-markdown>
+                    Taggeando commits do passado:
+                    ```
+                    $ git lg
+                    * 84f05a6 - Tue, 5 Apr 2016 17:44:05 -0300 (5 days ago) (HEAD, tagging)
+                    |           revisando o E-BNF - Marinofull
+                    * d37ca0b - Fri, 11 Mar 2016 10:11:27 -0300 (4 weeks ago) (origin/tagging)
+                    |           changes imgs - Marinofull
+                    | *   0737bc5 - Fri, 1 Apr 2016 20:23:03 -0300 (9 days ago) (origin/master, origin/HEAD, master)
+                    | |\            Merge pull request #8 from Marinofull/capacitacao-git - Marino Hohenheim
+                    | | | *   e064d6e - Fri, 1 Apr 2016 13:49:30 -0300 (9 days ago) (origin/gh-pages, gh-pages)
+                    | | | |\            Merge branch 'capacitacao-git' into gh-pages - Marinofull
+                    | | | |/
+                    | | |/|
+                    | | * | 25062a0 - Fri, 1 Apr 2016 13:47:56 -0300 (9 days ago) (origin/capacitacao-git, capacitacao-git)
+                    | | | |           little fixe - Marinofull
+                    | | * | b20c0a2 - Fri, 1 Apr 2016 00:30:32 -0300 (10 days ago)
+                    | | | |           it closes #3 resolve #4 - Marinofull
+                    :
 
+                    ```
+                    ```
+                    $ git tag -a v0.9 84f05a6
+                    ```
+                </section>
+                <section data-markdown>
+                    Lendo dados de uma tag
+                    ```
+                    $ git show v0.9
+                    ```
+                </section>
+            </section>
+
+                <!--
                 <section data-markdown="assets/md/test.md"
                          data-separator="^\n\n\n"
                          data-separator-vertical="^\n\n"
                          data-separator-notes="^Note:"
                          data-charset="iso-8859-15">
                 </section>
+                -->
 
                 <section>
                     <section>
-                        <h2>Uso</h2>
-                    </section>
-                    <section data-background="assets/img/scrum.svg" data-background-size="65%">
-                    </section>
-                    <section data-background="assets/img/github.svg" data-background-size="75%">
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>onde</h2>
-                    </section>
-                    <section>
-                        <h2>repo remoto</h2>
+                        <h2>Liberando releases no GitHub</h2>
                         <img src="assets/img/github.svg" alt="GitHub" class="no-border">
                     </section>
                 </section>
@@ -399,13 +438,8 @@
                     <section>
                         <h2>Dúvidas?</h2>
                     </section>
-                    <section>
-                        <h2>Obrigado!</h2>
-                    </section>
                 </section>
-
-            </div>
-            <!-- <footer class="footer">
+                <section>
                 <ul class="list">
                     <li class="linone">
                         <i class="fa fa-linkedin-square"></i><a href="https://br.linkedin.com/in/marinosouza">Marino Souza</a>
@@ -417,7 +451,17 @@
                         <i class="fa fa-square"></i><a href="http://about.me/hohenheimmarino">hohenheimmarino</a>
                     </li>
                 </ul>
-            </footer> -->
+                <ul>
+                    <li>
+                        <span>Referências:</span>
+                        <ul>
+                            <li class="linone"><a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Tagging">Documentação do Git</a></li>
+                            <li class="linone"><a href="http://semver.org/">SemVer.org</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </section>
+            </div>
             <footer class="footer"></footer>
         </div>
 
