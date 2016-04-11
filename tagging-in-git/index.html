@@ -407,13 +407,36 @@
 
                     ```
                     ```
-                    $ git tag -a v0.9 84f05a6
+                    $ git tag -a v1.1-alpha 84f05a6
                     ```
                 </section>
                 <section data-markdown>
                     Lendo dados de uma tag
+                    ```haskell
+                    $ git show v1.1-alpha
+                    tag v1.1-alpha
+                    Tagger: Marinofull <intmarinoreturn0@gmail.com>
+                    Date:   Sun Apr 10 16:41:53 2016 -0300
+
+                    Finalizando capacitação de tags
+
+                    commit 27df8c88d2220377cf52d2bc955a69f5e3dc1971
+                    Author: Marinofull <intmarinoreturn0@gmail.com>
+                    Date:   Sun Apr 10 16:37:41 2016 -0300
+
+                        adicionado instruções para taggear no git
+                            add slide de créditos
                     ```
-                    $ git show v0.9
+                </section>
+                <section data-markdown>
+                    Enviando para um repositório remoto:
+                    ```
+                    $ git push origin v1.0
+                    $ git push origin v2.3.1-beta
+                    ```
+                    ou simplismente:
+                    ```
+                    $ git push origin --tags
                     ```
                 </section>
             </section>
@@ -430,13 +453,28 @@
                 <section>
                     <section>
                         <h2>Liberando releases no GitHub</h2>
-                        <img src="assets/img/github.svg" alt="GitHub" class="no-border">
+                        <img src="assets/img/github.svg" alt="GitHub" height="500" width="500" class="no-border">
                     </section>
+                    <section><img src="assets/img/main-view.png" alt=""></section>
+                    <section><img src="assets/img/releases-view.png" alt=""></section>
+                    <section><img src="assets/img/release-details-view.png" alt=""></section>
+                    <section><img src="assets/img/create-release-view.png" alt=""></section>
+                    <section><img src="assets/img/attach-files-view.png" alt=""></section>
+                    <section><img src="assets/img/created-release-view.png" alt=""></section>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Dúvidas?</h2>
+                    <section data-markdown>
+                        ###Dúvidas?
+                        Este é o momento
+
+                        ###Feedbacks:
+                        ```
+                        mailto: marino@dcc.ufba.br
+                        mailto: intmarinoreturn0@gmail.com
+                        mailto: marino@infojr.com.br
+
+                        ```
                     </section>
                 </section>
                 <section>
@@ -450,9 +488,8 @@
                     <li class="linone">
                         <i class="fa fa-square"></i><a href="http://about.me/hohenheimmarino">hohenheimmarino</a>
                     </li>
-                </ul>
-                <ul>
-                    <li>
+                    <li class="linone">
+                        <br><i class="fa fa-book"></i>
                         <span>Referências:</span>
                         <ul>
                             <li class="linone"><a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Tagging">Documentação do Git</a></li>
