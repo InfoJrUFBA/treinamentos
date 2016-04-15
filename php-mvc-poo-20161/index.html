@@ -52,6 +52,30 @@
                 </section>
 
                 <section>
+                    <h2>Vejam só que incrível este sistema que fiz.</h2>
+                </section>
+
+                <section data-markdown contenteditable>
+                        ## Iniciando
+
+                        Clone o repositório do projeto
+                        ```
+                        $ cd /var/www/html/
+                        $ git clone https://www.github.com/InfoJrUFBA/meuprojeto.git
+                        $ cd meuprojeto
+                        ```
+                        Configure o seu usuário do git
+                        ```
+                        $ git config user.name "John Doe"
+                        $ git config user.email johnd@infojr.com.br
+                        ```
+                        Crie uma nova branch
+                        ```
+                        $ git checkout -b capacitacao-poo-mvc
+                        ```
+                </section>
+
+                <section>
                     <h2>Introdução a MVC</h2>
                 </section>
 
@@ -59,7 +83,7 @@
                 <section>
                     <section>
                         <h2>Introdução a MVC</h2>
-                        <h3>Models-Views-Controllers</h3>
+                        <h3>Model-View-Controller</h3>
                     </section>
                     <section>
                         <h3>MVC</h3>
@@ -82,18 +106,18 @@
                         </ul>
                     </section>
                     <section>
+                        <h3>Controller</h3>
+                        <p>Camada de Controle (decisão) do sistema</p>
+                        <ul>
+                            <li>Recebe a requisição de ação do usuário e decide o que fazer.</li>
+                        </ul>
+                    </section>
+                    <section>
                         <h3>View</h3>
                         <p>Camada de interação com o usuário</p>
                         <ul>
                             <li>Parte que o usuário vê.</li>
                             <li>Geralmente relacionada a uma página do sistema.</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>Controller</h3>
-                        <p>Camada de Controle (decisão) do sistema</p>
-                        <ul>
-                            <li>Recebe a requisição de ação do usuário e decide o que fazer.</li>
                         </ul>
                     </section>
                     <section>
@@ -108,20 +132,8 @@
                 <section data-markdown contenteditable>
                         ## Criando as pastas
 
-                        Clone o repositório do projeto
+                        Crie as novas pastas no seu projeto
                         ```
-                        $ cd /var/ww/html/
-                        $ git clone https://www.github.com/InfoJrUFBA/meuprojeto.git
-                        $ cd meuprojeto
-                        ```
-                        Configure o seu usuário do git
-                        ```
-                        $ git config user.name "John Doe"
-                        $ git config user.email johnd@infojr.com.br
-                        ```
-                        Crie uma nova branch e crie as novas pastas
-                        ```
-                        $ git checkout -b capacitacao-poo-mvc
                         $ mkdir models
                         $ mkdir views
                         $ mkdir controller
@@ -143,12 +155,27 @@
                         <p>Paradigma de programação em que se abstrai o código para uma coleção de objetos que podem interagir entre si</p>
                     </section>
                     <section>
+                        <img src="images/estruturada_vs_poo.png">
+                    </section>
+                    <section>
                         <h3>Classe</h3>
                         <p>Abstração que define um tipo de objeto</p>
                         <ul>
                             <li>Pessoa</li>
                             <li>Cachorro</li>
                         </ul>
+                    </section>
+                    <section data-markdown contenteditable>
+                        <script type="text/template">
+                        ``` php
+                            <?php
+
+                            class Person {
+
+                                /* ... */
+                            }
+                        ```
+                        </script>
                     </section>
                     <section>
                         <h3>Atributo</h3>
@@ -158,6 +185,25 @@
                             <li>Nome, Raça - Cachorro</li>
                         </ul>
                     </section>
+                    <section data-markdown contenteditable>
+                        <script type="text/template">
+                        ``` php
+                            <?php
+
+                            class Person {
+
+                                public $id;
+                                public $name;
+                                public $age;
+                                public $height;
+                                public $course;
+                                public $phrase;
+
+                                /* ... */
+                            }
+                        ```
+                        </script>
+                    </section>
                     <section>
                         <h3>Método</h3>
                         <p>Ações/Eventos que o objeto pode executar</p>
@@ -165,6 +211,39 @@
                             <li>Latir(), PegarOsso(), CavarBuraco() - Cachorro</li>
                             <li>Andar(), Dormir(), Comer() - Pessoa</li>
                         </ul>
+                    </section>
+                    <section data-markdown contenteditable>
+                        <script type="text/template">
+                        ``` php
+                            <?php
+
+                            class Person {
+
+                                /* Atributos */
+
+                                private function translateCourse($courseNumber)
+                                {
+                                    switch ($courseNumber) {
+                                        case 1:
+                                            $this->course = "Ciência da Computação";
+                                            break;
+                                        case 2:
+                                            $this->course = "Sistemas de Informação";
+                                            break;
+                                        case 3:
+                                            $this->course = "Licenciatura em Computação";
+                                            break;
+                                        case 4:
+                                            $this->course = "BI Ciência e Tecnologia";
+                                            break;
+                                        default:
+                                            $this->course = "Outro";
+                                            break;
+                                    }
+                                }
+                            }
+                        ```
+                        </script>
                     </section>
                     <section>
                         <h3>Objeto</h3>
@@ -174,163 +253,104 @@
                             <li>Joãozinho (Instância da Classe Pessoa)</li>
                         </ul>
                     </section>
+                    <section data-markdown contenteditable>
+                        <script type="text/template">
+                        ``` php
+                            <?php
+
+                            $person = new Person($_POST['person']);
+                            $person->greeting();
+                        ```
+                        </script>
+                    </section>
                 </section>
 
                 <section>
-                    <section>
-                        <h3>Programação Estruturada X POO</h3>
-                    </section>
-                    <section>
-                        <img src="images/estruturada_vs_poo.png">
-                    </section>
-                    <section data-markdown>
-                        <script type="text/template">
-                        ``` php
-                            class Pessoa{
-                                public $id;
-                                public $name;
-                                public $email;
+                    <h2>Exercício M</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Identificar e criar a primeira entidade do sistema.</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Pensar sobre o escopo do projeto (qual parte envolve manipulação de dados?)</p>
+                    <p>Pensar num *modelo* da sua entidade e quais atributos ela deve ter.</p>
+                    <p>Escrever um arquivo Entidade.php que contenha uma Classe Entidade.</p>
+                </section>
 
-                                public function __construct($attributes = array())
-                                {
-                                    $this->name = $attributes['name'];
-                                    $this->name = $attributes['email'];
-                                }
+                <section data-markdown contenteditable>
+                    <script type="text/template">
+                    ``` php
+                        <?php
 
-                                public function validarLogin()
-                                {
+                        include('../models/Person.php');
 
-                                }
+                        class PersonController
+                        {
+                            public static function insert() {
+                                $person = new Person($_POST['person']);
+                                echo $person->name;
                             }
-                        ```
-                        </script>
-                    </section>
-                    <section data-markdown>
-                        <script type="text/template">
-                        ``` php
-                            $pessoa = new Pessoa(array('name' => 'Joãozinho', 'email' => 'joao@maria.com'));
-                        ```
-                        ``` php
-                            echo $pessoa->name;
-                            echo $pessoa->validarLogin();
-                        ```
-                        </script>
-                    </section>
-                    <section>
-                        <h2>Outros Conceitos</h2>
-                        <ul>
-                            <li>Abstração</li>
-                            <li>Encapsulamento</li>
-                            <li>Herança</li>
-                            <li>Polimorfismo</li>
-                        </ul>
-                    </section>
+                        }
+
+                        PersonController::$_POST['action']();
+                    ```
+                    </script>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>PDO</h2>
-                        <h3>PHP Data Objects</h3>
-                    </section>
-                    <section>
-                        <h3>PDO</h3>
-                        <p>Extensão que fornece uma interface padronizada para trabalhar com bancos de dados, abstraindo-a (Portabilidade)</p>
-                    </section>
-                    <section data-markdown>
-                        <script type="text/template">
-                        ``` php
-                            ## Código
-                            //Instancia classe PDO
-                            $pdo = new PDO('mysql:host=localhost;dbname=nome_do_banco', 'nome_de_usuario', 'senha');
-                        ```
-                        </script>
-                    </section>
-                    <section>
-                        <h3>Mas, e agora ?</h3>
-                    </section>
+                    <h2>Exercício V</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Identificar e criar a primeira página de formulário do sistema.</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Lembra do modelo que você criou anteriormente? Agora você precisa controlá-lo.</p>
+                    <p>Escrever um arquivo entidade/pagina.php que contenha um formulário.</p>
+                </section>
+
+                <section data-markdown contenteditable>
+                    <script type="text/template">
+                    ``` html
+                        <form action="/* Rota para o Controller */" method="POST" enctype="multipart/form-data" class="s-form">
+                            <div class="person-name">
+                                <input type="text" class="form-control" name="person[name]" placeholder="Digite seu Nome" required>
+                            </div>
+
+                            <div class="person-age">
+                                <input type="text" class="form-control" name="person[age]" placeholder="Digite sua Idade" required>
+                            </div>
+
+                            <div class="person-height">
+                                <input type="text" class="form-control" name="person[height]" placeholder="Digite sua Altura" required>
+                            </div>
+                        </form>
+                    ```
+                    </script>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>DML</h2>
-                        <h3>Data Manipulation Language</h3>
-                    </section>
-                    <section>
-                        <h3>DML</h3>
-                        <p>Linguagem utilizada para a manipulação de informações em banco de dados.</p>
-                    </section>
-                    <section data-markdown>
-                        <script type="text/template">
-                        ``` SQL
-                        -- Código
-                        //Insere novo registro na tabela users
-                        INSERT INTO users (name, email, password) VALUES ('João', 'joao@maria.com', '123');
-
-                        //Altera registro existente na tabela users
-                        UPDATE users SET email = 'joao@maria.com.br', password = '1234' WHERE id = 1;
-
-                        //Remove registro existente na tabela users
-                        DELETE FROM users WHERE id = 1;
-
-                        //Seleciona nome de usuario na tabela users
-                        SELECT name FROM users WHERE id = 1;
-                        ```
-                        </script>
-                    </section>
-                    <section>
-                        <h3>Alguns Operadores</h3>
-                        <ul>
-                            <li>LIKE</li>
-                            <li>BETWEEN</li>
-                            <li>OR, AND, NOT</li>
-                            <li>IS NULL</li>
-                        </ul>
-                    </section>
+                    <h2>Exercício C</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Identificar e criar a primeira controller do sistema.</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Lembra do modelo que você criou anteriormente? Agora você precisa controlá-lo.</p>
+                    <p>Escrever um arquivo EntidadeController.php que contenha uma Classe EntidadeController.</p>
                 </section>
 
-                <section>
-                    <section>
-                        <h3>PDO + DML</h3>
-                        <section data-markdown>
-                            <script type="text/template">
-                            ``` php
-                                ## Código
-                                public static function find($attributes = array())
-                                {
-                                    $pdo = new PDO('mysql:host=localhost;dbname=nome_do_banco', 'nome_de_usuario', 'senha');
+                <section data-markdown contenteditable>
+                    <script type="text/template">
+                    ``` php
+                        <?php
 
-                                    $result = $pdo->prepare('SELECT * FROM users WHERE id = :id;');
-                                    $result->bindValue(':id', $attributes['id']);
-                                    $result->setFetchMode(PDO::FETCH_CLASS, get_called_class());
+                        include('../models/Person.php');
 
-                                    return $result->fetchAll();
-                                }
-                            ```
-                            </script>
-                        </section>
-                    </section>
+                        class PersonController
+                        {
+                            public static function insert() {
+                                $person = new Person($_POST['person']);
+                                echo $person->name;
+                            }
+                        }
 
-                    <section>
-                        <section data-markdown>
-                            <script type="text/template">
-                            ``` php
-                                ## Código
-                                public static function insert($attributes = array())
-                                {
-                                    $pdo = new PDO('mysql:host=localhost;dbname=nome_do_banco', 'nome_de_usuario', 'senha');
-
-                                    $action = $pdo->prepare('INSERT INTO users (name, email) VALUES (:name, :email);');
-
-                                    return $action->execute($attributes);
-                                }
-                            ```
-                            </script>
-                        </section>
-                    </section>
-                </section>
-
-                <section>
-                    <h2>Problema 2</h2>
+                        PersonController::$_POST['action']();
+                    ```
+                    </script>
                 </section>
 
                 <section>
@@ -343,7 +363,7 @@
 
                 <section>
                     <h1>O FIM</h1>
-                    <h3>Vlw Flw #PartiuJavascript</h3>
+                    <h3>Vlw Flw #BoraCodar</h3>
                 </section>
 
             </div>
