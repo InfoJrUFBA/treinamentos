@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+
+        <title>InfoJr UFBA - PHP Parte 1</title>
+
+        <meta name="description" content="Primeiro treinamento de PHP">
+        <meta name="author" content="Marco Antonio Oliveira">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <link rel="stylesheet" href="../vendor/assets/css/reveal.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/theme/simple.css">
+        <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../vendor/assets/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '../vendor/assets/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <header class="header">
+            </header>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section data-background="../assets/img/logo.svg" data-background-repeat="no-repeat" data-background-size="18%" data-background-position="1.2em 2.3em" class="introduction">
+                    <div class="logo"></div>
+                    <h2 class="align-right">PHP + POO + MVC</h2>
+                    <p class="align-right">
+                        <time>15 de Abril de 2016</time>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Vejam só que incrível este sistema que fiz.</h2>
+                </section>
+
+                <section data-markdown contenteditable>
+                        ## Iniciando
+
+                        Clone o repositório do projeto
+                        ```
+                        $ cd /var/www/html/
+                        $ git clone https://www.github.com/InfoJrUFBA/meuprojeto.git
+                        $ cd meuprojeto
+                        ```
+                        Configure o seu usuário do git
+                        ```
+                        $ git config user.name "John Doe"
+                        $ git config user.email johnd@infojr.com.br
+                        ```
+                        Crie uma nova branch
+                        ```
+                        $ git checkout -b capacitacao-poo-mvc
+                        ```
+                </section>
+
+                <section>
+                    <h2>Introdução a MVC</h2>
+                </section>
+
+                <!-- Example of nested vertical slides -->
+                <section>
+                    <section>
+                        <h2>Introdução a MVC</h2>
+                        <h3>Model-View-Controller</h3>
+                    </section>
+                    <section>
+                        <h3>MVC</h3>
+                        <p>"Model–view–controller (MVC) is a software architectural pattern for implementing user interfaces on computers. It divides a given software application into three interconnected parts, so as to separate internal representations of information from the ways that information is presented to or accepted from the user."</p><br>
+                        <p><b>TL;DR:</b> Padrão ARQUITETURAL de Software que divide a aplicação em três partes interconectadas.</p>
+                    </section>
+                    <section>
+                        <img src="images/mvc-process.png">
+                        <p>Quem te falou que é um padrão de design errou! </p>
+                        <ul>
+                            <li>Padrão arquitetural: nível de estrutura do sistema.</li>
+                            <li>Padrão de design: nível de código do sistema.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Model</h3>
+                        <p>Camada de manipulação dos dados</p>
+                        <ul>
+                            <li>Geralmente fornece uma classe que representa o modelo.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Controller</h3>
+                        <p>Camada de Controle (decisão) do sistema</p>
+                        <ul>
+                            <li>Recebe a requisição de ação do usuário e decide o que fazer.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>View</h3>
+                        <p>Camada de interação com o usuário</p>
+                        <ul>
+                            <li>Parte que o usuário vê.</li>
+                            <li>Geralmente relacionada a uma página do sistema.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Helper*</h3>
+                        <p>Camada de suporte às outras camadas</p>
+                        <ul>
+                            <li>Depende da aplicação construída.</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section data-markdown contenteditable>
+                        ## Criando as pastas
+
+                        Crie as novas pastas no seu projeto
+                        ```
+                        $ mkdir models
+                        $ mkdir views
+                        $ mkdir controller
+                        ```
+                </section>
+
+                <section>
+                    <h2>Introdução a POO</h2>
+                </section>
+
+                <!-- Example of nested vertical slides -->
+                <section>
+                    <section>
+                        <h2>Introdução a POO</h2>
+                        <h3>Programação Orientada à Objetos</h3>
+                    </section>
+                    <section>
+                        <h3>POO</h3>
+                        <p>Paradigma de programação em que se abstrai o código para uma coleção de objetos que podem interagir entre si</p>
+                    </section>
+                    <section>
+                        <img src="images/estruturada_vs_poo.png">
+                    </section>
+                    <section>
+                        <h3>Classe</h3>
+                        <p>Abstração que define um tipo de objeto</p>
+                        <ul>
+                            <li>Pessoa</li>
+                            <li>Cachorro</li>
+                        </ul>
+                    </section>
+                    <section data-markdown contenteditable>
+                        <script type="text/template">
+                        ``` php
+                            <?php
+
+                            class Person {
+
+                                /* ... */
+                            }
+                        ```
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Atributo</h3>
+                        <p>Características de um objeto</p>
+                        <ul>
+                            <li>Telefone, CPF, Estado Civil - Pessoa</li>
+                            <li>Nome, Raça - Cachorro</li>
+                        </ul>
+                    </section>
+                    <section data-markdown contenteditable>
+                        <script type="text/template">
+                        ``` php
+                            <?php
+
+                            class Person {
+
+                                public $id;
+                                public $name;
+                                public $age;
+                                public $height;
+                                public $course;
+                                public $phrase;
+
+                                /* ... */
+                            }
+                        ```
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Método</h3>
+                        <p>Ações/Eventos que o objeto pode executar</p>
+                        <ul>
+                            <li>Latir(), PegarOsso(), CavarBuraco() - Cachorro</li>
+                            <li>Andar(), Dormir(), Comer() - Pessoa</li>
+                        </ul>
+                    </section>
+                    <section data-markdown contenteditable>
+                        <script type="text/template">
+                        ``` php
+                            <?php
+
+                            class Person {
+
+                                /* Atributos */
+
+                                private function translateCourse($courseNumber)
+                                {
+                                    switch ($courseNumber) {
+                                        case 1:
+                                            $this->course = "Ciência da Computação";
+                                            break;
+                                        case 2:
+                                            $this->course = "Sistemas de Informação";
+                                            break;
+                                        case 3:
+                                            $this->course = "Licenciatura em Computação";
+                                            break;
+                                        case 4:
+                                            $this->course = "BI Ciência e Tecnologia";
+                                            break;
+                                        default:
+                                            $this->course = "Outro";
+                                            break;
+                                    }
+                                }
+                            }
+                        ```
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Objeto</h3>
+                        <p>Instância de uma Classe</p>
+                        <ul>
+                            <li>Rex (Instância da Classe Cachorro)</li>
+                            <li>Joãozinho (Instância da Classe Pessoa)</li>
+                        </ul>
+                    </section>
+                    <section data-markdown contenteditable>
+                        <script type="text/template">
+                        ``` php
+                            <?php
+
+                            $person = new Person($_POST['person']);
+                            $person->greeting();
+                        ```
+                        </script>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Exercício M</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Identificar e criar a primeira entidade do sistema.</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Pensar sobre o escopo do projeto (qual parte envolve manipulação de dados?)</p>
+                    <p>Pensar num *modelo* da sua entidade e quais atributos ela deve ter.</p>
+                    <p>Escrever um arquivo Entidade.php que contenha uma Classe Entidade.</p>
+                </section>
+
+                <section data-markdown contenteditable>
+                    <script type="text/template">
+                    ``` php
+                        <?php
+
+                        include('../models/Person.php');
+
+                        class PersonController
+                        {
+                            public static function insert() {
+                                $person = new Person($_POST['person']);
+                                echo $person->name;
+                            }
+                        }
+
+                        PersonController::$_POST['action']();
+                    ```
+                    </script>
+                </section>
+
+                <section>
+                    <h2>Exercício V</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Identificar e criar a primeira página de formulário do sistema.</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Lembra do modelo que você criou anteriormente? Agora você precisa controlá-lo.</p>
+                    <p>Escrever um arquivo entidade/pagina.php que contenha um formulário.</p>
+                </section>
+
+                <section data-markdown contenteditable>
+                    <script type="text/template">
+                    ``` html
+                        <form action="/* Rota para o Controller */" method="POST" enctype="multipart/form-data" class="s-form">
+                            <div class="person-name">
+                                <input type="text" class="form-control" name="person[name]" placeholder="Digite seu Nome" required>
+                            </div>
+
+                            <div class="person-age">
+                                <input type="text" class="form-control" name="person[age]" placeholder="Digite sua Idade" required>
+                            </div>
+
+                            <div class="person-height">
+                                <input type="text" class="form-control" name="person[height]" placeholder="Digite sua Altura" required>
+                            </div>
+                        </form>
+                    ```
+                    </script>
+                </section>
+
+                <section>
+                    <h2>Exercício C</h2>
+                    <h3 style="color: #27ae60">Objetivo</h3>
+                    <p>Identificar e criar a primeira controller do sistema.</p>
+                    <h3 style="color: #c0392b">Método</h3>
+                    <p>Lembra do modelo que você criou anteriormente? Agora você precisa controlá-lo.</p>
+                    <p>Escrever um arquivo EntidadeController.php que contenha uma Classe EntidadeController.</p>
+                </section>
+
+                <section data-markdown contenteditable>
+                    <script type="text/template">
+                    ``` php
+                        <?php
+
+                        include('../models/Person.php');
+
+                        class PersonController
+                        {
+                            public static function insert() {
+                                $person = new Person($_POST['person']);
+                                echo $person->name;
+                            }
+                        }
+
+                        PersonController::$_POST['action']();
+                    ```
+                    </script>
+                </section>
+
+                <section>
+                    <h3>Fontes</h3>
+                    <ul>
+                        <li><a href="http://tableless.com.br/mvc-afinal-e-o-que/" target="_blank">Tableless</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Wikipedia</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>O FIM</h1>
+                    <h3>Vlw Flw #BoraCodar</h3>
+                </section>
+
+            </div>
+            <footer class="footer">
+                <ul class="list">
+                    <li class="list-github">
+                        <i class="fa fa-github-square"></i><a href="https://www.github.com/AdeilsonSilva">AdeilsonSilva</a>
+                    </li>
+                    <li class="list-facebook">
+                        <i class="fa fa-facebook-square"></i><a href="https://www.facebook.com/IceemaaN">IceemaaN</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+
+        <script src="../vendor/assets/lib/js/head.min.js"></script>
+        <script src="../vendor/assets/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../vendor/assets/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/assets/js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../vendor/assets/js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../vendor/assets/js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+        <script src="../assets/js/theme/infojr.js"></script>
+    </body>
+</html>
