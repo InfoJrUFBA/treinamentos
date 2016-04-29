@@ -53,6 +53,9 @@
 
                 <section>
                     <section>
+                        <h2>Banco de dados</h2>
+                    </section>
+                    <section>
                         <h2>SQL?</h2>
                         <p>Structured Query Language</p>
                         <p>Aqui é br: (Linguagem de Consulta Estruturada)</p>
@@ -175,6 +178,41 @@
                 <section>
                     <section>
                         <h2>O uso de consultas</h2>
+                    </section>
+                    <section>
+                        <h2>Filtros de select</h2>
+                        <pre style="margin-bottom: 60px;"><code data-trim style="font-size: 22px; padding: 20px 30px; margin-top: 20px;">
+                        SELECT DISTINCT nome_da_coluna FROM nome_da_tabela;
+                        </code></pre>
+                        <pre style="margin-bottom: 60px;"><code data-trim style="font-size: 22px; padding: 20px 30px; margin-top: 20px;">
+                        SELECT nome_da_coluna FROM nome_da_tabela 
+                        WHERE nome_da_coluna operador valor;
+                        </code></pre>
+                        <pre style="margin-bottom: 60px;"><code data-trim style="font-size: 22px; padding: 20px 30px; margin-top: 20px;">
+                        SELECT * FROM nome_da_tabela 
+                        WHERE nome_da_coluna1= value1 
+                        AND nome_da_coluna2= 'value2';
+                        </code></pre>
+                        <pre style="margin-bottom: 60px;"><code data-trim style="font-size: 22px; padding: 20px 30px; margin-top: 20px;">
+                        SELECT * FROM nome_da_tabela WHERE nome_da_coluna LIKE 's%';
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Filtros de select</h2>
+                        <pre style="margin-bottom: 60px;"><code data-trim style="font-size: 22px; padding: 20px 30px; margin-top: 20px;">
+                        SELECT * FROM nome_da_tabela 
+                        WHERE nome_da_coluna 
+                        BETWEEN value1 AND value2;
+                        </code></pre>
+                        <pre style="margin-bottom: 60px;"><code data-trim style="font-size: 22px; padding: 20px 30px; margin-top: 20px;">
+                        SELECT nome_da_coluna FROM nome_da_tabela 
+                        WHERE nome_da_coluna IN (value1,value2,...);
+                        </code></pre>
+                        <pre style="margin-bottom: 60px;"><code data-trim style="font-size: 22px; padding: 20px 30px; margin-top: 20px;">
+                        SELECT * FROM nome_da_tabela
+                        ORDER BY nome_da_coluna1 
+                        ASC, nome_da_coluna2 DESC;
+                        </code></pre>
                     </section>
                 </section>
                 <section>
