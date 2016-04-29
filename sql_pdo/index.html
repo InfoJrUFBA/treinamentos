@@ -18,6 +18,8 @@
         <link rel="stylesheet" href="../vendor/assets/css/font-awesome.min.css">
         <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme">
         <link rel="stylesheet" href="assets/css/javascript.css">
+        <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme">
+
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="../vendor/assets/lib/css/zenburn.css">
@@ -216,20 +218,82 @@
                     </section>
                     <section>
                         <h2>SQL Injection</h2>
-                        <p>É uma técnica onde os usuários mal-intencionados pode injetar comandos SQL em uma instrução SQL, através da entrada de página da web. Comandos SQL injetadas podem alterar instrução SQL e comprometer a segurança de uma aplicação web.</p>
-                        <p>As injeções mais comuns são por comparação e instrução em lote.</p>
+                        <p>É uma técnica onde os usuários mal-intencionados pode injetar comandos SQL em uma instrução SQL, através da entrada de página da web. Comandos SQL injetadas podem alterar instrução SQL e comprometer a segurança de uma aplicação web. As injeções mais comuns são por comparação e instrução em lote.</p>
                     </section>
                     <section>
                         <h2>SQL Injection</h2>
                         <p>Parametrizar é a solução!</p>
                     </section>
                 </section>
-                <section data-background="../assets/img/logo.svg" data-background-repeat="no-repeat" data-background-size="18%" data-background-position="1.2em 2.3em" class="introduction">
-                    <div class="logo"></div>
-                    <h2 class="align-right">PDO</h2>
-                    <p class="align-right">
-                        <time>29 de dezembro de 2016</time>
-                    </p>
+                <section>
+                    <section data-background="../assets/img/logo.svg" data-background-repeat="no-repeat" data-background-size="18%" data-background-position="1.2em 2.3em" class="introduction">
+                        <div class="logo"></div>
+                        <h2 class="align-right">PDO</h2>
+                        <p class="align-right">
+                            <time>29 de dezembro de 2016</time>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>PDO</h2>
+                        <p>Nada mais é do que uma interface para banco de dados. Podemos dizer que é uma "classe universal" que nos fornece uma camada de abstração para vários SGBD's (MySQL, PostgreSQL etc) diferentes.</p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Conexão com o banco de dados</h2>
+                        <pre style="margin-bottom: 60px; width: 100%;"><code class="aux" data-trim style="font-size: 20px; padding: 20px 10px; margin-top: 20px;">
+                            //
+                            try{
+                              // Faz conexão com banco de daddos
+                              $pdo = new PDO("mysql:host=localhost;dbname=info;","root", "");
+                            }catch(PDOException $e){
+                              // Caso ocorra algum erro na conexão com o banco, exibe a mensagem
+                              echo 'Falha ao conectar no banco de dados: '.$e->getMessage();
+                              die;
+                            }
+                        </code></pre>
+                        <p>mysql_connect, pg_connect</p>
+                    </section>
+                    <section>
+                        <h2>Função de inserir dados</h2>
+                        <pre style="margin-bottom: 60px; width: 100%;"><code class="aux" data-trim style="font-size: 20px; padding: 20px 10px; margin-top: 20px;">
+                            //
+                            public function insert($pdo){
+                                $sth = $pdo->prepare("INSERT 
+                                INTO infojuniores(nome,cargo,idade) 
+                                VALUES (:nome,:cargo,:idade)");
+                                $sth->BindValue(':nome',$this->nome,PDO::PARAM_STR);
+                                $sth->BindValue(':cargo',$this->cargo,PDO::PARAM_STR);
+                                $sth->BindValue(':idade',$this->idade,PDO::PARAM_STR);
+                                return $sth->execute();
+                            }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Função de deletar dados</h2>
+                        <pre style="margin-bottom: 60px; width: 100%;"><code class="aux" data-trim style="font-size: 20px; padding: 20px 10px; margin-top: 20px;">
+                            //
+                            public static function delete($id,$pdo){
+                                $sth = $pdo->prepare("DELETE FROM infojuniores 
+                                WHERE id=:id LIMIT 1");
+                                $sth->bindValue(":id", $id, PDO::PARAM_INT);
+                                return $sth->execute();
+                            }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Função de selecionar todos</h2>
+                        <pre style="margin-bottom: 60px; width: 100%;"><code class="aux" data-trim style="font-size: 20px; padding: 20px 10px; margin-top: 20px;">
+                            //
+                            public static function selectAll($pdo){
+                                $sth = $pdo->query("SELECT * FROM infojuniores 
+                                ORDER BY nome ASC");
+                                $sth->execute();
+                                $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+                                return $results;
+                            }
+                        </code></pre>
+                    </section>
                 </section>
                 <section>
                     <h1>Obrigado!</h1>
