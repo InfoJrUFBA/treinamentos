@@ -3,11 +3,13 @@
 ## Agora vamos preparar um ambiente de desenvolvimento com as ferramentas mais utilizadas na InfoJr
 
 ### O que é o "apt-get"?
+
 > "Os desenvolvedores da distribuição Debian Linux criaram o APT (Advanced Packaging Tool),
 > uma ferramenta para instalar e atualizar pacotes (e suas dependências) de maneira rápida e prática." -
 > [Emerson Alecrim](http://www.infowester.com/aptget1.php)
 
 ### O que significa "sudo"?
+
 > "O comando sudo do sistema operacional Unix permite a usuários comuns obter privilégios de outro usuário,
 > em geral o super usuário, para executar tarefas específicas dentro do sistema de maneira segura e controlável
 > pelo administrador. O nome é uma forma abreviada de se referir a **s**ubstitute **u**ser **do** (fazer substituindo usuário)
@@ -15,41 +17,64 @@
 > [Wikipédia](https://pt.wikipedia.org/wiki/Sudo)
 
 ### Atualize o apt-get
+
 ```Linux
 sudo update apt-get
 ```
 
 ### Aprimore o apt-get
+
 ```Linux
 sudo upgrade apt-get
 ```
 
 ### Instale o apache2
+
+> Apache é a ferramenta responsável por criar um servidor local na sua máquina,
+> que por padrão é acessado como "http://localhost/".
+
 ```Linux
 sudo apt-get install apache2
 ```
 
 ### Instale o PHP 5
+
+> PHP é uma linguagem que permite os sites terem uma lógica. A diferença do PHP a linguagens
+> semelhantes como o JavaScript é que o PHP é executado apenas no servidor.
+
 ```Linux
 sudo apt-get install php5
 ```
 
+> "O MySQL é um sistema gerenciador de banco de dados relacional de código aberto usado na maioria das
+> aplicações gratuitas para gerir suas bases de dados. O serviço utiliza a linguagem SQL
+> (Structure Query Language – Linguagem de Consulta Estruturada), que é a linguagem mais popular para inserir,
+> acessar e gerenciar o conteúdo armazenado num banco de dados." -
+> [PEDRO PISA](http://www.techtudo.com.br/artigos/noticia/2012/04/o-que-e-e-como-usar-o-mysql.html)
+
 ### Instale o servidor do MySQL
+
 ```Linux
 sudo apt-get install mysql-server
 ```
 
 ### Instale o cliente do MySQL
+
 ```Linux
-mysql-client
+sudo apt-get install mysql-client
 ```
 
 ### Instale o Git
+
+> Git é uma ferramenta de controle de versão de arquivos. Ele permite que pessoas contribuam, editem
+> e criem arquivos simultaneamente sem que haja o risco das alterações sobrescreverem umas as outras.
+
 ```Linux
 sudo apt-get install git
 ```
 
 ### Instale o phpmyadmin
+
 ```Linux
 sudo apt-get install phpmyadmin
 ```
