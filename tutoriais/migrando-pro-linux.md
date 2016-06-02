@@ -50,7 +50,7 @@ sudo apt-get install php5
 > aplicações gratuitas para gerir suas bases de dados. O serviço utiliza a linguagem SQL
 > (Structure Query Language – Linguagem de Consulta Estruturada), que é a linguagem mais popular para inserir,
 > acessar e gerenciar o conteúdo armazenado num banco de dados." -
-> [PEDRO PISA](http://www.techtudo.com.br/artigos/noticia/2012/04/o-que-e-e-como-usar-o-mysql.html)
+> [Pedro Pisa](http://www.techtudo.com.br/artigos/noticia/2012/04/o-que-e-e-como-usar-o-mysql.html)
 
 ### Instale o servidor do MySQL
 
@@ -109,3 +109,5 @@ import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7
 
 	(Além disso, verificar se está “Tab width: 4” e desmarcada “indent with spaces”)
 Não esquecer de dar permissão a todas as pastas que você precisar rsrsrs: sudo chmod 777 /var/www/
+
+Ref: http://www.unixmen.com/how-to-install-lamp-stack-on-ubuntu-15-10/
