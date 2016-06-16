@@ -1,0 +1,67 @@
+.slides .logo {
+  background: url(../img/logo.svg) no-repeat;
+  background-size: 20%;
+  left: 15%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.reveal .snippet {
+  padding: 3em 0;
+}
+
+.snippet input {
+  border: 4px solid #ccc;
+  border-radius: 1em;
+  font-size: 1em;
+  height: 2.5em;
+  padding: 0 1em;
+  outline: none;
+  width: 100%;
+}
+
+.error {
+  color: #b20600;
+}
+
+input.error {
+  border-color: #b20600;
+}
+
+.success {
+  color: #7cb124;
+}
+
+input.success {
+  border-color: #7cb124;
+}
+
+.reveal img.unstyled {
+  border: 0;
+}
+
+.reveal .helper {
+  font-size: 1em;
+  font-weight: 700;
+  margin: .5em 0;
+}
+
+.reveal .kbd-shortcut {
+  font-size: .5em;
+}
+
+.reveal kbd {
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0px rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+  color: #333;
+  display: inline-block;
+  font-family: Arial,Helvetica,sans-serif;
+  line-height: .8em;
+  margin: 0 0.1em;
+  padding: 0.3em 0.6em;
+  text-shadow: 0 1px 0 #fff;
+  white-space: nowrap;
+}

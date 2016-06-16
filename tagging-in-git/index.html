@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+
+        <title>InfoJr UFBA - Semântica de Versionamento e tags no Git</title>
+
+        <meta name="description" content="Apresentação Semântica de Versionamento e tags no Git">
+        <meta name="author" content="Marino Hohenheim">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <link rel="stylesheet" href="../vendor/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="../vendor/reveal.js/css/devicons.min.css">
+        <link rel="stylesheet" href="../vendor/assets/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="../assets/css/theme/infojr.css" id="theme"> -->
+        <link rel="stylesheet" href="assets/css/tagging-in-git.css">
+
+        <link rel="stylesheet" href="../vendor/reveal.js/css/theme/blood.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../vendor/reveal.js/lib/css/zenburn.css">
+
+        <!-- eca Jquery -->
+        <script src="../vendor/assets/js/jquery.min.js"/>
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '../vendor/reveal.js/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <header class="header">
+            </header>
+
+            <div class="slides">
+                <section data-background="../assets/img/logo.svg" data-background-repeat="no-repeat" data-background-size="18%" data-background-position="1.2em 2.3em" class="introduction">
+                    <!-- <div class="logo"></div> -->
+                    <h2 class="align-right">Semântica de Versionamento com Tags do Git</h2>
+                    <h2>&</h2>
+                    <h2>Lançamento de Releases via GitHub</h2>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>O que é e porque usar</h2>
+                    </section>
+
+                    <section>
+                        <ul class="unstyled">
+                            <li data-fragment-index="0" class="fragment linone">
+                                <span data-fragment-index="1" class="fragment fade-out" id="fade-over">
+                                    <span class="icon-box">
+                                        <i class="fa fa-group fa-inverse"></i>
+                                    </span>
+                                    <span>
+                                        Todo mundo já fez alguma vez isso ou algo próximo
+                                    </span>
+                                </span>
+                                <span data-fragment-index="2" class="fragment">
+                                    <span class="icon-box">
+                                        <i class="fa fa-thumbs-down fa-inverse"></i>
+                                    </span>
+                                    <span>
+                                        Só que próximo não é suficiente
+                                    </span>
+                                </span>
+                            </li>
+                            <li data-fragment-index="3" class="fragment linone">
+                                <span class="icon-box">
+                                    <i class="fa fa-warning fa-inverse"></i>
+                                </span>
+                                Sem uso de especificação formal alguma, os números serão inúteis
+                            </li>
+                            <li data-fragment-index="4" class="fragment linone">
+                                <span class="icon-box">
+                                    <i class="fa fa-tag"></i>
+                                </span>
+                                Se uma aplicação X usa uma lib na versão 2.1.0 ...
+                            </li>
+                            <li data-fragment-index="5" class="fragment linone">
+                                <span class="icon-box">
+                                    <i class="fa fa-cog fa-spin"></i>
+                                </span>
+                                Saberemos que ela funcionará com essa lib numa versão >= 2.1.0 porém < 3.0.0
+                            </li>
+                            <li data-fragment-index="7" class="fragment linone">
+                                <span class="icon-box">
+                                    <i class="fa fa-level-up fa-inverse"></i>
+                                </span>
+                                Um projeto nem sempre chegará a sua versão 1.0.0
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Definição formal</h3>
+                        <ul class="unstyled">
+                                <li data-fragment-index="0" class="fragment linone fade-out" id="fade-over">
+                                    <span class="icon-box">
+                                        <i class="fa fa-tag fa-inverse"></i>
+                                    </span>
+                                    <span>
+                                        vX.Y.Z-label
+                                    </span>
+                                </li>
+                                <li data-fragment-index="1" class="fragment linone">
+                                    <span class="icon-box">
+                                        <i class="fa fa-tags fa-inverse"></i>
+                                    </span>
+                                    <span>
+                                        vMajor.Minor.Patch-label
+                                    </span>
+                                </li>
+                                <ul>
+                                    <li data-fragment-index="2" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>Patch:</strong> Otimização e correções;
+                                        </span>
+                                    </li>
+                                    <li data-fragment-index="3" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>Minor:</strong> Novas features, compatibilidade da API anterior;
+                                        </span>
+                                    </li>
+                                    <li data-fragment-index="4" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>Major:</strong> Novo release, imcompatibilidade da API anterior;
+                                        </span>
+                                    </li>
+                                    <li data-fragment-index="5" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            Major == 0 significa não oficial <span data-fragment-index="6" class="fragment" >(não necessáriamente)</span>
+                                            <!-- citar contra-exemplos -->
+                                        </span>
+                                    </li>
+                                </ul>
+                                <li data-fragment-index="7" class="fragment linone">
+                                    <span class="icon-box">
+                                        <i class="fa fa-tags fa-inverse"></i>
+                                    </span>
+                                    <span>
+                                        <strong>label</strong>
+                                    </span>
+                                </li>
+                                <ul>
+                                    <li data-fragment-index="8" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>pre-release</strong>
+                                        </span>
+                                        <ul>
+                                            <li class="linone"><span>Alpha</span></li>
+                                            <li class="linone"><span>Beta</span></li>
+                                            <li class="linone"><span>rc (Release Candidate)</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-fragment-index="9" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>build</strong>
+                                        </span>
+                                    </li>
+                                    <li data-fragment-index="10" class="fragment linone">
+                                        <span class="icon-box">
+                                            <i class="fa fa-tag fa-inverse"></i>
+                                        </span>
+                                        <span>
+                                            <strong>Ambos</strong>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <aside class="notes">
+                                Dependendo do autor, Major = 0 indica versão não oficial, enquanto outros estão abaixo da 1 e ainda assim já são oficiais e possuem LTS e talz. Tomem nota disso para definir qual será a sua política.
+                                <br>
+                                Quando uma Minor subir, a Patch retorna do zero, e quando uma Major subir, as outras duas resetam também.
+                                <br>
+                                Alpha diz respeito a versão sob testes em ambiente interno, simulando a realidade.
+                                <br>
+                                Beta diz respeito a versão sob testes realizados por um público externo.
+                            </aside>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template" class='slide'>
+                    ####Aumentando o nível de formalidade
+                    #### BNF
+```
+    <valid semver> ::= <version core>
+            | <version core> "-" <pre-release>
+            | <version core> "+" <build>
+            | <version core> "-" <pre-release> "+" <build>
+
+    <version core> ::= <major> "." <minor> "." <patch>
+
+    <major> ::= <numeric identifier>
+
+    <minor> ::= <numeric identifier>
+
+    <patch> ::= <numeric identifier>
+
+    <pre-release> ::= <dot-separated pre-release identifiers>
+
+    <dot-separated pre-release identifiers> ::= <pre-release identifier>
+                                              | <pre-release identifier> "." <dot-separated pre-release identifiers>
+
+    <build> ::= <dot-separated build identifiers>
+
+    <dot-separated build identifiers> ::= <build identifier>
+                                        | <build identifier> "." <dot-separated build identifiers>
+
+    <pre-release identifier> ::= <alphanumeric identifier>
+                               | <numeric identifier>
+
+    <build identifier> ::= <alphanumeric identifier>
+                         | <digits>
+
+    <alphanumeric identifier> ::= <non-digit>
+                                | <non-digit> <identifier characters>
+                                | <identifier characters> <non-digit>
+                                | <identifier characters> <non-digit> <identifier characters>
+
+    <numeric identifier> ::= "0"
+                           | <positive digit>
+                           | <positive digit> <digits>
+
+    <identifier characters> ::= <identifier character>
+                              | <identifier character> <identifier characters>
+
+    <identifier character> ::= <digit>
+                             | <non-digit>
+
+    <non-digit> ::= <letter>
+                  | "-"
+
+    <digits> ::= <digit>
+               | <digit> <digits>
+
+    <digit> ::= "0"
+              | <positive digit>
+
+    <positive digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+    <letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+               | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+               | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+               | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+               | "y" | "z"
+
+```
+    </script>
+                </section>
+
+                    <section data-markdown>
+                        <script type="text/template" class='slide'>
+                    ####Aumentando o nível de formalidade
+                    #### E-BNF
+```
+    valid-semver = version-core
+            | version-core '-' pre-release
+            | version-core '+' build
+            | version-core '-' pre-release '+' build
+
+    version-core = major '.' minor '.' patch
+
+    major = numeric-identifier
+
+    minor = numeric-identifier
+
+    patch = numeric-identifier
+
+    pre-release = dot-separated_pre-release_identifiers
+
+    dot-separated pre-release identifiers = pre-release identifier
+                                              | pre-release identifier '.' dot-separated pre-release identifiers
+
+    build = dot-separated build identifiers
+
+    dot-separated build identifiers = build identifier
+                                        | build identifier '.' dot-separated build identifiers
+
+    pre-release identifier = alphanumeric identifier
+                               | numeric identifier
+
+     build identifier = alphanumeric identifier
+                         | digits
+
+    alphanumeric identifier = non-digit
+                                | non-digit identifier characters
+                                | identifier characters non-digit
+                                | identifier characters non-digit identifier characters
+
+    numeric identifier = '0'
+                           | positive-digit {digits}
+
+    identifier characters = identifier character
+                              | identifier character identifier characters
+
+    identifier character = digit
+                             | non-digit
+
+    non-digit = letter
+                  | '-'
+
+    digits = digit {digit}
+
+    digit = '0'
+              | positive digit
+
+    positive digit = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+    letter = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+               | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+               | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+               | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+               | "y" | "z"
+
+```
+    </script>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Versionamento no Git com Tags</h2>
+                    <ul>
+                        <li class="fragment linone"><i class="fa fa-tag"></i>A função tag sua real habilidade;</li>
+                        <li class="fragment linone"><i class="fa fa-tag"></i>Asociar tags ao hash do commit alvo de versão;</li>
+                        <li class="fragment linone"><i class="fa fa-tag"></i>Troca de versão ultra rápida.</li>
+                        <li class="fragment linone"><i class="fa fa-tag"></i>Tags leves e tags anotadas</li>
+                    </ul>
+                    <aside class="notes">
+                        Pois bem...
+                        Falar de tags leves e anotadas antes de trocar o slide
+                        usar o comando pra progurar um commit/branch/tag pelo seu hash
+                    </aside>
+                </section>
+
+                <section data-markdown>
+                    ###Tags com o Git
+
+                    Tags Anotadas
+                    ```
+                    $ git tag -a vX.Y.Z -m "message"
+                    ```
+                    Tags Leves
+
+                    ```
+                    $ git tag vX.Y.Z
+                    ```
+                </section>
+                <section data-markdown>
+                    Listando Tags
+
+                    ```
+                    $ git tag
+                    v0.8
+                    v1.0-rc
+                    v1.1
+                    v2.0
+                    v2.1
+                    v2.2
+                    ```
+                    ```
+                    $ git tag -l 'v2.*'
+                    v2.0
+                    v2.1
+                    v2.2
+                    ```
+                </section>
+                <section data-markdown>
+                    Taggeando commits do passado:
+                    ```
+                    $ git lg
+                    * 84f05a6 - Tue, 5 Apr 2016 17:44:05 -0300 (5 days ago) (HEAD, tagging)
+                    |           revisando o E-BNF - Marinofull
+                    * d37ca0b - Fri, 11 Mar 2016 10:11:27 -0300 (4 weeks ago) (origin/tagging)
+                    |           changes imgs - Marinofull
+                    | *   0737bc5 - Fri, 1 Apr 2016 20:23:03 -0300 (9 days ago) (origin/master, origin/HEAD, master)
+                    | |\            Merge pull request #8 from Marinofull/capacitacao-git - Marino Hohenheim
+                    | | | *   e064d6e - Fri, 1 Apr 2016 13:49:30 -0300 (9 days ago) (origin/gh-pages, gh-pages)
+                    | | | |\            Merge branch 'capacitacao-git' into gh-pages - Marinofull
+                    | | | |/
+                    | | |/|
+                    | | * | 25062a0 - Fri, 1 Apr 2016 13:47:56 -0300 (9 days ago) (origin/capacitacao-git, capacitacao-git)
+                    | | | |           little fixe - Marinofull
+                    | | * | b20c0a2 - Fri, 1 Apr 2016 00:30:32 -0300 (10 days ago)
+                    | | | |           it closes #3 resolve #4 - Marinofull
+                    :
+
+                    ```
+                    ```
+                    $ git tag -a v1.1-alpha 84f05a6
+                    ```
+                </section>
+                <section data-markdown>
+                    Lendo dados de uma tag
+                    ```haskell
+                    $ git show v1.1-alpha
+                    tag v1.1-alpha
+                    Tagger: Marinofull <intmarinoreturn0@gmail.com>
+                    Date:   Sun Apr 10 16:41:53 2016 -0300
+
+                    Finalizando capacitação de tags
+
+                    commit 27df8c88d2220377cf52d2bc955a69f5e3dc1971
+                    Author: Marinofull <intmarinoreturn0@gmail.com>
+                    Date:   Sun Apr 10 16:37:41 2016 -0300
+
+                        adicionado instruções para taggear no git
+                            add slide de créditos
+                    ```
+                </section>
+                <section data-markdown>
+                    Enviando para um repositório remoto:
+                    ```
+                    $ git push origin v1.0
+                    $ git push origin v2.3.1-beta
+                    ```
+                    ou simplismente:
+                    ```
+                    $ git push origin --tags
+                    ```
+                </section>
+            </section>
+
+                <!--
+                <section data-markdown="assets/md/test.md"
+                         data-separator="^\n\n\n"
+                         data-separator-vertical="^\n\n"
+                         data-separator-notes="^Note:"
+                         data-charset="iso-8859-15">
+                </section>
+                -->
+
+                <section>
+                    <section>
+                        <h2>Liberando releases no GitHub</h2>
+                        <i class="fa fa-github logo"></i>
+                    </section>
+                    <section><img src="assets/img/main-view.png" alt=""></section>
+                    <section><img src="assets/img/releases-view.png" alt=""></section>
+                    <section><img src="assets/img/release-details-view.png" alt=""></section>
+                    <section><img src="assets/img/create-release-view.png" alt=""></section>
+                    <section><img src="assets/img/attach-files-view.png" alt=""></section>
+                    <section><img src="assets/img/created-release-view.png" alt=""></section>
+                </section>
+
+                <section>
+                    <section data-markdown>
+                        ###Dúvidas?
+                        Este é o momento
+
+                        ###Feedbacks:
+                        ```
+                        mailto: marino@dcc.ufba.br
+                        mailto: intmarinoreturn0@gmail.com
+                        mailto: marino@infojr.com.br
+
+                        ```
+                    </section>
+                </section>
+                <section>
+                <ul class="list">
+                    <li class="linone">
+                        <i class="fa fa-linkedin-square"></i><a href="https://br.linkedin.com/in/marinosouza">Marino Souza</a>
+                    </li>
+                    <li class="linone">
+                        <i class="fa fa-github-square"></i><a href="https://www.github.com/marinofull">Marinofull</a>
+                    </li>
+                    <li class="linone">
+                        <i class="fa fa-square"></i><a href="http://about.me/hohenheimmarino">hohenheimmarino</a>
+                    </li>
+                    <li class="linone">
+                        <br><i class="fa fa-book"></i>
+                        <span>Referências:</span>
+                        <ul>
+                            <li class="linone"><a href="https://git-scm.com/book/pt-br/v1/Git-Essencial-Tagging">Documentação do Git</a></li>
+                            <li class="linone"><a href="http://semver.org/">SemVer.org</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </section>
+            </div>
+            <footer class="footer"></footer>
+        </div>
+
+        <script src="../vendor/reveal.js/lib/js/head.min.js"></script>
+        <script src="../vendor/reveal.js/js/reveal.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../vendor/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../vendor/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../vendor/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../vendor/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../vendor/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+    $(function() {
+        disCount =  0;
+        ids      = [];
+        displays = [];
+        function makeDisappearAfterFragment(id) {
+            if(!$("#" + id)) return;
+
+            ids[disCount] = id;
+            displays[disCount] = $("#" + id).css("display");
+            disCount++;
+            Reveal.addEventListener( 'fragmentshown', function( event ) {
+                if ($(event.fragment).attr("id") === id) {
+                    $(event.fragment).css("display", "none");
+                }
+            } );
+
+            Reveal.addEventListener( 'fragmenthidden', function( event ) {
+                if ($(event.fragment).attr("id") === id) {
+                    $(event.fragment).css("display", displays[ids.indexOf(id)]);
+                }
+            } );
+        }
+
+        makeDisappearAfterFragment("fade-over");
+        // makeDisappearAfterFragment("liImg1");
+    });
+</script>
+        <script src="../assets/js/theme/infojr.js"></script>
+    </body>
+</html>
