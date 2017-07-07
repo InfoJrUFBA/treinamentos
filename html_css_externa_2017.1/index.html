@@ -73,13 +73,17 @@
                         <img src="img/HTML5_logo_and_wordmark.svg.png" height="500" width="500" style="background-color: white; padding: 50px; border: none;">
                     </section>
                     <section>
-                        <h3>HTML is a markup language for describing web documents (web pages).</h3><br/>
+                        <!-- <h3>HTML is a markup language for describing web documents (web pages).</h3><br/> -->
+                        <h3>HTML é uma linguagem de marcação para descrever páginas/documentos web.</h3><br/>
                         <ul>
-                            <li class="fragment">HTML stands for Hyper Text Markup Language</li>
-                            <li class="fragment">A markup language is a set of markup tags</li>
-                            <li class="fragment">HTML documents are described by HTML tags</li>
-                            <li class="fragment">Each HTML tag describes different document content</li>
-                        </ul>   
+                            <!-- <li class="fragment">HTML stands for Hyper Text Markup Language</li> -->
+                            <li class="fragment">A sigla HTML significa: Hyper Text Markup Language</li>
+                            <!-- <li class="fragment">A markup language is a set of markup tags</li> -->
+                            <li class="fragment">Composta por um conjunto de etiquetas(tag) de marcação</li>
+                            <!-- <li class="fragment">HTML documents are described by HTML tags</li> -->
+                            <li class="fragment">Documentos HTML são descritos por tags HTML</li>
+                            <li class="fragment">Cada tag HTML tag descreve diferentes conteúdos de um documento</li>
+                        </ul>
                     </section>
                     <section>
                         <img src="img/fossil.png" height="500" style="background-color: white; padding: 50px; border: none;">
@@ -124,8 +128,8 @@
                         <p>Elementos que não começam nova linha e só usam o espaço necessário.</p>
                         <ul>
                             <li><span class="fancy">&lt;span&gt;</span></li>
-                            <li><span class="fancy">&lt;a&gt;</span> ~ <span class="fancy">&lt;h6&gt;</span></li>
-                            <li><span class="fancy">&lt;image&gt;</span></li>
+                            <li><span class="fancy">&lt;a&gt;</span></li>
+                            <li><span class="fancy">&lt;img&gt;</span></li>
                         </ul>
                     </section>
                 </section>
@@ -227,7 +231,8 @@
                         <h3>Links</h3>
                         <p data-height="300" data-theme-id="9285" data-slug-hash="BRGjMp" data-default-tab="html,result" data-user="mateuscgc" data-embed-version="2" data-pen-title="links" class="codepen">See the Pen <a href="http://codepen.io/mateuscgc/pen/BRGjMp/">links</a> by Mateus Cordeiro (<a href="http://codepen.io/mateuscgc">@mateuscgc</a>) on <a href="http://codepen.io">CodePen</a>.</p>
                         <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-                        <p class="fragment">In HTML, links are defined with the <span class="fancy">&lt;a&gt;</span> tag.</p>
+                        <!-- <p>In HTML, links are defined with the <span class="fancy">&lt;a&gt;</span> tag.</p> -->
+                        <p>Em html, links são definidos com a tag <span class="fancy">&lt;a&gt;</span>.</p>
                     </section>
                     <section>
                         <h3>Links</h3>
@@ -245,46 +250,46 @@
                         <h3>Links - Tipos de links</h3>
                         <p data-height="350" data-theme-id="9285" data-slug-hash="umqtx" data-default-tab="result" data-user="mateuscgc" class='codepen'>See the Pen <a href='http://codepen.io/mateuscgc/pen/umqtx/'>umqtx</a> by Mateus Cordeiro (<a href='http://codepen.io/mateuscgc'>@mateuscgc</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
                         <script async src="http://codepen.io/assets/embed/ei.js"></script>                
-                        <p class="fragment">There are some types of links, including <span class="fancy">mailto</span> and <span class="fancy">tel</span></p>
+                        <!-- <p class="fragment">There are some types of links, including <span class="fancy">mailto</span> and <span class="fancy">tel</span></p> -->
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h3>Images</h3>
-                        <p class="fragment">In HTML, images are defined with the <span class="fancy">&lt;img&gt;</span> tag.</p>
-                        <p class="fragment">The <span class="fancy">&lt;img&gt;</span> tag is empty, it contains attributes only, and does not have a closing tag.</p>
-                        <p class="fragment">The <span class="fancy">src</span> attribute defines the url (web address) of the image:</p>
+                        <h3>Imagens</h3>
+                        <p class="fragment">Em html, imagens são definidas com a tag<span class="fancy">&lt;img&gt;</span>.</p>
+                        <p class="fragment">A tag <span class="fancy">&lt;img&gt;</span> é vazia, contém apenas atributos e não tem fechamento.</p>
+                        <p class="fragment">O atributo <span class="fancy">src</span> o endereço (url) da imagem a ser renderizada:</p>
                         <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
 &lt;img src="url"&gt;
                         </code></pre>
                     </section>
                     <section>
-                        <h3>some attributes of tag &lt;img&gt;</h3>
-                        <p>The <span class="fancy">alt</span> attribute specifies an alternate text for the image, if it cannot be displayed.</p>
-                        <p>The value of the <span class="fancy">alt</span> attribute should describe the image in words:</p>
+                        <h3>Alguns atributos da tag &lt;img&gt;</h3>
+                        <p>O atributo <span class="fancy">alt</span> especifica um texto alternativo para a imagem, caso não seja possível a sua renderização.</p>
+                        <p>O valor do atributo <span class="fancy">alt</span> deve descrever a imagem em palavras:</p>
                          <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
 &lt;img src="html5.gif" alt="The official HTML5 Icon"&gt;
                         </code></pre>
                     </section>
-                    <section>
+                    <!-- <section>
                         <h3>some attributes of tag &lt;img&gt;</h3>
                         <p>You can use the <span class="fancy">style</span> attribute to specify the <span class="fancy">width</span> and <span class="fancy">height</span> of an image.</p>
                         <p>The values are specified in pixels (use px after the value):</p>
                          <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
 &lt;img src="html5.gif" alt="HTML5 Icon" style="width:128px;height:128px"&gt;
                         </code></pre>
-                    </section>
+                    </section> -->
                     <section>
-                        <h3>some attributes of tag &lt;img&gt;</h3>
-                        <p>Alternatively, you can use <span class="fancy">width</span> and <span class="fancy">height</span> attributes.</p>
-                        <p>The values are specified in pixels (without px after the value):</p>
+                        <h3>Alguns atributos da tag &lt;img&gt;</h3>
+                        <p>Você pode usar <span class="fancy">width</span> e <span class="fancy">height</span> para definir as dimensões da imagem.</p>
+                        <p>O valores são especificados em pixels:</p>
                          <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
 &lt;img src="html5.gif" alt="HTML5 Icon" width="128" height="128"&gt;
                         </code></pre>
                     </section>
                     <section>
-                        <h3>Image as Link</h3>
-                        <p class="fragment">It is common to use images as links:</p>
+                        <h3>Imagem como link</h3>
+                        <p class="fragment">É comum utilizar imagens como links:</p>
                         <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
 &lt;a href="default.asp"&gt;
   &lt;img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0"&gt;
@@ -294,14 +299,18 @@
                  </section>
                  <section>
                     <section>
-                        <h3>&lt;table&gt;</h3>
-                        <p class="fragment">Tables are defined with the <span class="fancy">&lt;table&gt;</span> tag.</p>
-                        <p class="fragment">Tables are divided into table rows with the <span class="fancy">&lt;tr&gt;</span>tag.</p>
-                        <p class="fragment">Table rows are divided into table data with the <span class="fancy">&lt;td&gt;</span> tag.</p>
-                        <p class="fragment">A table row can also be divided into table headings with the <span class="fancy">&lt;th&gt;</span>tag.</p><span class="fancy">
+                        <h3>Tabelas</h3>
+                        <p class="fragment">Tabelas são definidas com a tag <span class="fancy">&lt;table&gt;</span>.</p>
+                        <!-- <p class="fragment">Tables are defined with the <span class="fancy">&lt;table&gt;</span> tag.</p> -->
+                        <p class="fragment">Tabelas são divididas em linhas com a tag <span class="fancy">&lt;tr&gt;</span>.</p>
+                        <!-- <p class="fragment">Tables are divided into table rows with the <span class="fancy">&lt;tr&gt;</span>tag.</p> -->
+                        <p class="fragment">Linhas são divididas em células de dados com a tag <span class="fancy">&lt;td&gt;</span>.</p>
+                        <!-- <p class="fragment">Table rows are divided into table data with the <span class="fancy">&lt;td&gt;</span> tag.</p> -->
+                        <p class="fragment">Celulas que representam cabeçalhos são definidas com a tag <span class="fancy">&lt;th&gt;</span>tag.</p><span class="fancy">
+                        <!-- <p class="fragment">A table row can also be divided into table headings with the <span class="fancy">&lt;th&gt;</span>tag.</p><span class="fancy"> -->
                     </section>
                     <section>
-                        <h3>Example</h3>
+                        <h3>Exemplo</h3>
                         <div data-height="350" data-theme-id="9285" data-slug-hash="Izrad" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;table&gt;
                           &lt;tr&gt;
                             &lt;th&gt;Firstname&lt;/th&gt;
@@ -324,7 +333,7 @@
                     </section>
                     <section>
                         <h3>&lt;thead&gt;, &lt;tfoot&gt;, and a &lt;tbody&gt;</h3>
-                        An HTML table with a <span class="fancy">&lt;thead&gt;</span>, <span class="fancy">&lt;tfoot&gt;</span>, and a <span class="fancy">&lt;tbody&gt;</span> element:
+                        <!-- An HTML table with a <span class="fancy">&lt;thead&gt;</span>, <span class="fancy">&lt;tfoot&gt;</span>, and a <span class="fancy">&lt;tbody&gt;</span> element: -->
                         <p></p>
                         <div data-height="350" data-theme-id="9285" data-slug-hash="Aockd" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;table&gt;
                           &lt;thead&gt;
@@ -354,8 +363,9 @@
                         </div><script async src="http://codepen.io/assets/embed/ei.js"></script>
                     </section>
                     <section>
-                        <h3>Table Attributes</h3>
-                        <p><span class="fancy">Colspan:</span> To make a cell span more than one column, use the <span class="fancy">colspan</span> attribute:</p>
+                        <h3>Atributas de tabela</h3>
+                        <p><span class="fancy">Colspan:</span> Faz com que um célula expanda mais que uma coluna, atributo <span class="fancy">colspan</span>:</p>
+                        <!-- <p><span class="fancy">Colspan:</span> To make a cell span more than one column, use the <span class="fancy">colspan</span> attribute:</p> -->
                         <div data-height="350" data-theme-id="9285" data-slug-hash="IECjo" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;table style=&quot;width:100%&quot;&gt;
                           &lt;tr&gt;
                             &lt;th&gt;Name&lt;/th&gt;
@@ -372,7 +382,8 @@
                     </section>
                     <section>
                         <h3>Table Attributes</h3>
-                        <p><span class="fancy">Rowspan:</span> To make a cell span more than one row, use the <span class="fancy">rowspan</span> attribute:</p>
+                        <p><span class="fancy">Roespan:</span> Faz com que um célula expanda mais que uma linha, atributo <span class="fancy">rowspan</span>:</p>
+                        <!-- <p><span class="fancy">Rowspan:</span> To make a cell span more than one row, use the <span class="fancy">rowspan</span> attribute:</p> -->
                         <div data-height="350" data-theme-id="9285" data-slug-hash="wKLuC" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;table style=&quot;width:100%&quot;&gt;
                           &lt;tr&gt;
                             &lt;th&gt;First Name:&lt;/th&gt;
@@ -392,10 +403,10 @@
                  </section>
                  <section>
                     <section>
-                        <h3>Forms</h3>
-                        <p class="fragment">HTML forms are used to pass data to a server.</p>
-                        <p class="fragment">An HTML <span class="fancy">&lt;form&gt;</span> can contain input elements like text fields, checkboxes, radio-buttons, submit buttons and more. A <span class="fancy">&lt;form&gt;</span> can also contain select lists, textarea, fieldset, legend, and label elements.</p>
-                        <p class="fragment">The <span class="fancy">&lt;form&gt;</span> tag is used to create an HTML <span class="fancy">&lt;form&gt;</span>:</p>
+                        <h3>Formulários</h3>
+                        <p class="fragment">Formulários HTML são usados para coletar dados do usuário.</p>
+                        <p class="fragment">Um dos principais mecanismos para enviar dados aos servidores.</p>
+                        <p class="fragment">Um <span class="fancy">&lt;form&gt;</span> html contém elementos (tags) de entrada de dados (input) como campos de texto e de marcação, seleção.</p>
                         <pre class="fragment"><code data-trim contenteditable style="padding: 20px;">
 &lt;form&gt;
 .
@@ -405,15 +416,16 @@ input elements
                         </code></pre>
                     </section>
                     <section>
-                        <h3>Form - The Input Element</h3>
-                        <p class="fragment">The most important <span class="fancy">form</span> element is the <span class="fancy">&lt;input&gt;</span> element.</p>
-                        <p class="fragment">The <span class="fancy">&lt;input&gt;</span> element is used to select user information.</p>
-                        <p class="fragment">An <span class="fancy">&lt;input&gt;</span> element can vary in many ways, depending on the type attribute. An <span class="fancy">&lt;input&gt;</span> element can be of type text field, checkbox, password, radio button, submit button, and more.</p>
-                        <p class="fragment">The most common <span class="fancy">input</span> types are described below.</p>
+                        <h3>Elemento <span class="fancy">&lt;input&gt;</span></h3>
+                        <p class="fragment">O mais importante elemento em um formulário.</p>
+                        <!-- <p class="fragment">The most important <span class="fancy">form</span> element is the <span class="fancy">&lt;input&gt;</span> element.</p> -->
+                        <p class="fragment">O elemento <span class="fancy">&lt;input&gt;</span> é utilizado para coletar dados do usuário.</p>
+                        <!-- <p class="fragment">The <span class="fancy">&lt;input&gt;</span> element is used to select user information.</p> -->
+                        <p class="fragment">O elemento <span class="fancy">&lt;input&gt;</span> pode pode variar em relação ao seu atributo <span class="fancy">type</span>. Um <span class="fancy">&lt;input&gt;</span> pode ser dos tipos: text field, checkbox, password, radio, submit, e muitos outros.</p>
                     </section>
                     <section>
-                        <h3>Text Fields</h3>
-                        <p><span class="fancy">&lt;input type="text"&gt;</span> defines a one-line input field that a user can enter text into:</p>
+                        <h3>Campo de texto</h3>
+                        <p><span class="fancy">&lt;input type="text"&gt;</span> Define um campo de uma linha para texto:</p>
                         <div data-height="150" data-theme-id="9314" data-slug-hash="ynArH" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
                         First name: &lt;input type=&quot;text&quot; name=&quot;firstname&quot;&gt;&lt;br&gt;
                         Last name: &lt;input type=&quot;text&quot; name=&quot;lastname&quot;&gt;
@@ -422,8 +434,8 @@ input elements
                         </div><script async src="//codepen.io/assets/embed/ei.js"></script><p>
                     </section>
                     <section>
-                        <h3>Password Field</h3>
-                        <p><span class="fancy">&lt;input type="password"&gt;</span> defines a password field:</p>
+                        <h3>Senha</h3>
+                        <p><span class="fancy">&lt;input type="password"&gt;</span> Define um campo para senha:</p>
                         <div data-height="150" data-theme-id="9314" data-slug-hash="jarlv" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
                         Password: &lt;input type=&quot;password&quot; name=&quot;pwd&quot;&gt;
                         &lt;/form&gt;</code></pre>
@@ -431,8 +443,8 @@ input elements
                         </div><script async src="//codepen.io/assets/embed/ei.js"></script>
                     </section>
                     <section>
-                        <h3>Radio Buttons</h3>
-                        <p><span class="fancy">&lt;input type="radio"&gt;</span> defines a radio button. Radio buttons let a user select ONLY ONE of a limited number of choices:</p>
+                        <h3>Radio</h3>
+                        <p><span class="fancy">&lt;input type="radio"&gt;</span> Define um campo de seleção que se agrupado permite ao usuário escolher apenas uma opção dentre várias:</p>
                         <div data-height="150" data-theme-id="9314" data-slug-hash="hxzqb" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
                         &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;Male&lt;br&gt;
                         &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;Female
@@ -441,8 +453,8 @@ input elements
                         </div><script async src="//codepen.io/assets/embed/ei.js"></script>
                     </section>
                     <section>
-                        <h3>Checkboxes</h3>
-                        <p><span class="fancy">&lt;input type="checkbox"&gt;</span> defines a checkbox. Checkboxes let a user select ZERO or MORE options of a limited number of choices.</p>
+                        <h3>Checkbox</h3>
+                        <p><span class="fancy">&lt;input type="checkbox"&gt;</span> Define um campo de seleção para que o usuário marque verdadeiro ou falso para um determinada opção:</p>
                         <div data-height="150" data-theme-id="9314" data-slug-hash="hxzqb" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
                         &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;Male&lt;br&gt;
                         &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;Female
@@ -451,9 +463,10 @@ input elements
                         </div><script async src="//codepen.io/assets/embed/ei.js"></script>
                     </section>
                     <section>
-                        <h3>Submit Button</h3>
-                        <p><span class="fancy">&lt;input type="submit"&gt;</span> defines a submit button.</p>
-                        <p>A submit button is used to send form data to a server. The data is sent to the page specified in the form's action attribute. The file defined in the action attribute usually does something with the received input:</p>
+                        <h3>Submit</h3>
+                        <p><span class="fancy">&lt;input type="submit"&gt;</span> define um botão para submissão do formulário.</p>
+                        <p>Os dados de um formulário são enviados para o endereço especificado no atributo <span class="fancy">action</span> utilizando o método definido no atributo <span class="fancy">action</span> (GET, POST):</p>
+                        <!-- <p>A submit button is used to send form data to a server. The data is sent to the page specified in the form's action attribute. The file defined in the action attribute usually does something with the received input:</p> -->
                         <div data-height="150" data-theme-id="9314" data-slug-hash="ioIyk" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form name=&quot;input&quot; action=&quot;demo_form_action.asp&quot; method=&quot;get&quot;&gt;
                         Username: &lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;
                         &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
@@ -463,8 +476,8 @@ input elements
                     </section>
                     <section>
                         <h3>Selects</h3>
-                        <p>The <span class="fancy">&lt;select&gt;</span> element is used to create a drop-down list.</p>
-                        <p>The <span class="fancy">&lt;option&gt;</span> tags inside the <span class="fancy">&lt;select&gt;</span> element define the available options in the list.</p>
+                        <p>O elemento <span class="fancy">&lt;select&gt;</span> é usado para criar uma lista de itens a serem selcionados.</p>
+                        <p>O elemento <span class="fancy">&lt;option&gt;</span> é usado dentro do <span class="fancy">&lt;select&gt;</span> para definir as opções.</p>
                         <div data-height="150" data-theme-id="9314" data-slug-hash="iuGDs" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;select&gt;
                         &lt;option value=&quot;volvo&quot;&gt;Volvo&lt;/option&gt;
                         &lt;option value=&quot;saab&quot;&gt;Saab&lt;/option&gt;
@@ -476,9 +489,7 @@ input elements
                     </section>
                     <section>
                         <h3>Textarea</h3>
-                        <p>The <span class="fancy">&lt;textarea&gt;</span> tag defines a multi-line text input control.</p>
-                        <p>A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually Courier).</p>
-                        <p>The size of a text area can be specified by the cols and rows attributes, or even better; through CSS' height and width properties.</p>
+                        <p>O elemento <span class="fancy">&lt;textarea&gt;</span> define um campo para texto de várias linhas.</p>
                         <div data-height="150" data-theme-id="9314" data-slug-hash="rjsCv" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;textarea rows=&quot;4&quot; cols=&quot;50&quot;&gt;
                         At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
                         &lt;/textarea&gt;</code></pre>
@@ -486,9 +497,9 @@ input elements
                         </div><script async src="//codepen.io/assets/embed/ei.js"></script>
                     </section>
                     <section>
-                        <h3>Input Types</h3>
-                        <p>HTML5 has several new input types for forms. These new features allow better input control and validation.</p>
-                        <p>This chapter covers the new input types:</p>
+                        <h3>Mais input <span class="fancy">types</span></h3>
+                        <p>O HTML5 introduziu diversos novos tipos que permitem melhor controle e validação.</p>
+                        <!-- <p>HTML5 has several new input types for forms. These new features allow better input control and validation.</p> -->
                         <ul>
                             <li>color</li>
                             <li>date</li>
@@ -506,7 +517,7 @@ input elements
                         </ul>
                     </section>
                     <section>
-                        <h3>Examples of use</h3>
+                        <h3>Exemplos de uso</h3>
                         <div data-height="268" data-theme-id="9314" data-slug-hash="BoIeb" data-default-tab="html" data-user="Gabrielgqa" class='codepen'><pre><code>&lt;form&gt;
                           &lt;p&gt;Type number&lt;/p&gt;Quantity:
                           &lt;input type=&quot;number&quot; name=&quot;points&quot; min=&quot;0&quot; max=&quot;100&quot; step=&quot;10&quot; value=&quot;30&quot;&gt;
@@ -615,12 +626,12 @@ input elements
                         <img src="img/css3_cheat_sheet.jpg" height="429" width="500" style="background-color: white; border: none;">
                     </section>
                     <section>
-                        <h3 style="line-height: 60px;">Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents.</h3>
+                        <h3 style="line-height: 60px;">Cascading Style Sheets (CSS) é um mecanismo simples para estilização de documentos web.</h3>
                         <ul>
-                            <li class="fragment">Styles define how to display HTML elements</li>
-                            <li class="fragment">Styles were added to HTML 4.0 to solve a problem</li>
-                            <li class="fragment">External Style Sheets can save a lot of work</li>
-                            <li class="fragment">External Style Sheets are stored in CSS files</li>
+                            <li class="fragment">Estilos definem como mostrar os elementos html</li>
+                            <!-- <li class="fragment">Styles define how to display HTML elements</li> -->
+                            <!-- <li class="fragment">Styles were added to HTML 4.0 to solve a problem</li> -->
+                            <li class="fragment">Estilos em arquivos CSS externos podem diminuir muito o trabalho</li>
                         </ul>
                     </section>
                     <section>
